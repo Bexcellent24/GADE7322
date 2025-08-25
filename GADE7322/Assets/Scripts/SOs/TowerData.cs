@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewTower", menuName = "Towers/Tower Data")]
+[CreateAssetMenu(fileName = "TowerDefense", menuName = "Towers/Tower Data")]
 public class TowerData : ScriptableObject
 {
     [Header("Prefabs")]
@@ -12,5 +12,5 @@ public class TowerData : ScriptableObject
     [TextArea] public string description;
     public Sprite icon;
     public int cost;
-
+    
 }

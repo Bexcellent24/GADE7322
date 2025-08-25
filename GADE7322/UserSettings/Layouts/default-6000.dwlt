@@ -273,15 +273,15 @@ MonoBehaviour:
     height: 331
   m_MinSize: {x: 231, y: 276}
   m_MaxSize: {x: 10001, y: 10026}
-  m_ActualView: {fileID: 18}
+  m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 17}
   - {fileID: 18}
   - {fileID: 19}
   - {fileID: 20}
   - {fileID: 21}
-  m_Selected: 1
-  m_LastSelected: 2
+  m_Selected: 2
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -432,7 +432,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 24
+    y: 79
     width: 496
     height: 576
   m_SerializedDataModeController:
@@ -497,8 +497,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 498
-    y: 24
+    x: 497
+    y: 79
     width: 997
     height: 576
   m_SerializedDataModeController:
@@ -1153,9 +1153,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -2.7891521, y: 3.297608, z: 5.933068}
+    m_Target: {x: 30.471798, y: 11.788409, z: 7.9596453}
     speed: 2
-    m_Value: {x: -2.7891521, y: 3.297608, z: 5.933068}
+    m_Value: {x: 30.471798, y: 11.788409, z: 7.9596453}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1201,9 +1201,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.198
   m_Rotation:
-    m_Target: {x: -0.010652842, y: -0.98502386, z: 0.06599774, w: -0.15916622}
+    m_Target: {x: 0.1428558, y: -0.41883698, z: 0.066897914, w: 0.89430404}
     speed: 2
-    m_Value: {x: 0.010652842, y: 0.9850238, z: -0.06599774, w: 0.15916622}
+    m_Value: {x: 0.14284956, y: -0.4188187, z: 0.06689499, w: 0.894265}
   m_Size:
     m_Target: 0.972397
     speed: 2
@@ -1371,7 +1371,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 626
+    y: 681
     width: 1495
     height: 305
   m_SerializedDataModeController:
@@ -1396,7 +1396,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Towers/GhostTowers
+    - Assets/Scripts/Interfaces
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1406,16 +1406,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Prefabs/Towers/GhostTowers
+  - Assets/Scripts/Interfaces
   m_LastFoldersGridSize: 96
-  m_LastProjectPath: C:\Users\USER-PC\Documents\Unity Projects\GADE7322
+  m_LastProjectPath: C:\Users\USER-PC\Documents\GitHub\GADE7322\GADE7322
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 70ac0000
-    m_LastClickedID: 44144
-    m_ExpandedIDs: 000000000cac00000eac000010ac000012ac0000
+    scrollPos: {x: 0, y: 99}
+    m_SelectedIDs: 0ab00000
+    m_LastClickedID: 45066
+    m_ExpandedIDs: 000000000cac00000eac000010ac000012ac000090ac000094ac000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1549,7 +1549,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/ScriptableObjects/TowerData
+    - Assets
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1559,16 +1559,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 53
   m_LastFolders:
-  - Assets/ScriptableObjects/TowerData
+  - Assets
   m_LastFoldersGridSize: 53
-  m_LastProjectPath: C:\Users\USER-PC\Documents\Unity Projects\GADE7322
+  m_LastProjectPath: C:\Users\USER-PC\Documents\GitHub\GADE7322\GADE7322
   m_LockTracker:
-    m_IsLocked: 1
+    m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 5eab0000
-    m_LastClickedID: 43870
-    m_ExpandedIDs: 000000000cac00000eac000010ac000012ac0000
+    m_SelectedIDs: 0cac0000
+    m_LastClickedID: 44044
+    m_ExpandedIDs: 000000000cac00000eac000010ac000012ac000094ac0000c0ac000026ae000028ae00002aae00002cae000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1623,8 +1623,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 52a60000
-    m_LastClickedInstanceID: 42578
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000506a0000226d0000c2aa00006e0200006c0200008c75000076a400005c8e000078ad030038f60000465f00006882000010690000fc6800005a98ffff748c000006960000e29600001896000094760000c67f000018f30000e4c80000cc630000bc630000c85a0000be800000e068000074690000c4650000b25a0000ba7e0000ae7e00006a5d00002e5b0000405b0000185b00004e5d00009ef500009af50000e852010032b80000065b0000685e00002c890000c6dc0000cedc0000bedc0000da530100345b00006ee80000645d0000c2460400d84e0400625a04001c5904001859040070810100a8cc0000b4040000a6f80000a8f5000000000000bcb00000
     m_RenameOverlay:
@@ -1752,8 +1752,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1497
-    y: 24
+    x: 1496
+    y: 79
     width: 423
     height: 907
   m_SerializedDataModeController:
