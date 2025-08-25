@@ -11,8 +11,20 @@ public class TowerSpot : MonoBehaviour
         if (ps != null) ps.Stop();
     }
 
-    public void Show() { if (ps != null && !ps.isPlaying) ps.Play(); }
-    public void Hide() { if (ps != null && ps.isPlaying) ps.Stop(); }
+    public void Show()
+    {
+        if (ps != null)
+        {
+            ps.Clear();
+            ps.Play();
+        }
+    }
+    
+    public void Hide()
+    {
+        if (ps != null)
+            ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+    }
 
     public bool CanPlaceTower()
     {

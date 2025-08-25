@@ -9,7 +9,7 @@ public class TowerSpotGenerator : MonoBehaviour
     [SerializeField] private int numberOfSpots = 8;
     [SerializeField] private float flattenRadius = 1.5f;
 
-    public List<TowerSpot> towerSpots = new List<TowerSpot>();
+    public List<TowerSpot> towerSpots;
 
     public void GenerateSpots()
     {
