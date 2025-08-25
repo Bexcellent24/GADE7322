@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3568974092526788796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1558936126771189672}
+  m_Layer: 0
+  m_Name: GenerationBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1558936126771189672
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3568974092526788796}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1707352763015016196}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4632996947101834670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1707352763015016196}
+  - component: {fileID: 6678156338315272664}
+  m_Layer: 0
+  m_Name: BaseTower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1707352763015016196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4632996947101834670}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 2.73}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1558936126771189672}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6678156338315272664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4632996947101834670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6991b9594362910489f231d8ca48d701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  height: 6
+  tileSize: 1
+  parent: {fileID: 1558936126771189672}
+  allTiles:
+  - {fileID: 11400000, guid: bc65723354e4da0409afec2d8259f145, type: 2}
+  - {fileID: 11400000, guid: b874630c452027c4d8603161d3728242, type: 2}
+  - {fileID: 11400000, guid: fde3fe596684ddb4ea3844598d3a6b65, type: 2}
+  - {fileID: 11400000, guid: d8dc3ee4f05c374478e1b881d49b85e9, type: 2}
+  - {fileID: 11400000, guid: ef23fd9f606f8d648856f9f553b34553, type: 2}
+  - {fileID: 11400000, guid: f5a755d2d18a4ee49b07fbe0c41abb00, type: 2}
+  - {fileID: 11400000, guid: 2b8e1f5eb0e00d246bbb3206c3f8ac73, type: 2}
+  - {fileID: 11400000, guid: 98fa74feb0b88604fa606805b491290e, type: 2}
+  - {fileID: 11400000, guid: 6f8efe4a672b522498acd2762c8dad98, type: 2}
+  - {fileID: 11400000, guid: 8cc2f17bf295a4f4f820941b5638fc7d, type: 2}
+  - {fileID: 11400000, guid: 9399c6850a9079c45b2337fb00f4f804, type: 2}
+  - {fileID: 11400000, guid: 3b168d3dea659c348b29358edc48f7fa, type: 2}
+  - {fileID: 11400000, guid: 8f0f6124ecaa34146984d0b27ea21f4c, type: 2}
+  - {fileID: 11400000, guid: cf4a9fd046763a04ca44f407f9e34979, type: 2}
+  - {fileID: 11400000, guid: 70cfdd4500824604bbe5451efdc46560, type: 2}
+  - {fileID: 11400000, guid: a247ee0d6a7055d4bb798472353bbf96, type: 2}
+  - {fileID: 11400000, guid: dbd90c0e4251d6245945cec181ea09f0, type: 2}
+  - {fileID: 11400000, guid: 450da0b3fc4b2154f809fe8b9af7245e, type: 2}
+  - {fileID: 11400000, guid: 974c5b7534284714f845100eea5084d9, type: 2}
+  - {fileID: 11400000, guid: bd36b9e65878ac844959749460c99528, type: 2}
+  - {fileID: 11400000, guid: e332c35bd6a292d4093cda3a055ca1a5, type: 2}
+  - {fileID: 11400000, guid: 546b0589a5e66c04f9653bc8126a4b90, type: 2}
+  - {fileID: 11400000, guid: 818213db75b5256499c2c4fb02f904a8, type: 2}
+  - {fileID: 11400000, guid: 770af0ef7224da646923687d7bc5e2f1, type: 2}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a80044efd65f5d9419384f6855431d46, type: 3}
+  m_Name: WallWindow_270
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4059930027133845626, guid: 5a6bc64bd72e73e46b9a5a45289b898e, type: 3}
+  isRoofTile: 0
+  topSocket: 3
+  bottomSocket: 3
+  northSocket: 1
+  eastSocket: 0
+  southSocket: 0
+  westSocket: 1
