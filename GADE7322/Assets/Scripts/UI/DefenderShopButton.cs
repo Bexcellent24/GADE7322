@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Serialization;
+
 public class TowerButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("Tower Info")]
@@ -13,8 +15,9 @@ public class TowerButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     [SerializeField] private TMP_Text priceText;
     [SerializeField] private Button button;
 
+    [FormerlySerializedAs("towerPlacer")]
     [Header("Placement")]
-    [SerializeField] private TowerPlacer towerPlacer;
+    [SerializeField] private DefenderPlacer defenderPlacer;
 
     private void Awake()
     {
@@ -32,16 +35,16 @@ public class TowerButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (towerData != null)
-            towerPlacer.BeginDrag(towerData);
+            defenderPlacer.BeginDrag(towerData);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        towerPlacer.UpdateDrag();
+        defenderPlacer.UpdateDrag();
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        towerPlacer.EndDrag();
+        defenderPlacer.EndDrag();
     }
 }

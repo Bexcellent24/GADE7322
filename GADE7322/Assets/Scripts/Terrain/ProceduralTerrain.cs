@@ -90,6 +90,6 @@ public class ProceduralTerrain : MonoBehaviour
         meshCollider.sharedMesh = mesh;
         meshRenderer.material = groundMaterial;
         
-        GetComponent<TowerSpotGenerator>()?.GenerateSpots();
+        GetComponent<DefenderSpotGenerator>()?.GenerateSpots();
     }
 }

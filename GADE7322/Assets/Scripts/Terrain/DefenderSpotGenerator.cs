@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerSpotGenerator : MonoBehaviour
+public class DefenderSpotGenerator : MonoBehaviour
 {
     [Header("Tower Spots")]
     [SerializeField] private GameObject towerSpotPrefab;
@@ -9,7 +9,7 @@ public class TowerSpotGenerator : MonoBehaviour
     [SerializeField] private int numberOfSpots = 8;
     [SerializeField] private float flattenRadius = 1.5f;
 
-    public List<TowerSpot> towerSpots;
+    public List<DefenderSpot> towerSpots;
 
     public void GenerateSpots()
     {
@@ -29,7 +29,7 @@ public class TowerSpotGenerator : MonoBehaviour
             FlattenArea(x, z, flattenRadius);
             
             GameObject newSpot = Instantiate(towerSpotPrefab, spot, Quaternion.identity, transform);
-            TowerSpot spotComp = newSpot.GetComponent<TowerSpot>();
+            DefenderSpot spotComp = newSpot.GetComponent<DefenderSpot>();
             towerSpots.Add(spotComp);
         }
         

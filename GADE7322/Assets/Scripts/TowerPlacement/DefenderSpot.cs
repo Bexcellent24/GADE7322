@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TowerSpot : MonoBehaviour
+public class DefenderSpot : MonoBehaviour
 {
     private ParticleSystem ps;
     public bool IsOccupied { get; private set; } = false;

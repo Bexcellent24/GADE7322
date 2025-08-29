@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class TowerPlacer : MonoBehaviour
+public class DefenderPlacer : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private TowerSpotGenerator spotGenerator;
+    [SerializeField] private DefenderSpotGenerator spotGenerator;
 
     private GameObject ghostInstance;
     private TowerData currentTower;
@@ -46,7 +46,7 @@ public class TowerPlacer : MonoBehaviour
     {
         if (ghostInstance == null) return;
 
-        TowerSpot nearestSpot = null;
+        DefenderSpot nearestSpot = null;
         float minDist = Mathf.Infinity;
 
         foreach (var spot in spotGenerator.towerSpots)
