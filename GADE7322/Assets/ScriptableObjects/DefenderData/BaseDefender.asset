@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 369fc33cc46c2a84e8c953678ebc730a, type: 3}
-  m_Name: BaseTower
+  m_Name: BaseDefender
   m_EditorClassIdentifier: 
   towerPrefab: {fileID: 4632996947101834670, guid: f52b106c5edf4d74e9571dae7c3c2710, type: 3}
   ghostPrefab: {fileID: 5272527493030601373, guid: 235b7200c98b31944b80f3e08406f582, type: 3}

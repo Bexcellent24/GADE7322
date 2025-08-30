@@ -61,9 +61,18 @@ public class DefenderPlacer : MonoBehaviour
             }
         }
 
-        if (nearestSpot != null && minDist < 2f) // within snap range
+        // Try to place tower
+        if (nearestSpot != null && minDist < 2f)
         {
-            nearestSpot.PlaceTower(currentTower.towerPrefab);
+            // Double-check affordability at the moment of placement
+            if (CurrencyManager.Instance.SpendCurrency(currentTower.cost))
+            {
+                nearestSpot.PlaceTower(currentTower.towerPrefab);
+            }
+            else
+            {
+                Debug.Log("Could not afford tower at placement time.");
+            }
         }
 
         // Cleanup

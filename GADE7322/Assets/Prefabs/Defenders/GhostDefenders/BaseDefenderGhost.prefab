@@ -1253,7 +1253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2978027750567180695}
   m_Layer: 0
-  m_Name: BaseTowerGhost
+  m_Name: BaseDefenderGhost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

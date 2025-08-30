@@ -4,9 +4,9 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Serialization;
 
-public class TowerButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DefenderShopButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    [Header("Tower Info")]
+    [Header("Defender Info")]
     [SerializeField] private TowerData towerData;
 
     [Header("UI References")]
@@ -14,8 +14,7 @@ public class TowerButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private TMP_Text priceText;
     [SerializeField] private Button button;
-
-    [FormerlySerializedAs("towerPlacer")]
+    
     [Header("Placement")]
     [SerializeField] private DefenderPlacer defenderPlacer;
 
@@ -26,8 +25,23 @@ public class TowerButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         {
             iconImage.sprite = towerData.icon;
             nameText.text = towerData.towerName;
-            priceText.text = "R " + towerData.cost;
+            priceText.text = towerData.cost.ToString();
         }
+        
+        // Subscribe to currency changes
+        CurrencyManager.Instance.OnCurrencyChanged += UpdateButtonState;
+        UpdateButtonState(CurrencyManager.Instance.CurrentCurrency);
+    }
+    
+    private void OnDestroy()
+    {
+        if (CurrencyManager.Instance != null)
+            CurrencyManager.Instance.OnCurrencyChanged -= UpdateButtonState;
+    }
+    
+    private void UpdateButtonState(int currentCurrency)
+    {
+        button.interactable = currentCurrency >= towerData.cost;
     }
     
     
