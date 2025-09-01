@@ -7,7 +7,7 @@ public class CurrencyManager : MonoBehaviour
     public static CurrencyManager Instance { get; private set; }
     public int CurrentCurrency { get; private set; }
 
-    public event Action<int> OnCurrencyChanged;
+    public static event Action<int> OnCurrencyChanged;
 
     private void Awake()
     {
@@ -19,6 +19,7 @@ public class CurrencyManager : MonoBehaviour
         Instance = this;
         
         CurrentCurrency = startingCurrency;
+        OnCurrencyChanged?.Invoke(CurrentCurrency);
     }
 
     public void AddCurrency(int amount)

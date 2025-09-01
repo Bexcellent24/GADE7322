@@ -5,70 +5,101 @@ public class DefenderSpotGenerator : MonoBehaviour
 {
     [Header("Tower Spots")]
     [SerializeField] private GameObject towerSpotPrefab;
-    [SerializeField] private ProceduralTerrain terrain;
+    [SerializeField] private Transform planet;       // Sphere or planet centre
+    [SerializeField] private float planetRadius = 5f;
     [SerializeField] private int numberOfSpots = 8;
     [SerializeField] private float flattenRadius = 1.5f;
 
-    public List<DefenderSpot> towerSpots;
+    private Mesh planetMesh;
+    private Vector3[] vertices;
+
+    public List<DefenderSpot> towerSpots = new List<DefenderSpot>();
+
+    void Awake()
+    {
+        planetMesh = planet.GetComponent<MeshFilter>().mesh;
+        vertices = planetMesh.vertices;
+        
+        Debug.Log(planetMesh.vertices.Length);
+    }
+
+    private void Start()
+    {
+        GenerateSpots();
+    }
 
     public void GenerateSpots()
     {
+        Debug.Log("Generating spots");
+
         towerSpots.Clear();
 
-        int width = terrain.verticesGrid.GetLength(0);
-        int depth = terrain.verticesGrid.GetLength(1);
+        // Always fetch latest mesh here
+        MeshFilter mf = planet.GetComponent<MeshFilter>();
+        if (mf == null || mf.mesh == null)
+        {
+            Debug.LogError("Planet has no mesh at runtime!");
+            return;
+        }
+
+        planetMesh = mf.mesh;
+        vertices = planetMesh.vertices;
 
         for (int i = 0; i < numberOfSpots; i++)
         {
-            int x = Random.Range(1, width - 1);
-            int z = Random.Range(1, depth - 1);
+            Vector3 randomDir = Random.onUnitSphere;
+            Vector3 rayStart = planet.position + randomDir * (planetRadius + 2f); // start outside the planet
+            Vector3 rayEnd = planet.position; // point at center
 
-            Vector3 spot = terrain.verticesGrid[x, z];
-
-            // Flatten surrounding vertices
-            FlattenArea(x, z, flattenRadius);
-            
-            GameObject newSpot = Instantiate(towerSpotPrefab, spot, Quaternion.identity, transform);
-            DefenderSpot spotComp = newSpot.GetComponent<DefenderSpot>();
-            towerSpots.Add(spotComp);
-        }
-        
-    }
-
-    void FlattenArea(int centerX, int centerZ, float radius)
-    {
-        int width = terrain.verticesGrid.GetLength(0);
-        int depth = terrain.verticesGrid.GetLength(1);
-
-        for (int z = 0; z < depth; z++)
-        {
-            for (int x = 0; x < width; x++)
+            if (Physics.Raycast(rayStart, (rayEnd - rayStart), out RaycastHit hit, planetRadius * 3f))
             {
-                Vector3 v = terrain.verticesGrid[x, z];
-                if (Vector3.Distance(new Vector3(v.x, 0, v.z), new Vector3(centerX * terrain.scale, 0, centerZ * terrain.scale)) <= radius)
-                {
-                    // Flatten to center Y
-                    v.y = terrain.verticesGrid[centerX, centerZ].y;
-                    terrain.verticesGrid[x, z] = v;
-                }
+                Vector3 spotPos = hit.point;
+
+                // Push tower slightly above the surface
+                Vector3 normal = (spotPos - planet.position).normalized;
+                float towerOffset = 0.1f;
+                spotPos += normal * towerOffset;
+
+                FlattenArea(hit, flattenRadius);
+
+                Quaternion spotRot = Quaternion.FromToRotation(Vector3.up, normal);
+
+                GameObject newSpot = Instantiate(towerSpotPrefab, spotPos, spotRot);
+                newSpot.transform.SetParent(transform, true); 
+                DefenderSpot spotComp = newSpot.GetComponent<DefenderSpot>();
+                towerSpots.Add(spotComp);
+                
+                
             }
         }
 
-        // Update mesh
-        Mesh mesh = terrain.GetComponent<MeshFilter>().mesh;
-        Vector3[] vertices = mesh.vertices;
-        int index = 0;
-        for (int z = 0; z < depth; z++)
-        for (int x = 0; x < width; x++)
-            vertices[index++] = terrain.verticesGrid[x, z];
-
-        mesh.vertices = vertices;
-        mesh.RecalculateNormals();
-        terrain.GetComponent<MeshCollider>().sharedMesh = mesh;
-        
-        
+        // Commit mesh changes
+        planetMesh.vertices = vertices;
+        planetMesh.RecalculateNormals();
+        planet.GetComponent<MeshCollider>().sharedMesh = planetMesh;
     }
-    
-    
-}
 
+
+    void FlattenArea(RaycastHit hit, float radius)
+    {
+        Vector3[] verts = planetMesh.vertices;
+        Transform meshTransform = planet.transform;
+
+        Vector3 hitLocal = meshTransform.InverseTransformPoint(hit.point);
+
+        for (int i = 0; i < verts.Length; i++)
+        {
+            Vector3 v = verts[i];
+            float dist = Vector3.Distance(v, hitLocal);
+            if (dist <= radius)
+            {
+                // Flatten this vertex to be at the same distance from centre as hit point
+                Vector3 dir = v.normalized;
+                float targetDistance = hitLocal.magnitude;
+                verts[i] = dir * targetDistance;
+            }
+        }
+
+        vertices = verts;
+    }
+}

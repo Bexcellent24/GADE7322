@@ -39,6 +39,12 @@ public class DefenderPlacer : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
             ghostInstance.transform.position = hit.point + Vector3.up * 0.1f;
+            
+            // Align tower so bottom points toward planet centre
+            Vector3 planetCenter = spotGenerator.transform.position;
+            Vector3 dirFromCenter = (ghostInstance.transform.position - planetCenter).normalized;
+
+            ghostInstance.transform.rotation = Quaternion.FromToRotation(Vector3.up, dirFromCenter);
         }
     }
 

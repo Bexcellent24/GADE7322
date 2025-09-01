@@ -6,21 +6,19 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text CurrencyText;
 
-
-    private void Awake()
+    private void OnEnable()
     {
-        CurrencyManager.Instance.OnCurrencyChanged += UpdateCurrencyHandler;
+        CurrencyManager.OnCurrencyChanged += UpdateCurrencyHandler;
     }
-    
     
     private void OnDestroy()
     {
-        if (CurrencyManager.Instance != null)
-            CurrencyManager.Instance.OnCurrencyChanged -= UpdateCurrencyHandler;
+        CurrencyManager.OnCurrencyChanged -= UpdateCurrencyHandler;
     }
 
     private void UpdateCurrencyHandler(int amount)
     {
+        Debug.Log($"Updating currency: {amount}");
         CurrencyText.text = amount.ToString();
     }
 }

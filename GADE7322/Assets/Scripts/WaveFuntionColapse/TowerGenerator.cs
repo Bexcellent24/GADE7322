@@ -246,18 +246,36 @@ public class TowerGenerator : MonoBehaviour
         if (instantiatedTiles[pos.x, pos.y, pos.z] != null)
             Destroy(instantiatedTiles[pos.x, pos.y, pos.z]);
 
-        Vector3 worldPos = transform.position
-                           + new Vector3(pos.x * tileSize, pos.y * tileSize, pos.z * tileSize)
-                           + new Vector3(sizeX, 0, sizeZ) * (tileSize * -.25f); // center offset
-        instantiatedTiles[pos.x, pos.y, pos.z] = Instantiate(tile.prefab, worldPos, tile.prefab.transform.rotation, parent);
+        // pick the transform that owns the grid
+        Transform p = parent != null ? parent : transform;
+
+        // centre the 2 by 2 grid around local origin
+        // half.x and half.z are 0.5 for a 2 by 2
+        Vector3 half = new Vector3((sizeX - 1) * 0.5f, 0f, (sizeZ - 1) * 0.5f);
+
+        // build the offset in LOCAL space, use local Y for height
+        Vector3 localPos =
+            new Vector3((pos.x - half.x) * tileSize,
+                pos.y * tileSize,
+                (pos.z - half.z) * tileSize);
+
+        // convert to world using the parent’s rotation and position
+        Vector3 worldPos = p.TransformPoint(localPos);
+
+        // use parent rotation so tiles align with the tower orientation
+        // if your tile prefabs have a local tweak, multiply it in
+        Quaternion rot = p.rotation; // or p.rotation * tile.prefab.transform.localRotation;
+
+        instantiatedTiles[pos.x, pos.y, pos.z] =
+            Instantiate(tile.prefab, worldPos, rot, p);
     }
+
 
     #endregion
 
     #region Utilities
 
     private bool IsInBounds(Vector3Int v) => v.x >= 0 && v.x < sizeX && v.y >= 0 && v.y < height && v.z >= 0 && v.z < sizeZ;
-
     #endregion
 }
 

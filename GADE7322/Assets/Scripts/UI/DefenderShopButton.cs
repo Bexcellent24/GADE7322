@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -27,16 +28,16 @@ public class DefenderShopButton : MonoBehaviour, IBeginDragHandler, IDragHandler
             nameText.text = towerData.towerName;
             priceText.text = towerData.cost.ToString();
         }
-        
-        // Subscribe to currency changes
-        CurrencyManager.Instance.OnCurrencyChanged += UpdateButtonState;
-        UpdateButtonState(CurrencyManager.Instance.CurrentCurrency);
     }
-    
+
+    private void OnEnable()
+    {
+        CurrencyManager.OnCurrencyChanged += UpdateButtonState;
+    }
+
     private void OnDestroy()
     {
-        if (CurrencyManager.Instance != null)
-            CurrencyManager.Instance.OnCurrencyChanged -= UpdateButtonState;
+        CurrencyManager.OnCurrencyChanged -= UpdateButtonState;
     }
     
     private void UpdateButtonState(int currentCurrency)
