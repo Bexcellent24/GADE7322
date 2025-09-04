@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,13 +20,6 @@ public class DefenderSpotGenerator : MonoBehaviour
     {
         planetMesh = planet.GetComponent<MeshFilter>().mesh;
         vertices = planetMesh.vertices;
-        
-        Debug.Log(planetMesh.vertices.Length);
-    }
-
-    private void Start()
-    {
-        GenerateSpots();
     }
 
     public void GenerateSpots()
@@ -101,5 +95,11 @@ public class DefenderSpotGenerator : MonoBehaviour
         }
 
         vertices = verts;
+    }
+
+    public IEnumerator GenerateSpotsCoroutine()
+    {
+        GenerateSpots();
+        yield return null;   
     }
 }
