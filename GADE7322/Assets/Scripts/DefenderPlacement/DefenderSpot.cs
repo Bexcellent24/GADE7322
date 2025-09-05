@@ -35,15 +35,10 @@ public class DefenderSpot : MonoBehaviour
     {
         if (IsOccupied) return;
 
-        Vector3 planetCenter = Vector3.zero; // Or your planet's actual transform.position
+        Vector3 planetCenter = Vector3.zero;
         Vector3 dirFromCenter = (transform.position - planetCenter).normalized;
-
-        // Rotate so that the tower's local "up" points away from the planet center
         Quaternion rotation = Quaternion.FromToRotation(Vector3.up, dirFromCenter);
-
-        // Spawn the base tower
         Instantiate(towerPrefab, transform.position, rotation);
-
         IsOccupied = true;
         Hide();
     }

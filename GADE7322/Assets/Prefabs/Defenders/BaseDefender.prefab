@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 6
-  tileSize: 1
+  tileSize: 0.35
   parent: {fileID: 1558936126771189672}
   allTiles:
   - {fileID: 11400000, guid: bc65723354e4da0409afec2d8259f145, type: 2}

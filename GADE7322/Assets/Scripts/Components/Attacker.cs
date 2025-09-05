@@ -4,18 +4,17 @@ public class Attacker : MonoBehaviour
 {
     private float range;
     private float fireRate;
-     private GameObject bulletPrefab;
-     private Transform firePoint;
+    private GameObject bulletPrefab;
+    [SerializeField] private Transform firePoint;
 
     private float fireCooldown;
     private IDamageable currentTarget;
 
-    public void Initialize(GameObject bulletPrefab, float range, float fireRate, Transform firePoint)
+    public void Initialize(GameObject bulletPrefab, float range, float fireRate)
     {
         this.bulletPrefab = bulletPrefab;
         this.range = range;
         this.fireRate = fireRate;
-        this.firePoint = firePoint;
     }
     
     void Update()

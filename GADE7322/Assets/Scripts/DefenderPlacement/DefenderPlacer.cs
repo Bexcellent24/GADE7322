@@ -3,7 +3,7 @@ using UnityEngine;
 public class DefenderPlacer : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private DefenderSpotGenerator spotGenerator;
+    [SerializeField] private DefenderSpotPlacer spotGenerator;
 
     private GameObject ghostInstance;
     private TowerData currentTower;
@@ -24,7 +24,7 @@ public class DefenderPlacer : MonoBehaviour
         ghostInstance = Instantiate(towerData.ghostPrefab);
 
         // Highlight all free spots
-        foreach (var spot in spotGenerator.towerSpots)
+        foreach (var spot in spotGenerator.spots)
         {
             if (spot.CanPlaceTower()) 
                 spot.Show();
@@ -55,7 +55,7 @@ public class DefenderPlacer : MonoBehaviour
         DefenderSpot nearestSpot = null;
         float minDist = Mathf.Infinity;
 
-        foreach (var spot in spotGenerator.towerSpots)
+        foreach (var spot in spotGenerator.spots)
         {
             if (!spot.CanPlaceTower()) continue;
 
@@ -87,7 +87,7 @@ public class DefenderPlacer : MonoBehaviour
         currentTower = null;
 
         // Hide all highlights
-        foreach (var spot in spotGenerator.towerSpots)
+        foreach (var spot in spotGenerator.spots)
         {
             spot.Hide();
         }

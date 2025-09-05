@@ -22,7 +22,10 @@ public class Health : MonoBehaviour, IDamageable
         if (!IsAlive) return;
 
         Current -= amount;
-        if (Current <= 0) Die();
+        if (Current <= 0)
+        {
+            Die();
+        }
     }
 
     private void Die()

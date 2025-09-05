@@ -4,8 +4,11 @@ using UnityEngine;
 public class PGManager : MonoBehaviour
 {
     [Header("Generators")]
+    [SerializeField] private DefenderSpotPlacer defenderSpotPlacer;
+    [SerializeField] private MarchingCubesPlanet planetGenerator;
+    
+    [Header("References")]
     [SerializeField] private GameObject crystalTowerPrefab;
-    [SerializeField] private DefenderSpotGenerator spotGenerator;
 
     [Header("Planet")]
     public Transform planet;
@@ -20,24 +23,20 @@ public class PGManager : MonoBehaviour
 
     private IEnumerator RunGenerationSequence()
     {
-        Debug.Log("Starting procedural generation sequence...");
         
-        // 3. Terrain
-        
+        // 1. Terrain
+       // yield return StartCoroutine(planetGenerator.GenerateCoroutine());
 
-        // 2. Spawn Crystal Tower at North Pole
+        // 2. Tower spots
+        yield return StartCoroutine(defenderSpotPlacer.GenerateCoroutine());
+        
+        // 3. Spawn Crystal Tower at North Pole
         Vector3 northPole = planet.transform.position + northPoleOffset;
         GameObject crystalObj = Instantiate(crystalTowerPrefab, northPole, Quaternion.identity);
         CrystalTowerGenerator generator = crystalObj.GetComponent<CrystalTowerGenerator>();
         yield return StartCoroutine(generator.GenerateCoroutine());
-
-
-        // 3. Tower spots
-        if (spotGenerator != null)
-        {
-            yield return StartCoroutine(spotGenerator.GenerateSpotsCoroutine());
-        }
-
-        Debug.Log("Procedural generation complete!");
+        
+        //4. Enemy Spawner
+        
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine.Serialization;
 
 public class Actor : MonoBehaviour
 {
-    [FormerlySerializedAs("data")] public ActorStats stats;
+    public ActorStats stats;
     public Faction faction;
 
     [HideInInspector] public Health health;
@@ -18,7 +18,7 @@ public class Actor : MonoBehaviour
             health.Initialize(stats.maxHealth);
         
         if (stats != null && health != null)
-            attacker.Initialize(stats.bulletPrefab, stats.range, stats.attackRate, stats.firePoint);
+            attacker.Initialize(stats.bulletPrefab, stats.range, stats.attackRate);
     }
 }
 

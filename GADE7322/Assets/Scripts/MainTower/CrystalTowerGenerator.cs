@@ -14,19 +14,28 @@ public class CrystalTowerGenerator : MonoBehaviour
     public Transform parent;
 
     [Header("Randomness")]
-    [Range(0f, 0.3f)] public float jitter = 0.2f;      // Random offset
-    [Range(0f, 0.5f)] public float lean = 0.2f;        // Max lean at bottom
-    [Range(0f, 0.5f)] public float skipChance = 0.2f;  // Chance to skip a crystal for gaps
+    [Range(0f, 0.3f)] public float jitter = 0.2f;      
+    [Range(0f, 0.5f)] public float lean = 0.2f;        
+    [Range(0f, 0.5f)] public float skipChance = 0.2f;  
 
+    
+    [Header("Firepoint")]
+    public Transform firePoint;            
+    public float firePointOffset = 1f;     
+    
     public void GenerateCrystalTower()
     {
         if (parent == null) parent = transform;
 
         // Clear existing
         foreach (Transform child in parent)
-            DestroyImmediate(child.gameObject);
+        {
+            if (child != firePoint) // Don't destroy firePoint
+                DestroyImmediate(child.gameObject);
+        }
 
         float currentY = 0f;
+        float maxHeight = 0f;
 
         for (int layer = 0; layer < heightLayers; layer++)
         {
@@ -70,10 +79,21 @@ public class CrystalTowerGenerator : MonoBehaviour
                 Vector3 dir = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)).normalized;
                 Vector3 leanDir = (Vector3.up + dir * leanAmount).normalized;
                 crystal.transform.rotation = Quaternion.FromToRotation(Vector3.up, leanDir);
+                
+                // Track tallest point
+                float crystalTop = pos.y + (baseScale.y * randHeight);
+                if (crystalTop > maxHeight)
+                    maxHeight = crystalTop;
             }
 
-            // Move up by **half the current layer's crystal height** to overlap layers
+            // Move up by .3 to overlap layers
             currentY += crystalHeight * 0.3f;
+        }
+        
+        // Position firePoint above the tallest crystal
+        if (firePoint != null)
+        {
+            firePoint.position = parent.position + Vector3.up * (maxHeight + firePointOffset);
         }
     }
 
