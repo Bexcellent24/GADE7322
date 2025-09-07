@@ -15,6 +15,7 @@ public class DefenderShopButton : MonoBehaviour, IBeginDragHandler, IDragHandler
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private TMP_Text priceText;
     [SerializeField] private Button button;
+    [SerializeField] private CanvasGroup canvasGroup;
     
     [Header("Placement")]
     [SerializeField] private DefenderPlacer defenderPlacer;
@@ -42,7 +43,17 @@ public class DefenderShopButton : MonoBehaviour, IBeginDragHandler, IDragHandler
     
     private void UpdateButtonState(int currentCurrency)
     {
-        button.interactable = currentCurrency >= towerData.cost;
+        bool canAfford = currentCurrency >= towerData.cost;
+        
+        button.interactable = canAfford;
+
+        if (canvasGroup != null)
+        {
+            // Fade out if unaffordable
+            canvasGroup.alpha = canAfford ? 1f : 0.3f;
+            canvasGroup.interactable = canAfford;
+            canvasGroup.blocksRaycasts = canAfford;
+        }
     }
     
     

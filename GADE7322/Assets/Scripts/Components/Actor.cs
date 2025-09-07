@@ -8,17 +8,22 @@ public class Actor : MonoBehaviour
 
     [HideInInspector] public Health health;
     [HideInInspector] public Attacker attacker;
+    [HideInInspector] public RangeIndicator indicator;
 
     void Awake()
     {
         health = GetComponent<Health>();
         attacker = GetComponent<Attacker>();
+        indicator = GetComponentInChildren<RangeIndicator>();
 
         if (stats != null && health != null)
-            health.Initialize(stats.maxHealth);
+            health.Initialize(stats.maxHealth, faction, stats.maxHealth, stats.triggerGameOver);
         
         if (stats != null && health != null)
             attacker.Initialize(stats.bulletPrefab, stats.range, stats.attackRate);
+
+        if (indicator != null)
+         indicator.Initialize(stats.range);
     }
 }
 

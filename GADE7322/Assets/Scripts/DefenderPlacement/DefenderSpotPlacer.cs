@@ -44,9 +44,10 @@ public class DefenderSpotPlacer : MonoBehaviour
     public bool verboseLogs = true;
 
     [Header("Flattening")] [Tooltip("Radius around each spot to flatten")]
-    public float flattenRadius = .5f;
-    [Tooltip("Strength of flattening (1 = fully flat, <1 = softer)")]
-    [Range(0f, 1f)] public float flattenStrength = 1f;
+    [SerializeField] private TerrainPatchDeformer terrainDeformer;
+    [SerializeField] private float flattenRadius = 1;
+    [Range(0, 1)]
+    [SerializeField] private float flattenStrength = .5f;
 
     //List containing all the tower spots available during runtime
     [HideInInspector] public List<DefenderSpot> spots = new();
@@ -177,7 +178,10 @@ public class DefenderSpotPlacer : MonoBehaviour
                 fwd = Vector3.Cross(up, Vector3.right);
             
             Quaternion rot = Quaternion.LookRotation(fwd.normalized, up);
-            FlattenTerrainAroundSpot(place, up, flattenRadius, flattenStrength);
+            if (terrainDeformer != null)
+            {
+                terrainDeformer.AddFlattenStampWorld(place, up, flattenRadius, 1f - flattenStrength);
+            }
             GameObject go;
             if (spotPrefab) 
                 go = Instantiate(spotPrefab, place, rot, transform);
@@ -270,52 +274,6 @@ public class DefenderSpotPlacer : MonoBehaviour
         //Returns all candidates the passed the 'inspection' 
         return added;
     }
-    
-    void FlattenTerrainAroundSpot(Vector3 center, Vector3 up, float radius, float strength)
-    {
-        if (!landMeshFilter || !landMeshFilter.sharedMesh)
-        {
-            Debug.Log("Failed to flatten terrain around spot!");
-            return;
-        }
-
-        Mesh mesh = landMeshFilter.mesh; // clone of sharedMesh
-        Vector3[] verts = mesh.vertices;
-
-        // Transform vertices to world
-        Matrix4x4 l2w = landMeshFilter.transform.localToWorldMatrix;
-        Matrix4x4 w2l = landMeshFilter.transform.worldToLocalMatrix;
-
-        // Flatten plane = passes through center, oriented by up
-        Plane plane = new Plane(up, center);
-
-        for (int i = 0; i < verts.Length; i++)
-        {
-            Vector3 wp = l2w.MultiplyPoint3x4(verts[i]);
-            float dist = Vector3.Distance(wp, center);
-
-            if (dist < radius)
-            {
-                // Project to plane
-                plane.Raycast(new Ray(wp, -up), out float enter);
-                Vector3 flatPos = wp + -up * enter;
-
-                // Blend between original and flat position
-                wp = Vector3.Lerp(wp, flatPos, strength);
-
-                verts[i] = w2l.MultiplyPoint3x4(wp);
-            }
-        }
-
-        mesh.vertices = verts;
-        mesh.RecalculateNormals();
-        mesh.RecalculateBounds();
-
-        var collider = landMeshFilter.GetComponent<MeshCollider>();
-        if (collider) collider.sharedMesh = null; // force update
-        if (collider) collider.sharedMesh = mesh;
-    }
-    
     public IEnumerator GenerateCoroutine()
     {
         GenerateSpots();

@@ -71,19 +71,31 @@ public class TerrainPatchDeformer : MonoBehaviour
             {
                 var st = _stamps[s];
 
-                Vector3 to = vw - st.center;
-                Vector3 tan = Vector3.ProjectOnPlane(to, st.up);
-                float dist = tan.magnitude;
-                if (dist > st.radius) continue;
+                // Direction from planet centre to vertex
+                Vector3 vertDir = (vw - planetCenter.position).normalized;
+                // Direction from planet centre to stamp centre
+                Vector3 stampDir = (st.center - planetCenter.position).normalized;
 
+                // Angle between vertex and stamp in radians
+                float angle = Mathf.Acos(Mathf.Clamp(Vector3.Dot(vertDir, stampDir), -1f, 1f));
+
+                // Convert to "arc length" distance on sphere (angle * radius of stamp)
+                float sphereDist = angle * (vw - planetCenter.position).magnitude;
+
+                if (sphereDist > st.radius) continue;
+
+                // Feathering as before, but based on spherical distance
                 float inner = st.radius * (1f - st.feather);
-                float t = (dist <= inner) ? 1f : 1f - Mathf.InverseLerp(inner, st.radius, dist);
+                float t = (sphereDist <= inner) ? 1f : 1f - Mathf.InverseLerp(inner, st.radius, sphereDist);
                 t = t * t * (3f - 2f * t); // smoothstep
 
                 if (t > bestS)
                 {
                     bestS = t;
-                    bestTarget = st.center + tan; // point on the stamp's tangent plane
+
+                    // Flatten toward sphere surface defined by stamp
+                    float height = Vector3.Dot(vw - st.center, st.up);
+                    bestTarget = vw - height * st.up;
                 }
             }
 

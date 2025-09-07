@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f9731f4450b8264cbbccbd1fc54e560, type: 3}
   m_Name: BaseEnemy
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 7850337081557151601, guid: 1b238b7f8b0f1af4d8d7418f8232c490, type: 3}
+  bulletPrefab: {fileID: 8010429607598179167, guid: 2aef4d6233394d44e899309b1d0d8a77, type: 3}
   maxHealth: 25
-  attackRate: 0.75
-  range: 2
+  attackRate: 1
+  range: 1

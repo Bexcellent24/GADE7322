@@ -25,7 +25,7 @@ public class PGManager : MonoBehaviour
     {
         
         // 1. Terrain
-       // yield return StartCoroutine(planetGenerator.GenerateCoroutine());
+        yield return StartCoroutine(planetGenerator.GenerateCoroutine());
 
         // 2. Tower spots
         yield return StartCoroutine(defenderSpotPlacer.GenerateCoroutine());

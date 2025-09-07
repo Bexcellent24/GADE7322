@@ -25,6 +25,7 @@ public class MarchingCubesPlanet : MonoBehaviour
     [SerializeField] int seed = 12345;
     [Tooltip("Keep on for RNG")]
     [SerializeField] bool autoRerollOnPlay = true;
+    [SerializeField] private bool autoRegenInEditor = true;
 
     [Header("Planet Noise")]
     [Tooltip("Low = Smooth noise, Craggy noise")]
@@ -35,6 +36,14 @@ public class MarchingCubesPlanet : MonoBehaviour
     [SerializeField] float lacunarity = 2.05f;
     [Tooltip("Keep at 0.5 please, otherwise planet won't be whole")]
     [SerializeField] float gain = 0.5f;
+    
+    [Header("Polar cap")]
+    [Tooltip("Fraction of hemisphere covered by the polar cap, 0..1, larger = bigger flattened cap")]
+    [SerializeField, Range(0f, 0.5f)] private float capSize = 0.15f;
+    [Tooltip("How strongly poles are depressed, positive pulls poles inward")]
+    [SerializeField] private float polarStrength = 1.0f;
+    [Tooltip("Clamp final displacement magnitude to avoid extreme pushes/pulls")]
+    [SerializeField] private float maxDisplacement = 4f;
 
     [Header("Continents")]
     [Tooltip("0.5 and lower = few large lands, 0.5 and higher = many small islands")]
@@ -76,9 +85,6 @@ public class MarchingCubesPlanet : MonoBehaviour
         
         //If changes are made in the editor while running makes sure the planet does auto regenerate
         mesh = mf.sharedMesh ? mf.sharedMesh : (mf.sharedMesh = new Mesh { name = "Planet" });
-        
-        InitSeed();
-        Regenerate();
     }
     void InitSeed()
     {
@@ -114,7 +120,11 @@ public class MarchingCubesPlanet : MonoBehaviour
         if (!isActiveAndEnabled) return;
         if (mf == null) mf = GetComponent<MeshFilter>();
         if (mf && mf.sharedMesh == null) mf.sharedMesh = new Mesh { name = "Planet (MarchingCubes)" };
-        if (Application.isPlaying == false) { InitSeed(); Regenerate(); }
+
+        if (Application.isPlaying == false && autoRegenInEditor) {
+            InitSeed();
+            Regenerate();
+        }
     }
 #endif
    void Build()
@@ -197,7 +207,7 @@ public class MarchingCubesPlanet : MonoBehaviour
     mesh.RecalculateBounds();
 }
 
-static Vector3 InterpVertex(Vector3 pA, Vector3 pB, float dA, float dB, float iso)
+    static Vector3 InterpVertex(Vector3 pA, Vector3 pB, float dA, float dB, float iso)
 {
     float denom = (dB - dA);
     if (Mathf.Abs(denom) < 1e-6f) return (pA + pB) * 0.5f;
@@ -227,8 +237,8 @@ static Vector3 InterpVertex(Vector3 pA, Vector3 pB, float dA, float dB, float is
         float detail = Mathf.Lerp(hills, ridged, 0.35f);
 
         float displacement = surfaceJitter * detail + continentalLift - seaLevel;
-
-        return sdfSphere + displacement;
+        
+        return sdfSphere + displacement; 
     }
 
     float TinyHash(Vector3 pos, float scale)
