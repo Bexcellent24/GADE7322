@@ -40,6 +40,7 @@ public class PGManager : MonoBehaviour
         yield return StartCoroutine(generator.GenerateCoroutine());
         
         //4. Enemy Spawner
+        yield return new WaitForSeconds(3f);
         if (enemySpawner != null)
             enemySpawner.Begin();
     }

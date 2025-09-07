@@ -11,6 +11,7 @@ public class ActorStats : ScriptableObject
     public int maxHealth = 100;
     public float attackRate = 1f;
     public float range = 3f;
+    public float damage = 15f;
     public bool triggerGameOver = false;
 
 }

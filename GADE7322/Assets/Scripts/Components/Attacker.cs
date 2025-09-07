@@ -4,17 +4,19 @@ public class Attacker : MonoBehaviour
 {
     private float range;
     private float fireRate;
+    private float damage;
     private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
 
     private float fireCooldown;
     private IDamageable currentTarget;
 
-    public void Initialize(GameObject bulletPrefab, float range, float fireRate)
+    public void Initialize(GameObject bulletPrefab, float range, float fireRate, float damage)
     {
         this.bulletPrefab = bulletPrefab;
         this.range = range;
         this.fireRate = fireRate;
+        this.damage = damage;
     }
     
     void Update()
@@ -68,7 +70,7 @@ public class Attacker : MonoBehaviour
         var bullet = bulletObj.GetComponent<Bullet>();
         if (bullet != null)
         {
-            bullet.Init(currentTarget);
+            bullet.Init(currentTarget, damage);
         }
     }
 }

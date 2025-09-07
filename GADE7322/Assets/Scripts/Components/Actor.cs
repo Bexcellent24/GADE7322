@@ -20,7 +20,7 @@ public class Actor : MonoBehaviour
             health.Initialize(stats.maxHealth, faction, stats.maxHealth, stats.triggerGameOver);
         
         if (stats != null && health != null)
-            attacker.Initialize(stats.bulletPrefab, stats.range, stats.attackRate);
+            attacker.Initialize(stats.bulletPrefab, stats.range, stats.attackRate, stats.damage);
 
         if (indicator != null)
          indicator.Initialize(stats.range);

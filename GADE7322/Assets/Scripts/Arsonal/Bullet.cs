@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private IDamageable target;
-    [SerializeField] private int damage = 10;
     [SerializeField] private float speed = 5f;
-
-    public void Init(IDamageable target)
+    
+    private IDamageable target;
+    private float damage = 10;
+    
+    public void Init(IDamageable target, float damage)
     {
         this.target = target;
+        this.damage = damage;
     }
 
     void Update()
@@ -34,7 +36,7 @@ public class Bullet : MonoBehaviour
         // Check if hit
         if (Vector3.Distance(transform.position, target.Transform.position) < 0.1f)
         {
-            target.TakeDamage(damage);
+            target.TakeDamage((int)damage);
             Destroy(gameObject);
         }
     }

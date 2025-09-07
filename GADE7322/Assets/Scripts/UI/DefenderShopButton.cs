@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Serialization;
 
-public class DefenderShopButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DefenderShopButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("Defender Info")]
     [SerializeField] private TowerData towerData;
@@ -19,6 +19,11 @@ public class DefenderShopButton : MonoBehaviour, IBeginDragHandler, IDragHandler
     
     [Header("Placement")]
     [SerializeField] private DefenderPlacer defenderPlacer;
+    
+    [Header("Tooltip")]
+    [SerializeField] private GameObject tooltipPanel;
+    [SerializeField] private TMP_Text tooltipText;
+
 
     private void Awake()
     {
@@ -29,6 +34,9 @@ public class DefenderShopButton : MonoBehaviour, IBeginDragHandler, IDragHandler
             nameText.text = towerData.towerName;
             priceText.text = towerData.cost.ToString();
         }
+        
+        if (tooltipPanel != null)
+            tooltipPanel.SetActive(false);
     }
 
     private void OnEnable()
@@ -72,5 +80,24 @@ public class DefenderShopButton : MonoBehaviour, IBeginDragHandler, IDragHandler
     public void OnEndDrag(PointerEventData eventData)
     {
         defenderPlacer.EndDrag();
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (tooltipPanel != null && towerData != null)
+        {
+            tooltipPanel.SetActive(true);
+            tooltipText.text = $"{towerData.towerName}\n \n" +
+                               $"Damage: {towerData.stats.damage}\n" +
+                               $"Range: {towerData.stats.range}\n" +
+                               $"Attack Rate: {towerData.stats.attackRate}\n \n" +
+                               $"{towerData.description}";
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (tooltipPanel != null)
+            tooltipPanel.SetActive(false);
     }
 }

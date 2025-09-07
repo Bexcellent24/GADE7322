@@ -5,7 +5,8 @@ public class TowerData : ScriptableObject
 {
     [Header("Prefabs")]
     public GameObject towerPrefab;  
-    public GameObject ghostPrefab; 
+    public GameObject ghostPrefab;
+    public ActorStats stats;
 
     [Header("UI Info")]
     public string towerName;

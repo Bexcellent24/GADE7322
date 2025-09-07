@@ -16,4 +16,5 @@ MonoBehaviour:
   maxHealth: 25
   attackRate: 1
   range: 2
+  damage: 5
   triggerGameOver: 0
