@@ -72,5 +72,7 @@ public class Attacker : MonoBehaviour
         {
             bullet.Init(currentTarget, damage);
         }
+        
+        AudioManager.Instance?.PlaySFX("Shoot");
     }
 }

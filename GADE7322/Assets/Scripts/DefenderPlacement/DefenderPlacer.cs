@@ -74,6 +74,7 @@ public class DefenderPlacer : MonoBehaviour
             if (CurrencyManager.Instance.SpendCurrency(currentTower.cost))
             {
                 nearestSpot.PlaceTower(currentTower.towerPrefab);
+                AudioManager.Instance.PlaySFX("Build");
             }
             else
             {

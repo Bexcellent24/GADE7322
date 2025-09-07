@@ -20,6 +20,12 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
+        
+    }
+
+    private void Start()
+    {
+        AudioManager.Instance?.PlayMusic("Background");
     }
 
     private void Update()
@@ -46,6 +52,8 @@ public class GameManager : MonoBehaviour
     
     public void LoseGame()
     {
+        AudioManager.Instance?.StopMusic();
+        AudioManager.Instance?.PlaySFX("Lose");
         OnGameLost?.Invoke(TimeSurvived, EnemiesKilled);
     }
 }

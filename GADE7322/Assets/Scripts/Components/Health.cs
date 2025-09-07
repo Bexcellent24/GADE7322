@@ -45,6 +45,10 @@ public class Health : MonoBehaviour, IDamageable
             CurrencyManager.Instance.AddCurrency(worth);
             GameManager.Instance.IncrementEnemiesKilled();
         }
+        else
+        {
+            AudioManager.Instance?.PlaySFX("Break");
+        }
         if (triggerGameOver)
         {
             GameManager.Instance.LoseGame();

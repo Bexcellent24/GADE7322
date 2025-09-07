@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 562899877363508562}
   - component: {fileID: 7494291471169893708}
   - component: {fileID: 7453975177940860144}
+  - component: {fileID: -4786715848306759920}
   m_Layer: 6
   m_Name: BaseDefender
   m_TagString: Untagged
@@ -176,6 +177,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65eea7204f1dfe746bb81f64e3aae689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4786715848306759920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4632996947101834670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653504112608ccd42b7b5647d6360c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6791963713582056067

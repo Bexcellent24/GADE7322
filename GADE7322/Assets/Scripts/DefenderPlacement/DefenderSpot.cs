@@ -31,6 +31,12 @@ public class DefenderSpot : MonoBehaviour
     {
         return !IsOccupied;
     }
+    
+    public void ClearSpot()
+    {
+        IsOccupied = false;
+        placedTower = null;
+    }
 
     public void PlaceTower(GameObject towerPrefab)
     {
@@ -39,8 +45,15 @@ public class DefenderSpot : MonoBehaviour
         Vector3 planetCenter = Vector3.zero;
         Vector3 dirFromCenter = (transform.position - planetCenter).normalized;
         Quaternion rotation = Quaternion.FromToRotation(Vector3.up, dirFromCenter);
-        placedTower = Instantiate(towerPrefab, transform.position, rotation);
+
+        var tower = Instantiate(towerPrefab, transform.position, rotation);
+        placedTower = tower;
         IsOccupied = true;
         Hide();
+        
+        var link = tower.GetComponent<DefenderSpotLink>();
+        if (link != null)
+            link.AssignSpot(this);
     }
+
 }
