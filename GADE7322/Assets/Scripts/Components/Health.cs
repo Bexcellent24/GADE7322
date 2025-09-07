@@ -8,7 +8,6 @@ public class Health : MonoBehaviour, IDamageable
     public Transform Transform => transform; 
     public bool IsAlive => Current > 0;
     public event Action<IDamageable> OnDeath;
-    public static event Action OnEnemyKilled;
     public event Action OnHealthChanged;
 
     private Faction faction;

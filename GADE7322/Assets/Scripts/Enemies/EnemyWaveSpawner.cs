@@ -86,7 +86,7 @@ public class EnemyWaveSpawner : MonoBehaviour
                     float t = timeBetweenWaves;
                     while (t > 0f)
                     {
-                        OnWaveCountdown?.Invoke(w + 2, t); // next wave index
+                        OnWaveCountdown?.Invoke(w + 2, t);
                         yield return null;
                         t -= Time.deltaTime;
                     }

@@ -33,7 +33,7 @@ public class HealthBar : MonoBehaviour
 
     private void LateUpdate()
     {
-      /*  if (target == null || mainCam == null) return;
+        if (target == null || mainCam == null) return;
 
         
         Vector3 lookDir = mainCam.transform.position - transform.position;
@@ -43,7 +43,7 @@ public class HealthBar : MonoBehaviour
         {
             transform.rotation = Quaternion.LookRotation(-lookDir); 
             
-        } */
+        } 
     }
 
     private void UpdateBar()

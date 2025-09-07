@@ -27,7 +27,7 @@ public class DefenderShopButton : MonoBehaviour, IBeginDragHandler, IDragHandler
 
     private void Awake()
     {
-        // Populate UI from towerData
+        // populate UI from towerData scriptable object
         if (towerData != null)
         {
             iconImage.sprite = towerData.icon;
@@ -57,7 +57,6 @@ public class DefenderShopButton : MonoBehaviour, IBeginDragHandler, IDragHandler
 
         if (canvasGroup != null)
         {
-            // Fade out if unaffordable
             canvasGroup.alpha = canAfford ? 1f : 0.3f;
             canvasGroup.interactable = canAfford;
             canvasGroup.blocksRaycasts = canAfford;

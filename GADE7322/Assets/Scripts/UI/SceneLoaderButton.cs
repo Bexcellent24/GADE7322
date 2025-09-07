@@ -16,8 +16,7 @@ public class SceneLoaderButton : MonoBehaviour
             Debug.LogError("[SceneLoaderButton] No Button component found!");
             return;
         }
-
-        // Remove any existing listeners to avoid duplicates
+        
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(LoadScene);
     }

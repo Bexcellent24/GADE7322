@@ -32,8 +32,8 @@ public class DefenderGenerator : MonoBehaviour
 
     #region Nested Types
     
-    // Represents a single cell in the WFC grid.
-    // Stores possible tiles it can collapse into.
+    // represents a single cell in the WFC grid.
+    // stores possible tiles it can collapse into.
     private class Cell
     {
         public HashSet<WFCTile> possible;
@@ -55,13 +55,13 @@ public class DefenderGenerator : MonoBehaviour
         Generate();
     }
     
-    // Call this to generate the tower.
+    // the placer calls this when its time to do the deed
     public void Generate()
     {
-        InitializeGrid();
-        ApplyBoundaryConstraints();
-        ApplyTopLayerCapsOnly();
-        StartCoroutine(RunWFC());
+        InitializeGrid(); //get grid ready
+        ApplyBoundaryConstraints(); //applying rules so it looks like a real thing
+        ApplyTopLayerCapsOnly();  //applying rules so it looks like a real thing
+        StartCoroutine(RunWFC());  //do ittttttttt
     }
 
     #endregion
@@ -245,15 +245,13 @@ public class DefenderGenerator : MonoBehaviour
     {
         if (instantiatedTiles[pos.x, pos.y, pos.z] != null)
             Destroy(instantiatedTiles[pos.x, pos.y, pos.z]);
-
-        // pick the transform that owns the grid
+        
         Transform p = parent != null ? parent : transform;
 
-        // centre the 2 by 2 grid around local origin
-        // half.x and half.z are 0.5 for a 2 by 2
+        // centre the build
         Vector3 half = new Vector3((sizeX - 1) * 0.5f, 0f, (sizeZ - 1) * 0.5f);
 
-        // build the offset in LOCAL space, use local Y for height
+        // build the offset in LOCAL space
         Vector3 localPos =
             new Vector3((pos.x - half.x) * tileSize,
                 pos.y * tileSize,
@@ -261,10 +259,7 @@ public class DefenderGenerator : MonoBehaviour
 
         // convert to world using the parent’s rotation and position
         Vector3 worldPos = p.TransformPoint(localPos);
-
-        // use parent rotation so tiles align with the tower orientation
-        // if your tile prefabs have a local tweak, multiply it in
-        Quaternion rot = p.rotation; // or p.rotation * tile.prefab.transform.localRotation;
+        Quaternion rot = p.rotation; 
 
         instantiatedTiles[pos.x, pos.y, pos.z] =
             Instantiate(tile.prefab, worldPos, rot, p);

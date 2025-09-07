@@ -20,10 +20,10 @@ public class DefenderPlacer : MonoBehaviour
 
         if (ghostInstance != null) Destroy(ghostInstance);
 
-        // Spawn ghost
+        // spawn ghost - cause ux is important 
         ghostInstance = Instantiate(towerData.ghostPrefab);
 
-        // Highlight all free spots
+        // highlight all free spots
         foreach (var spot in spotGenerator.spots)
         {
             if (spot.CanPlaceTower()) 
@@ -70,7 +70,7 @@ public class DefenderPlacer : MonoBehaviour
         // Try to place tower
         if (nearestSpot != null && minDist < 2f)
         {
-            // Double-check affordability at the moment of placement
+            // double checking if we can even afford the tower
             if (CurrencyManager.Instance.SpendCurrency(currentTower.cost))
             {
                 nearestSpot.PlaceTower(currentTower.towerPrefab);

@@ -3,7 +3,7 @@ using UnityEngine;
 public class OrbitCamera : MonoBehaviour
 {
     [Header("Target")]
-    [SerializeField] private Transform target; // The planet or focus point
+    [SerializeField] private Transform target;
 
     [Header("Orbit Settings")]
     [SerializeField] private float distance = 10f;
@@ -35,7 +35,7 @@ public class OrbitCamera : MonoBehaviour
     {
         if (target == null) return;
 
-        if (Input.GetMouseButton(1)) // Right mouse button held
+        if (Input.GetMouseButton(1)) 
         {
             x += Input.GetAxis("Mouse X") * xSpeed * Time.deltaTime;
             y -= Input.GetAxis("Mouse Y") * ySpeed * Time.deltaTime;
