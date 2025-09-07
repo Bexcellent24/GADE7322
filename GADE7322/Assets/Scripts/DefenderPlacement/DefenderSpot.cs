@@ -3,6 +3,7 @@ using UnityEngine;
 public class DefenderSpot : MonoBehaviour
 {
     private ParticleSystem ps;
+    private GameObject placedTower;
     public bool IsOccupied { get; private set; } = false;
 
     void Awake()
@@ -38,9 +39,8 @@ public class DefenderSpot : MonoBehaviour
         Vector3 planetCenter = Vector3.zero;
         Vector3 dirFromCenter = (transform.position - planetCenter).normalized;
         Quaternion rotation = Quaternion.FromToRotation(Vector3.up, dirFromCenter);
-        Instantiate(towerPrefab, transform.position, rotation);
+        placedTower = Instantiate(towerPrefab, transform.position, rotation);
         IsOccupied = true;
         Hide();
     }
-
 }

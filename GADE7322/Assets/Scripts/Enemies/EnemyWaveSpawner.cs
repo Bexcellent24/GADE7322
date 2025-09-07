@@ -1,6 +1,8 @@
+using System;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Random = UnityEngine.Random;
 
 [DefaultExecutionOrder(50)]
 public class EnemyWaveSpawner : MonoBehaviour
@@ -33,22 +35,19 @@ public class EnemyWaveSpawner : MonoBehaviour
     public int maxConcurrent = 60;
 
     [Header("Run")]
-    public bool autoStart = true;
     public bool verboseLogs = true;
 
     int _alive;
     Coroutine _runner;
-
-    void OnEnable()
+    
+    public static event Action<int> OnWaveStarted;
+    public static event Action<int, float> OnWaveCountdown; 
+    
+    public void Begin()
     {
-        if (autoStart) EnsureRunning();
+        if (_runner == null) 
+            _runner = StartCoroutine(Run());
     }
-
-    void Start()
-    {
-        if (autoStart) EnsureRunning();
-    }
-
     void EnsureRunning()
     {
         if (_runner == null) _runner = StartCoroutine(Run());
@@ -58,26 +57,18 @@ public class EnemyWaveSpawner : MonoBehaviour
     {
         if (verboseLogs) Debug.Log("[Spawner] Run() start");
 
-        while (enemyPrefab == null)
-        {
-            if (verboseLogs) Debug.Log("[Spawner] Waiting for enemyPrefab…");
-            yield return null;
-        }
-
+        while (enemyPrefab == null) yield return null;
         if (!planet) planet = FindObjectOfType<MarchingCubesPlanet>();
 
-        if (waves == null || waves.Count == 0)
-        {
-            if (verboseLogs) Debug.LogWarning("[Spawner] No waves configured.");
-            yield break;
-        }
-
+        int globalWaveIndex = 0;
+        
         do
         {
             for (int w = 0; w < waves.Count; w++)
             {
+                globalWaveIndex++;
                 var wave = waves[w];
-                if (verboseLogs) Debug.Log($"[Spawner] Wave {w + 1}/{waves.Count}: {wave.count} in {wave.duration}s");
+                OnWaveStarted?.Invoke(globalWaveIndex);
 
                 float gap = (wave.count <= 1 || wave.duration <= 0f) ? 0f : wave.duration / wave.count;
 
@@ -90,13 +81,23 @@ public class EnemyWaveSpawner : MonoBehaviour
                     else yield return null;
                 }
 
-                if (timeBetweenWaves > 0f) yield return new WaitForSeconds(timeBetweenWaves);
+                if (timeBetweenWaves > 0f)
+                {
+                    float t = timeBetweenWaves;
+                    while (t > 0f)
+                    {
+                        OnWaveCountdown?.Invoke(w + 2, t); // next wave index
+                        yield return null;
+                        t -= Time.deltaTime;
+                    }
+                }
             }
         } while (loopWaves);
 
         if (verboseLogs) Debug.Log("[Spawner] Done (no loop).");
         _runner = null;
     }
+
 
     [ContextMenu("Spawn One (Debug)")]
     public GameObject SpawnOneDebug() => SpawnInternal();

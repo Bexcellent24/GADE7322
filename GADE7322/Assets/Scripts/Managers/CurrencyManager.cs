@@ -42,5 +42,11 @@ public class CurrencyManager : MonoBehaviour
         CurrentCurrency = amount;
         OnCurrencyChanged?.Invoke(CurrentCurrency);
     }
+    
+    public void ResetCurrency()
+    {
+        CurrentCurrency = startingCurrency;
+        OnCurrencyChanged?.Invoke(CurrentCurrency);
+    }
 }
 

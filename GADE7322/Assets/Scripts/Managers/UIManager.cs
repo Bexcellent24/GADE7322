@@ -6,66 +6,88 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [Header("UI HUD Stuff")]
-    [SerializeField] private TMP_Text CurrencyText;
-    
-    [Header("UI Pause Stuff")]
+    [Header("UI Panels")]
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject gameOverMenu;
+
+    [Header("HUD")]
+    [SerializeField] private TMP_Text currencyText;
+    [SerializeField] private TMP_Text waveText;
+    [SerializeField] private TMP_Text countdownText;
     
-    [Header("UI End Game Stuff")]
-    [SerializeField] private GameObject endGameMenu;
+    [Header("End Game UI")]
+    [SerializeField] private TMP_Text wavesText;
     [SerializeField] private TMP_Text timeSurvivedText;
-    [SerializeField] private TMP_Text EnemiesKilledText;
+    [SerializeField] private TMP_Text enemiesKilledText;
+
+    private int wave;
+    private void OnEnable()
+    {
+        CurrencyManager.OnCurrencyChanged += UpdateCurrencyHandler;
+        GameManager.OnGameLost += HandleGameLost;
+        GameManager.OnGamePaused += HandlePauseStateChanged;
+        EnemyWaveSpawner.OnWaveStarted += HandleWaveStarted;
+        EnemyWaveSpawner.OnWaveCountdown += HandleWaveCountdown;
+    }
+
+    private void OnDisable()
+    {
+        CurrencyManager.OnCurrencyChanged -= UpdateCurrencyHandler;
+        GameManager.OnGameLost -= HandleGameLost;
+        GameManager.OnGamePaused -= HandlePauseStateChanged;
+        EnemyWaveSpawner.OnWaveStarted -= HandleWaveStarted;
+        EnemyWaveSpawner.OnWaveCountdown -= HandleWaveCountdown;
+    }
 
     private void Start()
     {
         pauseMenu.SetActive(false);
-        endGameMenu.SetActive(false);
+        gameOverMenu.SetActive(false);
     }
 
-    private void OnEnable()
+    private void HandleGameLost(float timeSurvived, int enemiesKilled)
     {
-        CurrencyManager.OnCurrencyChanged += UpdateCurrencyHandler;
-        GameManager.OnPauseToggle += TogglePauseHandler;
-        GameManager.OnGameLost += GameLostHandler;
-    }
-    
-    private void OnDestroy()
-    {
-        CurrencyManager.OnCurrencyChanged -= UpdateCurrencyHandler;
-        GameManager.OnPauseToggle -= TogglePauseHandler;
-        GameManager.OnGameLost -= GameLostHandler;
-    }
-
-    private void GameLostHandler(float TimeSurvived, int enemiesKilled)
-    {
-        endGameMenu.SetActive(true);
-        TimeSpan t = TimeSpan.FromSeconds(TimeSurvived);
-        timeSurvivedText.text = string.Format("{0:D2}:{1:D2}", t.Minutes, t.Seconds);
-        EnemiesKilledText.text = enemiesKilled.ToString();
+        Time.timeScale = 0;
         
+        TimeSpan t = TimeSpan.FromSeconds(timeSurvived);
+        timeSurvivedText.text = $"{t.Minutes:D2}:{t.Seconds:D2}";
+        enemiesKilledText.text = enemiesKilled.ToString();
+        wavesText.text = wave.ToString();
+        
+        gameOverMenu.SetActive(true);
     }
-    
+
     private void UpdateCurrencyHandler(int amount)
     {
-        CurrencyText.text = amount.ToString();
+        currencyText.text = amount.ToString();
+    }
+    private void HandleWaveStarted(int waveIndex)
+    {
+        waveText.text = waveIndex.ToString();
+        countdownText.text = "0s";
+
+        wave = waveIndex;
     }
 
-    private void TogglePauseHandler()
+    private void HandleWaveCountdown(int nextWave, float timeRemaining)
     {
-        pauseMenu.SetActive(!pauseMenu.activeSelf);
-        Time.timeScale = pauseMenu.activeSelf ? 0 : 1;
-    }
-
-    public void Resume()
-    {
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1;
+        countdownText.text = $"{Mathf.FloorToInt(timeRemaining)}s";
     }
     
-    public void Restart()
+    private void HandlePauseStateChanged(bool isPaused)
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        pauseMenu.SetActive(isPaused);
+        Time.timeScale = isPaused ? 0f : 1f;
+    }
+
+    // UI Buttons
+    public void Resume()
+    {
+        GameManager.Instance.TogglePause();
+    }
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
+

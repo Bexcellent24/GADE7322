@@ -9,8 +9,7 @@ public class OrbitCamera : MonoBehaviour
     [SerializeField] private float distance = 10f;
     [SerializeField] private float xSpeed = 120f;
     [SerializeField] private float ySpeed = 80f;
-    [SerializeField] private float yMinLimit = -20f;
-    [SerializeField] private float yMaxLimit = 80f;
+
 
     [Header("Zoom Settings")]
     [SerializeField] private float zoomSpeed = 5f;
@@ -40,7 +39,6 @@ public class OrbitCamera : MonoBehaviour
         {
             x += Input.GetAxis("Mouse X") * xSpeed * Time.deltaTime;
             y -= Input.GetAxis("Mouse Y") * ySpeed * Time.deltaTime;
-            y = Mathf.Clamp(y, yMinLimit, yMaxLimit);
         }
 
         // Zoom with scroll wheel

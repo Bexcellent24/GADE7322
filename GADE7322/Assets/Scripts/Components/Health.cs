@@ -9,7 +9,6 @@ public class Health : MonoBehaviour, IDamageable
     public bool IsAlive => Current > 0;
     public event Action<IDamageable> OnDeath;
     public static event Action OnEnemyKilled;
-    public static event Action OnGameOverTriggered;
     public event Action OnHealthChanged;
 
     private Faction faction;
@@ -45,11 +44,11 @@ public class Health : MonoBehaviour, IDamageable
         if (faction == Faction.Enemy)
         {
             CurrencyManager.Instance.AddCurrency(worth);
-            OnEnemyKilled?.Invoke();
+            GameManager.Instance.IncrementEnemiesKilled();
         }
         if (triggerGameOver)
         {
-            OnGameOverTriggered?.Invoke();
+            GameManager.Instance.LoseGame();
         }
         
         Destroy(gameObject);

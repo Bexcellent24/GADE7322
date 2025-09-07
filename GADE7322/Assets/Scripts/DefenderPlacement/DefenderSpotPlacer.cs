@@ -274,6 +274,7 @@ public class DefenderSpotPlacer : MonoBehaviour
         //Returns all candidates the passed the 'inspection' 
         return added;
     }
+    
     public IEnumerator GenerateCoroutine()
     {
         GenerateSpots();

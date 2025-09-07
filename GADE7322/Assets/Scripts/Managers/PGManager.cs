@@ -6,6 +6,7 @@ public class PGManager : MonoBehaviour
     [Header("Generators")]
     [SerializeField] private DefenderSpotPlacer defenderSpotPlacer;
     [SerializeField] private MarchingCubesPlanet planetGenerator;
+    [SerializeField] private EnemyWaveSpawner enemySpawner;
     
     [Header("References")]
     [SerializeField] private GameObject crystalTowerPrefab;
@@ -15,11 +16,13 @@ public class PGManager : MonoBehaviour
     
     [Header("North Pole Position")]
     public Vector3 northPoleOffset = new Vector3(0, 5, 0);
+    
 
     private void Start()
     {
         StartCoroutine(RunGenerationSequence());
     }
+
 
     private IEnumerator RunGenerationSequence()
     {
@@ -37,6 +40,7 @@ public class PGManager : MonoBehaviour
         yield return StartCoroutine(generator.GenerateCoroutine());
         
         //4. Enemy Spawner
-        
+        if (enemySpawner != null)
+            enemySpawner.Begin();
     }
 }

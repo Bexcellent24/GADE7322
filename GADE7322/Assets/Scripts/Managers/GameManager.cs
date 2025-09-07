@@ -4,16 +4,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-
-    // Events
-    public static event Action OnPauseToggle;
+    
+    public static event Action<bool> OnGamePaused;
     public static event Action<float, int> OnGameLost;
 
-    // Stats
-    public float TimeSurvived { get; private set; } = 0f;
-    public int EnemiesKilled { get; private set; } = 0;
-
-    private bool gameActive = true;
+    public float TimeSurvived { get; private set; }
+    public int EnemiesKilled { get; private set; }
+    private bool isPaused = false;
 
     private void Awake()
     {
@@ -23,49 +20,32 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
-
-    private void OnEnable()
-    {
-        Health.OnGameOverTriggered += LoseGame;
-        Health.OnEnemyKilled += TrackEnemyKill;  // Enemy should invoke this when it dies
-    }
-
-    private void OnDisable()
-    {
-        Health.OnGameOverTriggered -= LoseGame;
-        Health.OnEnemyKilled -= TrackEnemyKill;
     }
 
     private void Update()
     {
-        if (!gameActive) return;
+        
+        TimeSurvived += Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("Paused");
-            OnPauseToggle?.Invoke();
+            TogglePause();
         }
-        
-        TimeSurvived += Time.deltaTime;
+    }
+    
+    public void TogglePause()
+    {
+        isPaused = !isPaused;
+        OnGamePaused?.Invoke(isPaused);
     }
 
-    private void TrackEnemyKill()
+    public void IncrementEnemiesKilled()
     {
         EnemiesKilled++;
     }
-
-    private void LoseGame()
-    {
-        gameActive = false;
-        OnGameLost?.Invoke(TimeSurvived, EnemiesKilled);
-    }
     
-    public void ResetStats()
+    public void LoseGame()
     {
-        TimeSurvived = 0f;
-        EnemiesKilled = 0;
-        gameActive = true;
+        OnGameLost?.Invoke(TimeSurvived, EnemiesKilled);
     }
 }
