@@ -6,6 +6,7 @@ public class PGManager : MonoBehaviour
     [Header("Generators")]
     [SerializeField] private DefenderSpotPlacer defenderSpotPlacer;
     [SerializeField] private MarchingCubesPlanet planetGenerator;
+    [SerializeField] private PolarCapDeformer polarCapDeformer;
     [SerializeField] private EnemyWaveSpawner enemySpawner;
     
     [Header("References")]
@@ -30,16 +31,19 @@ public class PGManager : MonoBehaviour
         // 1. Terrain
         yield return StartCoroutine(planetGenerator.GenerateCoroutine());
 
-        // 2. Tower spots
+        //2. Pole Caps
+        yield return StartCoroutine(polarCapDeformer.ApplyPolarCaps());
+        
+        // 3. Tower spots
         yield return StartCoroutine(defenderSpotPlacer.GenerateCoroutine());
         
-        // 3. Spawn Crystal Tower at North Pole
+        // 4. Spawn Crystal Tower at North Pole
         Vector3 northPole = planet.transform.position + northPoleOffset;
         GameObject crystalObj = Instantiate(crystalTowerPrefab, northPole, Quaternion.identity);
         CrystalTowerGenerator generator = crystalObj.GetComponent<CrystalTowerGenerator>();
         yield return StartCoroutine(generator.GenerateCoroutine());
         
-        //4. Enemy Spawner
+        //5. Enemy Spawner
         yield return new WaitForSeconds(3f);
         if (enemySpawner != null)
             enemySpawner.Begin();

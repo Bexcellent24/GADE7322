@@ -4039,7 +4039,7 @@ MonoBehaviour:
   planet: {fileID: 1516610172}
   minAltitude: 0.01
   clusterArcDeg: 20
-  maxSpots: 15
+  maxSpots: 20
   vertexStep: 4
   spotPrefab: {fileID: 5080328083470261281, guid: dd17e5151655aab4d9db10d2f40d8398, type: 3}
   defaultRingRadius: 0.5
@@ -10097,6 +10097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defenderSpotPlacer: {fileID: 884343445}
   planetGenerator: {fileID: 1516610172}
+  polarCapDeformer: {fileID: 1516610177}
   enemySpawner: {fileID: 1490688461}
   crystalTowerPrefab: {fileID: 506492153464357288, guid: 62709f9b4c97bb7479fad3ff2293d451, type: 3}
   planet: {fileID: 179851553}
@@ -11194,6 +11195,7 @@ GameObject:
   - component: {fileID: 1516610173}
   - component: {fileID: 1516610172}
   - component: {fileID: 1516610176}
+  - component: {fileID: 1516610177}
   m_Layer: 3
   m_Name: Land
   m_TagString: Untagged
@@ -11364,6 +11366,24 @@ MonoBehaviour:
   landMeshFilter: {fileID: 1516610175}
   landCollider: {fileID: 1516610173}
   planetCenter: {fileID: 1507791553}
+--- !u!114 &1516610177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516610170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48558f4e82ed0c548a7b4ab8248e6a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetMeshFilter: {fileID: 1516610175}
+  planetCollider: {fileID: 1516610173}
+  planetCenter: {fileID: 1507791553}
+  capSize: 0.13
+  polarStrength: 0.3
+  maxDisplacement: 4
 --- !u!1 &1538406961
 GameObject:
   m_ObjectHideFlags: 0
