@@ -11381,8 +11381,8 @@ MonoBehaviour:
   planetMeshFilter: {fileID: 1516610175}
   planetCollider: {fileID: 1516610173}
   planetCenter: {fileID: 1507791553}
-  capSize: 0.13
-  polarStrength: 0.3
+  capSize: 0.2
+  polarStrength: 0.4
   maxDisplacement: 4
 --- !u!1 &1538406961
 GameObject:
