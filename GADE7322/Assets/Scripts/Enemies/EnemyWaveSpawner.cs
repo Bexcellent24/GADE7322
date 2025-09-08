@@ -34,20 +34,25 @@ public class EnemyWaveSpawner : MonoBehaviour
     public bool loopWaves = false;
     public int maxConcurrent = 60;
 
+    [Header("Optional Spawn Points")]
+    [Tooltip("If set, enemies will spawn from one of these points instead of the ring logic")]
+    public List<Transform> spawnPoints;
+
     [Header("Run")]
     public bool verboseLogs = true;
 
     int _alive;
     Coroutine _runner;
-    
+
     public static event Action<int> OnWaveStarted;
-    public static event Action<int, float> OnWaveCountdown; 
-    
+    public static event Action<int, float> OnWaveCountdown;
+
     public void Begin()
     {
-        if (_runner == null) 
+        if (_runner == null)
             _runner = StartCoroutine(Run());
     }
+
     void EnsureRunning()
     {
         if (_runner == null) _runner = StartCoroutine(Run());
@@ -61,7 +66,7 @@ public class EnemyWaveSpawner : MonoBehaviour
         if (!planet) planet = FindObjectOfType<MarchingCubesPlanet>();
 
         int globalWaveIndex = 0;
-        
+
         do
         {
             for (int w = 0; w < waves.Count; w++)
@@ -98,7 +103,6 @@ public class EnemyWaveSpawner : MonoBehaviour
         _runner = null;
     }
 
-
     [ContextMenu("Spawn One (Debug)")]
     public GameObject SpawnOneDebug() => SpawnInternal();
 
@@ -109,27 +113,44 @@ public class EnemyWaveSpawner : MonoBehaviour
         Vector3 center = globeCenter ? globeCenter.position : Vector3.zero;
         float targetRadius = waterRadius + hoverOffset;
 
-        Vector3 poleDir = (-goalPoleDir).normalized;
+        Vector3 surfacePos;
+        Quaternion rot;
 
-        float ang = Random.Range(0f, spawnRingDegrees) * Mathf.Deg2Rad;
-        Vector3 u = Vector3.Cross(poleDir, Vector3.up);
-        if (u.sqrMagnitude < 1e-4f) u = Vector3.Cross(poleDir, Vector3.right);
-        u.Normalize();
-        Vector3 v = Vector3.Cross(poleDir, u);
-        float theta = Random.value * Mathf.PI * 2f;
-        Vector3 ringOffset = (Mathf.Cos(theta) * u + Mathf.Sin(theta) * v) * Mathf.Sin(ang);
-        Vector3 spawnDir = (poleDir * Mathf.Cos(ang) + ringOffset).normalized;
+        // Check if spawnPoints exist and pick one randomly
+        if (spawnPoints != null && spawnPoints.Count > 0)
+        {
+            Transform chosen = spawnPoints[Random.Range(0, spawnPoints.Count)];
+            surfacePos = chosen.position;
+            Vector3 up = (surfacePos - center).normalized;
+            Vector3 fwd = Vector3.ProjectOnPlane(goalPoleDir, up).normalized;
+            if (fwd.sqrMagnitude < 1e-6f) fwd = Vector3.Cross(up, Vector3.right).normalized;
+            rot = Quaternion.LookRotation(fwd, up);
+        }
+        else
+        {
+            //fall back if not spawn points
+            Vector3 poleDir = (-goalPoleDir).normalized;
 
-        Vector2 jitter2 = Random.insideUnitCircle * spawnTangentialJitter;
-        Vector3 jitter = (u * jitter2.x + v * jitter2.y);
+            float ang = Random.Range(0f, spawnRingDegrees) * Mathf.Deg2Rad;
+            Vector3 u = Vector3.Cross(poleDir, Vector3.up);
+            if (u.sqrMagnitude < 1e-4f) u = Vector3.Cross(poleDir, Vector3.right);
+            u.Normalize();
+            Vector3 v = Vector3.Cross(poleDir, u);
+            float theta = Random.value * Mathf.PI * 2f;
+            Vector3 ringOffset = (Mathf.Cos(theta) * u + Mathf.Sin(theta) * v) * Mathf.Sin(ang);
+            Vector3 spawnDir = (poleDir * Mathf.Cos(ang) + ringOffset).normalized;
 
-        Vector3 posDir = (spawnDir * targetRadius + jitter - center).normalized;
-        Vector3 surfacePos = center + posDir * targetRadius;
+            Vector2 jitter2 = Random.insideUnitCircle * spawnTangentialJitter;
+            Vector3 jitter = (u * jitter2.x + v * jitter2.y);
 
-        Vector3 up = (surfacePos - center).normalized;
-        Vector3 fwd = Vector3.ProjectOnPlane(goalPoleDir, up).normalized;
-        if (fwd.sqrMagnitude < 1e-6f) fwd = Vector3.Cross(up, Vector3.right).normalized;
-        Quaternion rot = Quaternion.LookRotation(fwd, up);
+            Vector3 posDir = (spawnDir * targetRadius + jitter - center).normalized;
+            surfacePos = center + posDir * targetRadius;
+
+            Vector3 up = (surfacePos - center).normalized;
+            Vector3 fwd = Vector3.ProjectOnPlane(goalPoleDir, up).normalized;
+            if (fwd.sqrMagnitude < 1e-6f) fwd = Vector3.Cross(up, Vector3.right).normalized;
+            rot = Quaternion.LookRotation(fwd, up);
+        }
 
         var go = Instantiate(enemyPrefab, surfacePos, rot);
         go.SetActive(true);
@@ -149,7 +170,7 @@ public class EnemyWaveSpawner : MonoBehaviour
         nav.planet = planet;
         nav.useHeightFallback = true;
         nav.waterBias = 0f;
-        
+
         go.AddComponent<SpawnedToken>().Init(this);
         _alive++;
         return go;

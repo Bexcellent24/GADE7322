@@ -7,6 +7,7 @@ public class PGManager : MonoBehaviour
     [SerializeField] private DefenderSpotPlacer defenderSpotPlacer;
     [SerializeField] private MarchingCubesPlanet planetGenerator;
     [SerializeField] private PolarCapDeformer polarCapDeformer;
+    [SerializeField] private EnemySpawnPointPlacer enemySpawnPlacer;
     [SerializeField] private EnemyWaveSpawner enemySpawner;
     
     [Header("References")]
@@ -43,9 +44,12 @@ public class PGManager : MonoBehaviour
         CrystalTowerGenerator generator = crystalObj.GetComponent<CrystalTowerGenerator>();
         yield return StartCoroutine(generator.GenerateCoroutine());
         
-        //5. Enemy Spawner
+        // 5. Enemy Spawn Points
+        yield return StartCoroutine(enemySpawnPlacer.GenerateCoroutine());
+        enemySpawner.spawnPoints = enemySpawnPlacer.spawnPoints;
+
+        // 6. Enemy Spawner
         yield return new WaitForSeconds(3f);
-        if (enemySpawner != null)
-            enemySpawner.Begin();
+        enemySpawner.Begin();
     }
 }
