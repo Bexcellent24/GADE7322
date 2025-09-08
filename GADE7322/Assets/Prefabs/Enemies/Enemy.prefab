@@ -164,12 +164,12 @@ MonoBehaviour:
   landMask:
     serializedVersion: 2
     m_Bits: 8
-  lookAhead: 2
-  probeRadius: 0.1
-  minClearance: 1
+  lookAhead: 0.9
+  probeRadius: 0.35
+  minClearance: 2
   probeAnchor: {fileID: 0}
   probeSkinUp: 0.025
-  probeLocalOffset: {x: 0, y: -0.2, z: 0}
+  probeLocalOffset: {x: 0, y: -0.1, z: 0}
   planet: {fileID: 0}
   useHeightFallback: 1
   waterBias: 0.1
@@ -188,7 +188,7 @@ MonoBehaviour:
   waterLockSteps: 5
   pullBackToLastWater: 1
   preventLandPenetration: 1
-  hardPushStrength: 4
+  hardPushStrength: 8
 --- !u!114 &8337872736828362074
 MonoBehaviour:
   m_ObjectHideFlags: 0
