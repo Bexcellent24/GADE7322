@@ -67,10 +67,14 @@ public class Attacker : MonoBehaviour
     private void Fire()
     {
         var bulletObj = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        var bullet = bulletObj.GetComponent<Bullet>();
+        var bullet = bulletObj.GetComponent<BaseBullet>();
         if (bullet != null)
         {
-            bullet.Init(currentTarget, damage);
+            bullet.Init(currentTarget, damage, GetComponent<Actor>().faction);
+        }
+        else
+        {
+            Debug.LogWarning("No StandardBullet Prefab attached");
         }
         
         AudioManager.Instance?.PlaySFX("Shoot");
