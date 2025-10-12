@@ -10465,7 +10465,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358c861cce4d8d147af7d11e5101b4d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 5634974199342168380, guid: 6a45f37882c71e54eac7b0749988d096, type: 3}
+  lightEnemyPrefab: {fileID: 5634974199342168380, guid: 583a4b2c61c5f5845a8fcc35d4905ad0, type: 3}
+  mediumEnemyPrefab: {fileID: 5634974199342168380, guid: abd5418c4fa90bf468b829c6197a83b6, type: 3}
+  heavyEnemyPrefab: {fileID: 5634974199342168380, guid: 9a9515c1845b1f14e9c93cff6e7ff083, type: 3}
   globeCenter: {fileID: 1507791553}
   waterRadius: 7
   hoverOffset: 0
@@ -10477,7 +10479,7 @@ MonoBehaviour:
   spawnRingDegrees: 0
   spawnTangentialJitter: 0.75
   waves:
-  - count: 2
+  - count: 10
     duration: 10
   - count: 5
     duration: 5
@@ -10493,6 +10495,7 @@ MonoBehaviour:
   loopWaves: 1
   maxConcurrent: 60
   spawnPoints: []
+  pureRandom: 1
   verboseLogs: 1
 --- !u!4 &741068884723314624
 Transform:

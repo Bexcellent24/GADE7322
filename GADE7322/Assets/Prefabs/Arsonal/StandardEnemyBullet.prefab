@@ -222,8 +222,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.90588236, g: 0.827721, b: 0, a: 1}
-      maxColor: {r: 0.90588236, g: 0.7527897, b: 0.04705884, a: 1}
+      minColor: {r: 0.9056604, g: 0.5085293, b: 0, a: 1}
+      maxColor: {r: 0.90588236, g: 0.055642847, b: 0.04705884, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4941,8 +4941,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.9811321, g: 0.7412597, b: 0.032395888, a: 0.9137255}
-      key1: {r: 0.9633941, g: 1, b: 0.16470587, a: 0}
+      key0: {r: 0.7058824, g: 0.2899904, b: 0, a: 0.9137255}
+      key1: {r: 1, g: 0.1641509, b: 0.80140275, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -5203,8 +5203,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.90588236, g: 0.6360508, b: 0, a: 1}
-      maxColor: {r: 0.90588236, g: 0.72640336, b: 0.04705884, a: 1}
+      minColor: {r: 0.9056604, g: 0.5085293, b: 0, a: 1}
+      maxColor: {r: 0.90588236, g: 0.055642847, b: 0.04705884, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -9861,4 +9861,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949b939153979f94e9da72e681892256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 5
   speed: 3
