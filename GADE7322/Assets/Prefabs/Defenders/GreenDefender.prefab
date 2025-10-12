@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 8470762880486245005}
   m_Layer: 6
   m_Name: GreenDefender
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -313,6 +313,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c16090f5a331544b7735b8073d73c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tickRate: 0.2
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  popShieldOnBlock: 1
   laserBeamPrefab: {fileID: 4386324054906598, guid: 2daf61373f1edaf428b84d09b39f643f, type: 3}
   firePoint: {fileID: 5233225615591349072}
 --- !u!1 &6791963713582056067

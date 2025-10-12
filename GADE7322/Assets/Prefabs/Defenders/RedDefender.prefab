@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: -4786715848306759920}
   m_Layer: 6
   m_Name: RedDefender
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,6 +154,7 @@ MonoBehaviour:
   faction: 0
   health: {fileID: 0}
   attacker: {fileID: 0}
+  auraAttacker: {fileID: 0}
   indicator: {fileID: 0}
 --- !u!114 &7494291471169893708
 MonoBehaviour:

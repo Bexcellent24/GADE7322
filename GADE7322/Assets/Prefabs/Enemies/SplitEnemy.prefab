@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 4684843129088879439}
   - component: {fileID: 1721901336947984517}
   - component: {fileID: 2225689925084613348}
+  - component: {fileID: 3734180358245932833}
   m_Layer: 6
   m_Name: SplitEnemy
   m_TagString: Untagged
@@ -206,6 +207,7 @@ MonoBehaviour:
   faction: 1
   health: {fileID: 0}
   attacker: {fileID: 0}
+  auraAttacker: {fileID: 0}
   indicator: {fileID: 0}
 --- !u!114 &4684843129088879439
 MonoBehaviour:
@@ -249,6 +251,22 @@ MonoBehaviour:
   relativeScale: 0.5
   burstRadius: 0.6
   inheritNavigator: 1
+--- !u!114 &3734180358245932833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5634974199342168380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423180a503c3e83469dfa355873766f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyType: {fileID: 11400000, guid: 55ee48e5cbd080a489f517461ac090f0, type: 2}
+  faction: 1
+  triggerGameOver: 0
+  applyNavMeshAgent: 1
 --- !u!1 &5922492490904186096
 GameObject:
   m_ObjectHideFlags: 0

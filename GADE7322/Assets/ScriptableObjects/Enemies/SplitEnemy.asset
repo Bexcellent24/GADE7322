@@ -12,21 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3041455e10023c43bd0d638c73a5ab0, type: 3}
   m_Name: SplitEnemy
   m_EditorClassIdentifier: 
-  displayName: Medium
+  displayName: SplitEnemy
   visualPrefab: {fileID: 5634974199342168380, guid: abd5418c4fa90bf468b829c6197a83b6, type: 3}
-  maxHealth: 20
+  maxHealth: 10
   worth: 1
   moveSpeed: 0.5
   turnSpeedDeg: 180
   canAttack: 1
   attackRange: 1.5
   attackRate: 1
-  attackDamage: 1
-  splitsOnDeath: 1
-  splitChildType: {fileID: 11400000}
-  splitCount: 2
-  splitScale: 0.6
-  splitBurstRadius: 0.6
-  hasFrontalShield: 0
-  shieldHalfAngle: 90
-  shieldRadius: 1
+  attackDamage: 2.5
