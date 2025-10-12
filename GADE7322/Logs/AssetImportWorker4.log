@@ -1,0 +1,3316 @@
+Using pre-set license
+Built from '6000.0/staging' branch; Version is '6000.0.39f1 (15ea7ed0b100) revision 1436286'; Using compiler version '193933523'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26100) 64bit CoreSingleLanguage' Language: 'en' Physical Memory: 16051 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.0.39f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker4
+-projectPath
+C:/Users/danie/OneDrive/Desktop/Vega/Unity/GADE7322_DanFork/GADE7322
+-logFile
+Logs/AssetImportWorker4.log
+-srvPort
+61616
+-job-worker-count
+7
+-background-job-worker-count
+8
+-gc-helper-count
+1
+Successfully changed project path to: C:/Users/danie/OneDrive/Desktop/Vega/Unity/GADE7322_DanFork/GADE7322
+C:/Users/danie/OneDrive/Desktop/Vega/Unity/GADE7322_DanFork/GADE7322
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [7224]  Target information:
+
+Player connection [7224]  * "[IP] 192.168.68.106 [Port] 0 [Flags] 2 [Guid] 1900782524 [EditorId] 1900782524 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-93KCOVK) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [7224] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [7224] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 7
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 2.24 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.0.39f1 (15ea7ed0b100)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.39f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/danie/OneDrive/Desktop/Vega/Unity/GADE7322_DanFork/GADE7322/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3050 Ti Laptop GPU (ID=0x25a0)
+    Vendor:   NVIDIA
+    VRAM:     3962 MB
+    Driver:   32.0.15.8142
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.39f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.39f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.39f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56084
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.39f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003392 seconds.
+- Loaded All Assemblies, in  0.488 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.420 seconds
+Domain Reload Profiling: 907ms
+	BeginReloadAssembly (170ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (47ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (57ms)
+	LoadAllAssembliesAndSetupDomain (198ms)
+		LoadAssemblies (167ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (193ms)
+			TypeCache.Refresh (192ms)
+				TypeCache.ScanAssembly (171ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (420ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (362ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (33ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (68ms)
+			ProcessInitializeOnLoadAttributes (191ms)
+			ProcessInitializeOnLoadMethodAttributes (65ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.107 seconds
+Refreshing native plugins compatible for Editor in 1.13 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.187 seconds
+Domain Reload Profiling: 2291ms
+	BeginReloadAssembly (194ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (40ms)
+	RebuildCommonClasses (41ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (47ms)
+	LoadAllAssembliesAndSetupDomain (811ms)
+		LoadAssemblies (542ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (382ms)
+			TypeCache.Refresh (280ms)
+				TypeCache.ScanAssembly (255ms)
+			BuildScriptInfoCaches (82ms)
+			ResolveRequiredComponents (15ms)
+	FinalizeReload (1187ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (860ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (133ms)
+			ProcessInitializeOnLoadAttributes (620ms)
+			ProcessInitializeOnLoadMethodAttributes (94ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 1.87 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 229 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6767 unused Assets / (5.7 MB). Loaded Objects now: 7486.
+Memory consumption went from 175.4 MB to 169.6 MB.
+Total: 17.109500 ms (FindLiveObjects: 1.638500 ms CreateObjectMapping: 1.203900 ms MarkObjects: 8.337300 ms  DeleteObjects: 5.927500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 34409.765347 seconds.
+  path: Assets/Art/Models/Rocks/Materials/RocksStylized_M.mat
+  artifactKey: Guid(3ce20efffb7ed4447b7ccd91314023f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Models/Rocks/Materials/RocksStylized_M.mat using Guid(3ce20efffb7ed4447b7ccd91314023f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '23237d89b0468022f785abe0483bb8a1') in 0.534275 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.932 seconds
+Refreshing native plugins compatible for Editor in 1.35 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.974 seconds
+Domain Reload Profiling: 1907ms
+	BeginReloadAssembly (289ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (21ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (96ms)
+	RebuildCommonClasses (48ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (35ms)
+	LoadAllAssembliesAndSetupDomain (540ms)
+		LoadAssemblies (454ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (213ms)
+			TypeCache.Refresh (11ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (183ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (975ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (730ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (128ms)
+			ProcessInitializeOnLoadAttributes (537ms)
+			ProcessInitializeOnLoadMethodAttributes (51ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 0.84 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6764 unused Assets / (5.1 MB). Loaded Objects now: 7567.
+Memory consumption went from 166.4 MB to 161.2 MB.
+Total: 9.097100 ms (FindLiveObjects: 0.695800 ms CreateObjectMapping: 0.640300 ms MarkObjects: 5.137100 ms  DeleteObjects: 2.622600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.70 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6756 unused Assets / (5.9 MB). Loaded Objects now: 7567.
+Memory consumption went from 164.7 MB to 158.8 MB.
+Total: 17.394900 ms (FindLiveObjects: 1.382600 ms CreateObjectMapping: 1.158300 ms MarkObjects: 10.145500 ms  DeleteObjects: 4.706800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.21 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6756 unused Assets / (5.6 MB). Loaded Objects now: 7567.
+Memory consumption went from 164.7 MB to 159.1 MB.
+Total: 18.544900 ms (FindLiveObjects: 1.172600 ms CreateObjectMapping: 1.034400 ms MarkObjects: 9.744000 ms  DeleteObjects: 6.592300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.844 seconds
+Refreshing native plugins compatible for Editor in 1.58 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.998 seconds
+Domain Reload Profiling: 1843ms
+	BeginReloadAssembly (242ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (58ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (29ms)
+	LoadAllAssembliesAndSetupDomain (526ms)
+		LoadAssemblies (408ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (248ms)
+			TypeCache.Refresh (14ms)
+				TypeCache.ScanAssembly (1ms)
+			BuildScriptInfoCaches (218ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (998ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (744ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (129ms)
+			ProcessInitializeOnLoadAttributes (532ms)
+			ProcessInitializeOnLoadMethodAttributes (72ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 1.43 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (6.0 MB). Loaded Objects now: 7569.
+Memory consumption went from 164.5 MB to 158.5 MB.
+Total: 10.492400 ms (FindLiveObjects: 0.932300 ms CreateObjectMapping: 0.570400 ms MarkObjects: 5.225200 ms  DeleteObjects: 3.762800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.644 seconds
+Refreshing native plugins compatible for Editor in 0.89 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.706 seconds
+Domain Reload Profiling: 1351ms
+	BeginReloadAssembly (180ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (47ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (400ms)
+		LoadAssemblies (313ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (173ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (151ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (706ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (545ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (92ms)
+			ProcessInitializeOnLoadAttributes (398ms)
+			ProcessInitializeOnLoadMethodAttributes (47ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (5.1 MB). Loaded Objects now: 7571.
+Memory consumption went from 164.5 MB to 159.4 MB.
+Total: 9.656300 ms (FindLiveObjects: 0.650200 ms CreateObjectMapping: 0.552500 ms MarkObjects: 6.348400 ms  DeleteObjects: 2.103900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 420.167651 seconds.
+  path: Assets/Prefabs/Enemies/DefaultEnemy.prefab
+  artifactKey: Guid(6a45f37882c71e54eac7b0749988d096) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/DefaultEnemy.prefab using Guid(6a45f37882c71e54eac7b0749988d096) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9d40c73f651eae8871c01ae85d9d7fdd') in 0.5455346 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 86
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Prefabs/Enemies/SplitEnemy.prefab
+  artifactKey: Guid(abd5418c4fa90bf468b829c6197a83b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/SplitEnemy.prefab using Guid(abd5418c4fa90bf468b829c6197a83b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c887f9a6be5519de012b0f185afedc48') in 0.021221 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 126
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.194856 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '6bf07880a1dea37c67e3a8aa5dfa98b8') in 0.0382164 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.161456 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '55f17e3c593570bb113b6043faec0c58') in 0.0382568 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.988493 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '8c1cace84d076c4d996ff8723066b45b') in 0.0429031 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.135333 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'a73b79337ca183cf5af22e619f6e3fef') in 0.03512 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.141464 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '1ba1be163ecc26f568ea68c61eabbc65') in 0.033664 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.152470 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'd3b55a209f310ef7513b8435386f5ac6') in 0.0396995 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.340720 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '376316b70f188a044963cee73dfde242') in 0.0415601 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.350704 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'f3faa8e753343ea7f9401cb9e0d0fec2') in 0.0366965 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.262987 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '304002c1f10a7a993560555f613b79cf') in 0.0358042 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.614398 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'f49d88957b6255f3f34101c78a5b5caa') in 0.0226911 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.417548 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'e4c32585cfa83a9d78b01279f684d1d9') in 0.0253659 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.359237 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'fe83b39cc6d9ed96c67a77f7f1f60c3d') in 0.0192297 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.975139 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '60cd0121a981faeebae65783c7d65698') in 0.0216967 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.62 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6759 unused Assets / (5.3 MB). Loaded Objects now: 7727.
+Memory consumption went from 173.0 MB to 167.7 MB.
+Total: 17.408800 ms (FindLiveObjects: 1.170100 ms CreateObjectMapping: 0.891900 ms MarkObjects: 11.493600 ms  DeleteObjects: 3.851100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 142.930614 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '042b65e0d9b2df01e97213cc4005ca07') in 0.0388631 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.940 seconds
+Refreshing native plugins compatible for Editor in 1.86 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.051 seconds
+Domain Reload Profiling: 1993ms
+	BeginReloadAssembly (291ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (30ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (80ms)
+	RebuildCommonClasses (48ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (40ms)
+	LoadAllAssembliesAndSetupDomain (545ms)
+		LoadAssemblies (427ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (249ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (221ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (1053ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (733ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (139ms)
+			ProcessInitializeOnLoadAttributes (530ms)
+			ProcessInitializeOnLoadMethodAttributes (54ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (16ms)
+Refreshing native plugins compatible for Editor in 1.57 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6766 unused Assets / (5.8 MB). Loaded Objects now: 7609.
+Memory consumption went from 169.0 MB to 163.3 MB.
+Total: 10.778900 ms (FindLiveObjects: 0.948300 ms CreateObjectMapping: 0.547800 ms MarkObjects: 5.995700 ms  DeleteObjects: 3.285600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.19 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6756 unused Assets / (5.7 MB). Loaded Objects now: 7609.
+Memory consumption went from 169.0 MB to 163.3 MB.
+Total: 16.718000 ms (FindLiveObjects: 1.166900 ms CreateObjectMapping: 1.186400 ms MarkObjects: 9.209700 ms  DeleteObjects: 5.152700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 66.740604 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '7435807626bdc43c8673efefaf90856a') in 0.9283791 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.32 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6759 unused Assets / (6.0 MB). Loaded Objects now: 7751.
+Memory consumption went from 177.1 MB to 171.1 MB.
+Total: 27.334100 ms (FindLiveObjects: 0.957500 ms CreateObjectMapping: 1.627500 ms MarkObjects: 10.446600 ms  DeleteObjects: 14.300600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.934 seconds
+Refreshing native plugins compatible for Editor in 1.28 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.145 seconds
+Domain Reload Profiling: 2078ms
+	BeginReloadAssembly (293ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (33ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (76ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (39ms)
+	LoadAllAssembliesAndSetupDomain (545ms)
+		LoadAssemblies (420ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (252ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (223ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (1146ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (852ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (149ms)
+			ProcessInitializeOnLoadAttributes (621ms)
+			ProcessInitializeOnLoadMethodAttributes (67ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (23ms)
+Refreshing native plugins compatible for Editor in 1.39 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (5.5 MB). Loaded Objects now: 7632.
+Memory consumption went from 173.2 MB to 167.7 MB.
+Total: 12.294700 ms (FindLiveObjects: 0.970800 ms CreateObjectMapping: 0.470300 ms MarkObjects: 7.923400 ms  DeleteObjects: 2.928900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.10 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6756 unused Assets / (5.3 MB). Loaded Objects now: 7632.
+Memory consumption went from 173.2 MB to 167.9 MB.
+Total: 27.301400 ms (FindLiveObjects: 0.822800 ms CreateObjectMapping: 1.433300 ms MarkObjects: 19.578900 ms  DeleteObjects: 5.464800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 11.060821 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'd9b42102ac0967d530b8d871b0578ca5') in 0.5798119 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.699 seconds
+Refreshing native plugins compatible for Editor in 0.79 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.875 seconds
+Domain Reload Profiling: 1576ms
+	BeginReloadAssembly (219ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (22ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (63ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (415ms)
+		LoadAssemblies (326ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (184ms)
+			TypeCache.Refresh (11ms)
+				TypeCache.ScanAssembly (1ms)
+			BuildScriptInfoCaches (159ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (875ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (692ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (92ms)
+			ProcessInitializeOnLoadAttributes (542ms)
+			ProcessInitializeOnLoadMethodAttributes (49ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6766 unused Assets / (5.3 MB). Loaded Objects now: 7655.
+Memory consumption went from 177.3 MB to 172.0 MB.
+Total: 7.967000 ms (FindLiveObjects: 0.649100 ms CreateObjectMapping: 0.549600 ms MarkObjects: 4.252000 ms  DeleteObjects: 2.515300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.635 seconds
+Refreshing native plugins compatible for Editor in 0.64 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.708 seconds
+Domain Reload Profiling: 1344ms
+	BeginReloadAssembly (180ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (49ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (394ms)
+		LoadAssemblies (310ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (169ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (148ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (709ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (543ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (92ms)
+			ProcessInitializeOnLoadAttributes (396ms)
+			ProcessInitializeOnLoadMethodAttributes (46ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (11ms)
+Refreshing native plugins compatible for Editor in 0.79 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (5.1 MB). Loaded Objects now: 7657.
+Memory consumption went from 177.1 MB to 172.1 MB.
+Total: 7.524400 ms (FindLiveObjects: 0.632300 ms CreateObjectMapping: 0.585200 ms MarkObjects: 4.187300 ms  DeleteObjects: 2.118400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.807 seconds
+Refreshing native plugins compatible for Editor in 0.78 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.888 seconds
+Domain Reload Profiling: 1698ms
+	BeginReloadAssembly (229ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (10ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (57ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (27ms)
+	LoadAllAssembliesAndSetupDomain (508ms)
+		LoadAssemblies (372ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (250ms)
+			TypeCache.Refresh (11ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (224ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (889ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (671ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (107ms)
+			ProcessInitializeOnLoadAttributes (489ms)
+			ProcessInitializeOnLoadMethodAttributes (64ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (22ms)
+Refreshing native plugins compatible for Editor in 1.76 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (5.1 MB). Loaded Objects now: 7659.
+Memory consumption went from 177.2 MB to 172.1 MB.
+Total: 11.087800 ms (FindLiveObjects: 0.852900 ms CreateObjectMapping: 0.943200 ms MarkObjects: 6.384900 ms  DeleteObjects: 2.905300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 182.015554 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '159d75e3aac8601025d1be6008d885bf') in 0.5201575 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.562894 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'c85b21f22e3587df73f55d872bc54a71') in 0.030832 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.703 seconds
+Refreshing native plugins compatible for Editor in 0.97 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.909 seconds
+Domain Reload Profiling: 1614ms
+	BeginReloadAssembly (212ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (26ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (61ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (427ms)
+		LoadAssemblies (321ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (189ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (166ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (909ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (730ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (127ms)
+			ProcessInitializeOnLoadAttributes (542ms)
+			ProcessInitializeOnLoadMethodAttributes (52ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 0.86 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6766 unused Assets / (5.2 MB). Loaded Objects now: 7683.
+Memory consumption went from 181.5 MB to 176.3 MB.
+Total: 9.047500 ms (FindLiveObjects: 1.157000 ms CreateObjectMapping: 0.673400 ms MarkObjects: 4.667500 ms  DeleteObjects: 2.548400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 106.617518 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'a24614ffdf62a526b700efbd6123d28d') in 0.4922484 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.545007 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'd1bb139bdb8400f257ef8ebbb541091e') in 0.0226671 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.964329 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'b004a25fe8f28edde65a67d97d4d9d53') in 0.0225688 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 33.502746 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'd280c3134d3b15f2bf8d2c3465c359f4') in 0.0363665 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.198126 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '540b0dea772e20d0cb666f0fb30dff4e') in 0.0440382 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.387052 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'e1812895dc2cfa281acc2e0047c7a74f') in 0.0367939 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.709 seconds
+Refreshing native plugins compatible for Editor in 1.06 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.738 seconds
+Domain Reload Profiling: 1449ms
+	BeginReloadAssembly (230ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (22ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (73ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (413ms)
+		LoadAssemblies (334ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (173ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (152ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (738ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (564ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (97ms)
+			ProcessInitializeOnLoadAttributes (412ms)
+			ProcessInitializeOnLoadMethodAttributes (46ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6766 unused Assets / (5.3 MB). Loaded Objects now: 7711.
+Memory consumption went from 185.7 MB to 180.4 MB.
+Total: 8.079200 ms (FindLiveObjects: 0.613800 ms CreateObjectMapping: 0.528500 ms MarkObjects: 4.419500 ms  DeleteObjects: 2.516500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 116.587888 seconds.
+  path: Assets/Art/Real Stars Skybox/StarSkybox04/CubemapStars.cubemap
+  artifactKey: Guid(5a672cb61ef32734b9c28539c9c42494) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Real Stars Skybox/StarSkybox04/CubemapStars.cubemap using Guid(5a672cb61ef32734b9c28539c9c42494) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b2383fb450221dedc52983eded02c690') in 1.447842 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.039186 seconds.
+  path: Assets/Art/Models/Projectiles
+  artifactKey: Guid(1f47c9e56d8bffc4a8d4b78b640c13e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Models/Projectiles using Guid(1f47c9e56d8bffc4a8d4b78b640c13e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b02ef9fc5610090c5502b71d5041b384') in 0.002402 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.297763 seconds.
+  path: Assets/Scripts/Components/Attacker.cs
+  artifactKey: Guid(6ffc6b6f6cdfa0e418dab6747c19fba5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Components/Attacker.cs using Guid(6ffc6b6f6cdfa0e418dab6747c19fba5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f33d38ec6aa301eb5ab987b031f9b1d0') in 0.0009951 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.121717 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ac2427a31bccff3a4bfd10f0418eba85') in 0.0026109 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.527971 seconds.
+  path: Assets/Prefabs/Arsonal/StandardBullet.prefab
+  artifactKey: Guid(1b238b7f8b0f1af4d8d7418f8232c490) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Arsonal/StandardBullet.prefab using Guid(1b238b7f8b0f1af4d8d7418f8232c490) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a2e1aab3cb7dc7e5488f5f49d35f39d3') in 0.0458784 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 19
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.353044 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '5da6519ee449307417d756871864350a') in 0.0431346 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.745 seconds
+Refreshing native plugins compatible for Editor in 0.89 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.775 seconds
+Domain Reload Profiling: 1521ms
+	BeginReloadAssembly (231ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (20ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (75ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (445ms)
+		LoadAssemblies (348ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (190ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (168ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (775ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (582ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (100ms)
+			ProcessInitializeOnLoadAttributes (425ms)
+			ProcessInitializeOnLoadMethodAttributes (45ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 0.76 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6768 unused Assets / (5.1 MB). Loaded Objects now: 7736.
+Memory consumption went from 189.9 MB to 184.7 MB.
+Total: 8.072300 ms (FindLiveObjects: 0.765100 ms CreateObjectMapping: 0.595800 ms MarkObjects: 4.511500 ms  DeleteObjects: 2.198400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 187.157296 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'a6e299a8c0626b2ceb290fc2ecbd322d') in 0.4886457 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.535939 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'c75ff1dbe753e36f0511662af2737eb2') in 0.0390303 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.756145 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '594a1c9e6c90d6dc15dd3c441ddd58ee') in 0.0363658 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.569581 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'd64c2863c43a1fe0717d9a8c6daf09d1') in 0.0254681 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.142916 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '5d30045fb436434ed8cebbaf73449eef') in 0.0237196 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.689 seconds
+Refreshing native plugins compatible for Editor in 1.27 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.749 seconds
+Domain Reload Profiling: 1440ms
+	BeginReloadAssembly (201ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (17ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (61ms)
+	RebuildCommonClasses (30ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (422ms)
+		LoadAssemblies (315ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (192ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (169ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (749ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (573ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (97ms)
+			ProcessInitializeOnLoadAttributes (419ms)
+			ProcessInitializeOnLoadMethodAttributes (49ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (15ms)
+Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6766 unused Assets / (5.2 MB). Loaded Objects now: 7763.
+Memory consumption went from 194.0 MB to 188.8 MB.
+Total: 8.299500 ms (FindLiveObjects: 0.568600 ms CreateObjectMapping: 0.496600 ms MarkObjects: 4.897700 ms  DeleteObjects: 2.335000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 88.945039 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'c10247717edd76eb47ad9e3ec7d2d4f4') in 0.4958665 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.248204 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '7cfa2cadd9826b6856a18556211d5fe6') in 0.0326369 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.819742 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'dcdd8fb49a3fcf74241440ce545c0755') in 0.0326912 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.961883 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'b5eef2e0c95e3ebca8210ab6abd3af32') in 0.0243103 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.148448 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '1ae610b59f873a27297f524247377423') in 0.0213973 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.157691 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'dc4ba3c260edf73c249d81a9e68804c9') in 0.0227068 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.156352 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '207eec1b31f7921e1080078845d6c184') in 0.0172783 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.388260 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'ac553d2d127f4ddc6868ba274a85fc8f') in 0.0233997 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.155739 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'b987b3a2f06a067d36852ae5adfade99') in 0.0174134 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.371189 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'f62964fddd79c4f3dd81f122089e3262') in 0.018426 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.993008 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '73847a7b1e59de6dbbd0a4efc4fe5d44') in 0.0215007 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.603367 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '8a2d5ec65ad9089a34cc88daa4c80b1e') in 0.0397143 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.440238 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '84c125406374aed8f9066fc6aaaee169') in 0.0427509 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.654 seconds
+Refreshing native plugins compatible for Editor in 0.71 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.755 seconds
+Domain Reload Profiling: 1412ms
+	BeginReloadAssembly (195ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (17ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (54ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (27ms)
+	LoadAllAssembliesAndSetupDomain (392ms)
+		LoadAssemblies (302ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (172ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (151ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (756ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (572ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (93ms)
+			ProcessInitializeOnLoadAttributes (424ms)
+			ProcessInitializeOnLoadMethodAttributes (47ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (17ms)
+Refreshing native plugins compatible for Editor in 1.17 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6766 unused Assets / (5.9 MB). Loaded Objects now: 7798.
+Memory consumption went from 198.3 MB to 192.4 MB.
+Total: 9.623100 ms (FindLiveObjects: 0.808700 ms CreateObjectMapping: 0.802400 ms MarkObjects: 4.979100 ms  DeleteObjects: 3.031400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 65.939818 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'a5b71aa2c94978b0359506fc83b6bf53') in 0.5424529 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.850677 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'cdbcd1222fb07aab59e8604760220a4a') in 0.0360508 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 99
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.27 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6759 unused Assets / (6.3 MB). Loaded Objects now: 7941.
+Memory consumption went from 206.4 MB to 200.1 MB.
+Total: 24.023800 ms (FindLiveObjects: 1.984700 ms CreateObjectMapping: 1.944100 ms MarkObjects: 13.701400 ms  DeleteObjects: 6.391100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.065 seconds
+Refreshing native plugins compatible for Editor in 1.27 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.148 seconds
+Domain Reload Profiling: 2212ms
+	BeginReloadAssembly (299ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (34ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (74ms)
+	RebuildCommonClasses (49ms)
+	RebuildNativeTypeToScriptingClass (18ms)
+	initialDomainReloadingComplete (40ms)
+	LoadAllAssembliesAndSetupDomain (657ms)
+		LoadAssemblies (477ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (312ms)
+			TypeCache.Refresh (18ms)
+				TypeCache.ScanAssembly (1ms)
+			BuildScriptInfoCaches (271ms)
+			ResolveRequiredComponents (15ms)
+	FinalizeReload (1149ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (862ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (126ms)
+			ProcessInitializeOnLoadAttributes (643ms)
+			ProcessInitializeOnLoadMethodAttributes (79ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (20ms)
+Refreshing native plugins compatible for Editor in 1.44 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (5.4 MB). Loaded Objects now: 7822.
+Memory consumption went from 202.4 MB to 197.0 MB.
+Total: 11.841500 ms (FindLiveObjects: 0.886100 ms CreateObjectMapping: 1.098800 ms MarkObjects: 6.096700 ms  DeleteObjects: 3.758000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.467 seconds
+Refreshing native plugins compatible for Editor in 1.14 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.855 seconds
+Domain Reload Profiling: 2325ms
+	BeginReloadAssembly (611ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (75ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (1ms)
+		CreateAndSetChildDomain (199ms)
+	RebuildCommonClasses (43ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (34ms)
+	LoadAllAssembliesAndSetupDomain (769ms)
+		LoadAssemblies (717ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (225ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (195ms)
+			ResolveRequiredComponents (14ms)
+	FinalizeReload (856ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (643ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (123ms)
+			ProcessInitializeOnLoadAttributes (451ms)
+			ProcessInitializeOnLoadMethodAttributes (60ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (17ms)
+Refreshing native plugins compatible for Editor in 1.11 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (6.0 MB). Loaded Objects now: 7824.
+Memory consumption went from 202.3 MB to 196.3 MB.
+Total: 12.809000 ms (FindLiveObjects: 0.918200 ms CreateObjectMapping: 0.708700 ms MarkObjects: 5.733900 ms  DeleteObjects: 5.445700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 3779.763036 seconds.
+  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/ParticlesUnlit.mat
+  artifactKey: Guid(e823cd5b5d27c0f4b8256e7c12ee3e6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/ParticlesUnlit.mat using Guid(e823cd5b5d27c0f4b8256e7c12ee3e6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4cb0eeead97e8dfdb4d71896b2c5ab7c') in 0.6255854 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.128083 seconds.
+  path: Assets/Prefabs/Arsonal/StandardBullet.prefab
+  artifactKey: Guid(1b238b7f8b0f1af4d8d7418f8232c490) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Arsonal/StandardBullet.prefab using Guid(1b238b7f8b0f1af4d8d7418f8232c490) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ac9ddf15bf38fb4a2ce399ef941190bf') in 0.0581225 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 32.824413 seconds.
+  path: Assets/Scripts/Arsonal/Bullet.cs
+  artifactKey: Guid(949b939153979f94e9da72e681892256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Arsonal/Bullet.cs using Guid(949b939153979f94e9da72e681892256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'db2ebcdfd22c8bd4df6141fad2468a80') in 0.0019939 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 3.01 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6756 unused Assets / (6.2 MB). Loaded Objects now: 7965.
+Memory consumption went from 210.3 MB to 204.1 MB.
+Total: 29.073400 ms (FindLiveObjects: 4.629400 ms CreateObjectMapping: 3.393200 ms MarkObjects: 14.818800 ms  DeleteObjects: 6.229500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 65.740340 seconds.
+  path: Assets/Scripts/Arsonal/Bullet.cs
+  artifactKey: Guid(949b939153979f94e9da72e681892256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Arsonal/Bullet.cs using Guid(949b939153979f94e9da72e681892256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4f5ea0ad74ea839437faa743c0740f5e') in 0.0132322 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Prefabs/Arsonal/StandardEnemyBullet.prefab
+  artifactKey: Guid(2aef4d6233394d44e899309b1d0d8a77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Arsonal/StandardEnemyBullet.prefab using Guid(2aef4d6233394d44e899309b1d0d8a77) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8b776d108daf0b8d1df21449fd2cff23') in 0.0404353 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 19
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.787 seconds
+Refreshing native plugins compatible for Editor in 0.67 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.923 seconds
+Domain Reload Profiling: 1711ms
+	BeginReloadAssembly (221ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (19ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (65ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (491ms)
+		LoadAssemblies (361ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (222ms)
+			TypeCache.Refresh (14ms)
+				TypeCache.ScanAssembly (1ms)
+			BuildScriptInfoCaches (192ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (923ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (663ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (104ms)
+			ProcessInitializeOnLoadAttributes (491ms)
+			ProcessInitializeOnLoadMethodAttributes (58ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (19ms)
+Refreshing native plugins compatible for Editor in 0.94 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (5.5 MB). Loaded Objects now: 7846.
+Memory consumption went from 206.6 MB to 201.1 MB.
+Total: 10.688700 ms (FindLiveObjects: 0.762100 ms CreateObjectMapping: 0.726300 ms MarkObjects: 5.249600 ms  DeleteObjects: 3.949100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 59.235017 seconds.
+  path: Assets/Prefabs/Arsonal/StandardEnemyBullet.prefab
+  artifactKey: Guid(2aef4d6233394d44e899309b1d0d8a77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Arsonal/StandardEnemyBullet.prefab using Guid(2aef4d6233394d44e899309b1d0d8a77) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fdcef2fd4bc404847e6e73a37b374a97') in 0.4627298 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 21
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.601143 seconds.
+  path: Assets/Prefabs/Arsonal/StandardBullet.prefab
+  artifactKey: Guid(1b238b7f8b0f1af4d8d7418f8232c490) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Arsonal/StandardBullet.prefab using Guid(1b238b7f8b0f1af4d8d7418f8232c490) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1ee2112682fca378557d22ba29f73528') in 0.0292738 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 21
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.802 seconds
+Refreshing native plugins compatible for Editor in 1.39 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.099 seconds
+Domain Reload Profiling: 1901ms
+	BeginReloadAssembly (239ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (28ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (62ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (37ms)
+	LoadAllAssembliesAndSetupDomain (481ms)
+		LoadAssemblies (378ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (204ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (182ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1100ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (877ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (131ms)
+			ProcessInitializeOnLoadAttributes (649ms)
+			ProcessInitializeOnLoadMethodAttributes (85ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (27ms)
+Refreshing native plugins compatible for Editor in 1.46 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (5.5 MB). Loaded Objects now: 7868.
+Memory consumption went from 210.7 MB to 205.2 MB.
+Total: 13.322800 ms (FindLiveObjects: 0.869100 ms CreateObjectMapping: 1.061600 ms MarkObjects: 6.937400 ms  DeleteObjects: 4.452900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 6.817562 seconds.
+  path: Assets/Prefabs/Arsonal/StandardEnemyBullet.prefab
+  artifactKey: Guid(2aef4d6233394d44e899309b1d0d8a77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Arsonal/StandardEnemyBullet.prefab using Guid(2aef4d6233394d44e899309b1d0d8a77) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a2510a67a170579f0ea7db57cb750f4b') in 0.5738807 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 21
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.394720 seconds.
+  path: Assets/Prefabs/Enemies/DefaultEnemy.prefab
+  artifactKey: Guid(6a45f37882c71e54eac7b0749988d096) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/DefaultEnemy.prefab using Guid(6a45f37882c71e54eac7b0749988d096) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '29c6f43ec7fca0b0d283aada40413f9c') in 0.0479033 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 88
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Prefabs/Enemies/SplitEnemy.prefab
+  artifactKey: Guid(abd5418c4fa90bf468b829c6197a83b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/SplitEnemy.prefab using Guid(abd5418c4fa90bf468b829c6197a83b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dd6b2d961a048844c5377425fbadcfa6') in 0.0255051 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 128
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.760755 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'd00ee2e87690b55ec687aa091a00956d') in 0.0383562 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 102
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.190276 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '7028fc446929ed857a41b29a6b230ce4') in 0.0270841 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 102
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.557864 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '0d3415460dd210cc9a917dddf6d637b1') in 0.0269411 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 102
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.703 seconds
+Refreshing native plugins compatible for Editor in 0.95 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.878 seconds
+Domain Reload Profiling: 1582ms
+	BeginReloadAssembly (205ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (16ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (61ms)
+	RebuildCommonClasses (30ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (27ms)
+	LoadAllAssembliesAndSetupDomain (432ms)
+		LoadAssemblies (331ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (187ms)
+			TypeCache.Refresh (11ms)
+				TypeCache.ScanAssembly (1ms)
+			BuildScriptInfoCaches (162ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (879ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (693ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (101ms)
+			ProcessInitializeOnLoadAttributes (528ms)
+			ProcessInitializeOnLoadMethodAttributes (56ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (21ms)
+Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6766 unused Assets / (5.4 MB). Loaded Objects now: 7893.
+Memory consumption went from 214.9 MB to 209.5 MB.
+Total: 8.665900 ms (FindLiveObjects: 0.782400 ms CreateObjectMapping: 0.567100 ms MarkObjects: 4.584900 ms  DeleteObjects: 2.730400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.662 seconds
+Refreshing native plugins compatible for Editor in 0.64 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.756 seconds
+Domain Reload Profiling: 1420ms
+	BeginReloadAssembly (185ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (51ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (407ms)
+		LoadAssemblies (310ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (184ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (162ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (757ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (571ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (97ms)
+			ProcessInitializeOnLoadAttributes (417ms)
+			ProcessInitializeOnLoadMethodAttributes (48ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (17ms)
+Refreshing native plugins compatible for Editor in 0.77 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (5.5 MB). Loaded Objects now: 7895.
+Memory consumption went from 214.7 MB to 209.3 MB.
+Total: 8.727700 ms (FindLiveObjects: 0.684600 ms CreateObjectMapping: 0.555300 ms MarkObjects: 4.304200 ms  DeleteObjects: 3.182400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 104.057309 seconds.
+  path: Assets/Scripts/Enemies/FrontalShield.cs
+  artifactKey: Guid(b0fc626f3cd14dc44b6d8f37a720cc68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemies/FrontalShield.cs using Guid(b0fc626f3cd14dc44b6d8f37a720cc68) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '96cf2a4c77a804b1d3c61e2dbe12a847') in 0.014814 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.323168 seconds.
+  path: Assets/Scripts/Enemies/EnemyWaveSpawner.cs
+  artifactKey: Guid(358c861cce4d8d147af7d11e5101b4d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemies/EnemyWaveSpawner.cs using Guid(358c861cce4d8d147af7d11e5101b4d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8b80cb1fc2d9ff29922792e8186490f8') in 0.0007974 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.376088 seconds.
+  path: Assets/Scripts/Enemies/EnemyInstaller.cs
+  artifactKey: Guid(6905fb2f468e5eb499a5483e80c2fb85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemies/EnemyInstaller.cs using Guid(6905fb2f468e5eb499a5483e80c2fb85) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'eeb8502b9221333ca3ab6d325f1825ed') in 0.0014069 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.08 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6756 unused Assets / (6.2 MB). Loaded Objects now: 7895.
+Memory consumption went from 214.9 MB to 208.7 MB.
+Total: 13.962200 ms (FindLiveObjects: 1.148600 ms CreateObjectMapping: 0.715900 ms MarkObjects: 7.349100 ms  DeleteObjects: 4.746900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 154.223468 seconds.
+  path: Assets/Scripts/Enemies/EnemyInstaller.cs
+  artifactKey: Guid(6905fb2f468e5eb499a5483e80c2fb85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemies/EnemyInstaller.cs using Guid(6905fb2f468e5eb499a5483e80c2fb85) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3c3fc3363cf5aaf3dfd6c12befb5c06f') in 0.0065938 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.60 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6756 unused Assets / (5.9 MB). Loaded Objects now: 7895.
+Memory consumption went from 214.9 MB to 209.0 MB.
+Total: 12.743500 ms (FindLiveObjects: 1.056900 ms CreateObjectMapping: 0.567200 ms MarkObjects: 7.399500 ms  DeleteObjects: 3.718600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.748 seconds
+Refreshing native plugins compatible for Editor in 0.64 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.804 seconds
+Domain Reload Profiling: 1554ms
+	BeginReloadAssembly (197ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (48ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (31ms)
+	LoadAllAssembliesAndSetupDomain (478ms)
+		LoadAssemblies (358ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (217ms)
+			TypeCache.Refresh (12ms)
+				TypeCache.ScanAssembly (1ms)
+			BuildScriptInfoCaches (188ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (804ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (623ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (98ms)
+			ProcessInitializeOnLoadAttributes (472ms)
+			ProcessInitializeOnLoadMethodAttributes (44ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (16ms)
+Refreshing native plugins compatible for Editor in 0.93 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (5.3 MB). Loaded Objects now: 7897.
+Memory consumption went from 214.7 MB to 209.4 MB.
+Total: 8.302900 ms (FindLiveObjects: 0.631000 ms CreateObjectMapping: 0.624800 ms MarkObjects: 4.367900 ms  DeleteObjects: 2.678000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.820 seconds
+Refreshing native plugins compatible for Editor in 0.75 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.009 seconds
+Domain Reload Profiling: 1831ms
+	BeginReloadAssembly (209ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (10ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (50ms)
+	RebuildCommonClasses (38ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (539ms)
+		LoadAssemblies (373ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (269ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (237ms)
+			ResolveRequiredComponents (17ms)
+	FinalizeReload (1009ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (793ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (134ms)
+			ProcessInitializeOnLoadAttributes (584ms)
+			ProcessInitializeOnLoadMethodAttributes (66ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (23ms)
+Refreshing native plugins compatible for Editor in 1.31 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (5.4 MB). Loaded Objects now: 7899.
+Memory consumption went from 214.7 MB to 209.3 MB.
+Total: 11.331900 ms (FindLiveObjects: 1.082000 ms CreateObjectMapping: 0.697000 ms MarkObjects: 6.199000 ms  DeleteObjects: 3.352600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.636 seconds
+Refreshing native plugins compatible for Editor in 0.72 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.738 seconds
+Domain Reload Profiling: 1376ms
+	BeginReloadAssembly (174ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (43ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (397ms)
+		LoadAssemblies (303ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (176ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (154ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (739ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (566ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (96ms)
+			ProcessInitializeOnLoadAttributes (407ms)
+			ProcessInitializeOnLoadMethodAttributes (55ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 0.79 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (6.5 MB). Loaded Objects now: 7901.
+Memory consumption went from 214.7 MB to 208.2 MB.
+Total: 9.501500 ms (FindLiveObjects: 0.791200 ms CreateObjectMapping: 0.653800 ms MarkObjects: 4.391200 ms  DeleteObjects: 3.663600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.795 seconds
+Refreshing native plugins compatible for Editor in 0.98 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.054 seconds
+Domain Reload Profiling: 1851ms
+	BeginReloadAssembly (214ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (49ms)
+	RebuildCommonClasses (50ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (38ms)
+	LoadAllAssembliesAndSetupDomain (476ms)
+		LoadAssemblies (373ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (217ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (185ms)
+			ResolveRequiredComponents (17ms)
+	FinalizeReload (1054ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (783ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (164ms)
+			ProcessInitializeOnLoadAttributes (540ms)
+			ProcessInitializeOnLoadMethodAttributes (67ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (20ms)
+Refreshing native plugins compatible for Editor in 1.33 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (6.5 MB). Loaded Objects now: 7903.
+Memory consumption went from 214.7 MB to 208.2 MB.
+Total: 12.174200 ms (FindLiveObjects: 1.058800 ms CreateObjectMapping: 0.537800 ms MarkObjects: 6.231100 ms  DeleteObjects: 4.345300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.647 seconds
+Refreshing native plugins compatible for Editor in 0.93 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.765 seconds
+Domain Reload Profiling: 1414ms
+	BeginReloadAssembly (186ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (52ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (27ms)
+	LoadAllAssembliesAndSetupDomain (392ms)
+		LoadAssemblies (302ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (175ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (154ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (766ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (588ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (103ms)
+			ProcessInitializeOnLoadAttributes (426ms)
+			ProcessInitializeOnLoadMethodAttributes (50ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 0.76 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (5.6 MB). Loaded Objects now: 7905.
+Memory consumption went from 214.7 MB to 209.1 MB.
+Total: 9.162800 ms (FindLiveObjects: 1.230700 ms CreateObjectMapping: 0.610500 ms MarkObjects: 4.500500 ms  DeleteObjects: 2.819900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.688 seconds
+Refreshing native plugins compatible for Editor in 1.31 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.963 seconds
+Domain Reload Profiling: 1654ms
+	BeginReloadAssembly (175ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (48ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (447ms)
+		LoadAssemblies (330ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (196ms)
+			TypeCache.Refresh (11ms)
+				TypeCache.ScanAssembly (1ms)
+			BuildScriptInfoCaches (170ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (964ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (777ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (94ms)
+			ProcessInitializeOnLoadAttributes (542ms)
+			ProcessInitializeOnLoadMethodAttributes (130ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (17ms)
+Refreshing native plugins compatible for Editor in 1.13 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (6.1 MB). Loaded Objects now: 7907.
+Memory consumption went from 214.7 MB to 208.6 MB.
+Total: 10.707400 ms (FindLiveObjects: 0.800800 ms CreateObjectMapping: 0.653000 ms MarkObjects: 5.170800 ms  DeleteObjects: 4.078900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 262.727159 seconds.
+  path: Assets/Prefabs/Arsonal/StandardBullet.prefab
+  artifactKey: Guid(1b238b7f8b0f1af4d8d7418f8232c490) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Arsonal/StandardBullet.prefab using Guid(1b238b7f8b0f1af4d8d7418f8232c490) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fe760c6497453987da996db6fe0d38a9') in 0.5012042 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 21
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.012486 seconds.
+  path: Assets/Prefabs/Arsonal/StandardBullet.prefab
+  artifactKey: Guid(1b238b7f8b0f1af4d8d7418f8232c490) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Arsonal/StandardBullet.prefab using Guid(1b238b7f8b0f1af4d8d7418f8232c490) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0b70b46f0bb72cad9afb9fab0de99796') in 0.0189045 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.686 seconds
+Refreshing native plugins compatible for Editor in 0.76 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.750 seconds
+Domain Reload Profiling: 1438ms
+	BeginReloadAssembly (206ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (20ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (63ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (416ms)
+		LoadAssemblies (317ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (183ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (161ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (751ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (571ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (96ms)
+			ProcessInitializeOnLoadAttributes (421ms)
+			ProcessInitializeOnLoadMethodAttributes (46ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (17ms)
+Refreshing native plugins compatible for Editor in 0.71 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (5.2 MB). Loaded Objects now: 7929.
+Memory consumption went from 219.0 MB to 213.8 MB.
+Total: 7.604000 ms (FindLiveObjects: 0.633200 ms CreateObjectMapping: 0.543600 ms MarkObjects: 4.296400 ms  DeleteObjects: 2.129900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.06 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6756 unused Assets / (6.2 MB). Loaded Objects now: 7929.
+Memory consumption went from 219.1 MB to 212.9 MB.
+Total: 16.978000 ms (FindLiveObjects: 1.207000 ms CreateObjectMapping: 0.923800 ms MarkObjects: 9.437000 ms  DeleteObjects: 5.408200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.30 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6757 unused Assets / (5.7 MB). Loaded Objects now: 7930.
+Memory consumption went from 219.1 MB to 213.4 MB.
+Total: 33.632400 ms (FindLiveObjects: 1.002400 ms CreateObjectMapping: 1.093300 ms MarkObjects: 22.620900 ms  DeleteObjects: 8.913900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 344.214321 seconds.
+  path: Assets/Scripts/Enemies/ShieldSegment.cs
+  artifactKey: Guid(c85cc62e07d700a49aa131b81b84cecc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemies/ShieldSegment.cs using Guid(c85cc62e07d700a49aa131b81b84cecc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bd6fa009f6a3a185f9651928034d949c') in 0.0217149 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.80 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6757 unused Assets / (5.4 MB). Loaded Objects now: 7930.
+Memory consumption went from 219.1 MB to 213.6 MB.
+Total: 15.015400 ms (FindLiveObjects: 1.191700 ms CreateObjectMapping: 1.124000 ms MarkObjects: 9.015500 ms  DeleteObjects: 3.681800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 44.328077 seconds.
+  path: Assets/Scripts/Enemies/ShieldSegment.cs
+  artifactKey: Guid(c85cc62e07d700a49aa131b81b84cecc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemies/ShieldSegment.cs using Guid(c85cc62e07d700a49aa131b81b84cecc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c8f119edf7ed3811cceb82f6cf6898f6') in 0.0174841 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.513762 seconds.
+  path: Assets/Scripts/Enemies/EnemyInstaller.cs
+  artifactKey: Guid(6905fb2f468e5eb499a5483e80c2fb85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemies/EnemyInstaller.cs using Guid(6905fb2f468e5eb499a5483e80c2fb85) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '31d110474a5a4c5c8a020449609bf89b') in 0.0007013 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.98 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6756 unused Assets / (5.4 MB). Loaded Objects now: 7929.
+Memory consumption went from 219.1 MB to 213.6 MB.
+Total: 8.569100 ms (FindLiveObjects: 0.737700 ms CreateObjectMapping: 0.608900 ms MarkObjects: 4.559600 ms  DeleteObjects: 2.661700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.683 seconds
+Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.832 seconds
+Domain Reload Profiling: 1518ms
+	BeginReloadAssembly (194ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (1ms)
+		CreateAndSetChildDomain (56ms)
+	RebuildCommonClasses (35ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (421ms)
+		LoadAssemblies (318ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (192ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (1ms)
+			BuildScriptInfoCaches (165ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (833ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (643ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (95ms)
+			ProcessInitializeOnLoadAttributes (484ms)
+			ProcessInitializeOnLoadMethodAttributes (55ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (15ms)
+Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (5.2 MB). Loaded Objects now: 7931.
+Memory consumption went from 218.9 MB to 213.7 MB.
+Total: 7.695800 ms (FindLiveObjects: 0.643800 ms CreateObjectMapping: 0.567200 ms MarkObjects: 4.189100 ms  DeleteObjects: 2.294400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 464.729202 seconds.
+  path: Assets/Prefabs/Arsonal/StandardBullet.prefab
+  artifactKey: Guid(1b238b7f8b0f1af4d8d7418f8232c490) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Arsonal/StandardBullet.prefab using Guid(1b238b7f8b0f1af4d8d7418f8232c490) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ddc01653e87abfda7a866f4cad6b6266') in 0.480329 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.663 seconds
+Refreshing native plugins compatible for Editor in 0.72 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.750 seconds
+Domain Reload Profiling: 1416ms
+	BeginReloadAssembly (198ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (20ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (56ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (23ms)
+	LoadAllAssembliesAndSetupDomain (403ms)
+		LoadAssemblies (310ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (175ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (151ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (751ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (554ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (93ms)
+			ProcessInitializeOnLoadAttributes (408ms)
+			ProcessInitializeOnLoadMethodAttributes (44ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (19ms)
+Refreshing native plugins compatible for Editor in 0.67 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (5.3 MB). Loaded Objects now: 7953.
+Memory consumption went from 223.2 MB to 217.9 MB.
+Total: 8.006200 ms (FindLiveObjects: 0.716800 ms CreateObjectMapping: 0.547700 ms MarkObjects: 4.342800 ms  DeleteObjects: 2.398200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.701 seconds
+Refreshing native plugins compatible for Editor in 0.82 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.868 seconds
+Domain Reload Profiling: 1572ms
+	BeginReloadAssembly (191ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (50ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (29ms)
+	LoadAllAssembliesAndSetupDomain (439ms)
+		LoadAssemblies (332ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (196ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (1ms)
+			BuildScriptInfoCaches (170ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (869ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (690ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (98ms)
+			ProcessInitializeOnLoadAttributes (534ms)
+			ProcessInitializeOnLoadMethodAttributes (49ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (18ms)
+Refreshing native plugins compatible for Editor in 0.78 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (5.4 MB). Loaded Objects now: 7955.
+Memory consumption went from 223.1 MB to 217.7 MB.
+Total: 8.452800 ms (FindLiveObjects: 0.632100 ms CreateObjectMapping: 0.562400 ms MarkObjects: 4.303600 ms  DeleteObjects: 2.953200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.628 seconds
+Refreshing native plugins compatible for Editor in 0.62 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.752 seconds
+Domain Reload Profiling: 1382ms
+	BeginReloadAssembly (171ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (46ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (393ms)
+		LoadAssemblies (298ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (176ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (154ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (752ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (572ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (96ms)
+			ProcessInitializeOnLoadAttributes (417ms)
+			ProcessInitializeOnLoadMethodAttributes (49ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (17ms)
+Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (5.3 MB). Loaded Objects now: 7957.
+Memory consumption went from 223.1 MB to 217.8 MB.
+Total: 8.596300 ms (FindLiveObjects: 1.347000 ms CreateObjectMapping: 0.527300 ms MarkObjects: 4.436700 ms  DeleteObjects: 2.284400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.655 seconds
+Refreshing native plugins compatible for Editor in 0.86 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.782 seconds
+Domain Reload Profiling: 1438ms
+	BeginReloadAssembly (175ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (43ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (415ms)
+		LoadAssemblies (304ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (194ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (170ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (782ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (588ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (100ms)
+			ProcessInitializeOnLoadAttributes (424ms)
+			ProcessInitializeOnLoadMethodAttributes (55ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (21ms)
+Refreshing native plugins compatible for Editor in 1.27 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6763 unused Assets / (5.1 MB). Loaded Objects now: 7959.
+Memory consumption went from 223.1 MB to 218.0 MB.
+Total: 9.418900 ms (FindLiveObjects: 0.694300 ms CreateObjectMapping: 0.575700 ms MarkObjects: 5.319200 ms  DeleteObjects: 2.828400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 223.836265 seconds.
+  path: Assets/Prefabs/Enemies/DefaultEnemy.prefab
+  artifactKey: Guid(6a45f37882c71e54eac7b0749988d096) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/DefaultEnemy.prefab using Guid(6a45f37882c71e54eac7b0749988d096) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c06f4a0947a0f052cd90489e57219734') in 0.5356195 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 86
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Prefabs/Enemies/SplitEnemy.prefab
+  artifactKey: Guid(abd5418c4fa90bf468b829c6197a83b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/SplitEnemy.prefab using Guid(abd5418c4fa90bf468b829c6197a83b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5b15a5b4f5b18d269ad59d13ba72d980') in 0.0243788 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 126
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/Prefabs/Enemies/SplitEnemyBaby.prefab
+  artifactKey: Guid(ddb40e886b948d34a99b1cdfb7737ea7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/SplitEnemyBaby.prefab using Guid(ddb40e886b948d34a99b1cdfb7737ea7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'be9fa6da26ef24dfabedcda671fec0e6') in 0.0176001 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 87
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.865151 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '07564cec8e3b6b09ac2da098216dddd1') in 0.0308732 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 123
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.711 seconds
+Refreshing native plugins compatible for Editor in 0.90 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.767 seconds
+Domain Reload Profiling: 1480ms
+	BeginReloadAssembly (218ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (22ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (63ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (27ms)
+	LoadAllAssembliesAndSetupDomain (425ms)
+		LoadAssemblies (330ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (184ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (160ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (768ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (576ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (99ms)
+			ProcessInitializeOnLoadAttributes (416ms)
+			ProcessInitializeOnLoadMethodAttributes (51ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (19ms)
+Refreshing native plugins compatible for Editor in 0.90 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6766 unused Assets / (5.4 MB). Loaded Objects now: 7983.
+Memory consumption went from 227.4 MB to 222.1 MB.
+Total: 9.803300 ms (FindLiveObjects: 0.724000 ms CreateObjectMapping: 0.644200 ms MarkObjects: 5.051500 ms  DeleteObjects: 3.382400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 42.604766 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '905f16178ff928b7c2fd9af6490295bc') in 0.489656 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 123
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.096594 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'c5f7e4092ced890423a4e69ea3c83e76') in 0.0384034 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 123
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.761324 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '55b8016c9983dfcc41288e7ec7494e82') in 0.0341316 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 123
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.216008 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'eefe685d99eebdbe3e2e557d556eb54e') in 0.0375202 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 123
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.986974 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'b2996b3216869e1a834cc83f36f4900a') in 0.0344447 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 123
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.361843 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'b857a240df74ae1ede6f2a341aa60c04') in 0.0374135 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 123
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.420603 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '1e8e0d33b96e2d9c9f703d3e5d362a2e') in 0.0328326 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 123
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.739825 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'e1cd7432a493f91e1fbe86f43b04c082') in 0.0365514 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 123
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.933533 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '4caa03005b85f1956b816b4bd09c6a62') in 0.0327323 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 123
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.194864 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '53971f818d09616e8a789d1bd6be2165') in 0.0374323 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 123
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.574662 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: 'a90c1932702f51622684298ce21b6630') in 0.0359739 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 123
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.150142 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '54d65b420bca7ef96ce724f815eb55c4') in 0.0428967 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 123
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.709 seconds
+Refreshing native plugins compatible for Editor in 0.62 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.769 seconds
+Domain Reload Profiling: 1480ms
+	BeginReloadAssembly (208ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (19ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (56ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (434ms)
+		LoadAssemblies (325ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (197ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (169ms)
+			ResolveRequiredComponents (16ms)
+	FinalizeReload (769ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (572ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (93ms)
+			ProcessInitializeOnLoadAttributes (425ms)
+			ProcessInitializeOnLoadMethodAttributes (44ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (16ms)
+Refreshing native plugins compatible for Editor in 0.76 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6766 unused Assets / (5.3 MB). Loaded Objects now: 8017.
+Memory consumption went from 231.9 MB to 226.6 MB.
+Total: 7.962700 ms (FindLiveObjects: 0.653300 ms CreateObjectMapping: 0.658500 ms MarkObjects: 4.293500 ms  DeleteObjects: 2.356200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 95.025549 seconds.
+  path: Assets/Prefabs/Enemies/DefaultEnemy.prefab
+  artifactKey: Guid(6a45f37882c71e54eac7b0749988d096) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/DefaultEnemy.prefab using Guid(6a45f37882c71e54eac7b0749988d096) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00b1ddbd8e9a26dff52fd87dce444df5') in 0.4861789 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 85
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.708924 seconds.
+  path: Assets/Prefabs/Enemies/SplitEnemy.prefab
+  artifactKey: Guid(abd5418c4fa90bf468b829c6197a83b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/SplitEnemy.prefab using Guid(abd5418c4fa90bf468b829c6197a83b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bcb19c3e113fcc9fccfbe8b09f02bafb') in 0.0258534 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 125
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.898492 seconds.
+  path: Assets/Prefabs/Enemies/SplitEnemy.prefab
+  artifactKey: Guid(abd5418c4fa90bf468b829c6197a83b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/SplitEnemy.prefab using Guid(abd5418c4fa90bf468b829c6197a83b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '198a6d495526c670b229c82dc9da7566') in 0.017792 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 124
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.691 seconds
+Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.768 seconds
+Domain Reload Profiling: 1461ms
+	BeginReloadAssembly (204ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (17ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (58ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (423ms)
+		LoadAssemblies (326ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (185ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (163ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (769ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (582ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (100ms)
+			ProcessInitializeOnLoadAttributes (419ms)
+			ProcessInitializeOnLoadMethodAttributes (54ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (18ms)
+Refreshing native plugins compatible for Editor in 0.71 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6766 unused Assets / (5.3 MB). Loaded Objects now: 8039.
+Memory consumption went from 236.0 MB to 230.7 MB.
+Total: 7.957000 ms (FindLiveObjects: 0.649400 ms CreateObjectMapping: 0.560800 ms MarkObjects: 4.387400 ms  DeleteObjects: 2.358500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 78.907550 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '392bc970c96579dff3932513d7941e8f') in 0.4782183 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 123
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.877288 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '01260499ebdaf94bd1c59cabf24edfdc') in 0.0392434 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 123
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.948583 seconds.
+  path: Assets/Prefabs/Enemies/ShieldEnemy.prefab
+  artifactKey: Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/ShieldEnemy.prefab using Guid(9a9515c1845b1f14e9c93cff6e7ff083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)SendMessage cannot be called during Awake, CheckConsistency, or OnValidate (ShieldHitbox: OnMeshFilterChanged)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.MeshFilter:set_sharedMesh (UnityEngine.Mesh)
+ShieldArcVisual:Build () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:39)
+ShieldArcVisual:OnValidate () (at Assets/Scripts/Enemies/ShieldArcVisual.cs:19)
+
+[Assets/Scripts/Enemies/ShieldArcVisual.cs line 39]
+
+ -> (artifact id: '6a9a645ce232eee250015b16c6b04cfe') in 0.0396276 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 123
+

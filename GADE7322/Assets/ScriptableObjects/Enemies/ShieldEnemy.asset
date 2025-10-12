@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3041455e10023c43bd0d638c73a5ab0, type: 3}
+  m_Name: ShieldEnemy
+  m_EditorClassIdentifier: 
+  displayName: Heavy
+  visualPrefab: {fileID: 5634974199342168380, guid: 9a9515c1845b1f14e9c93cff6e7ff083, type: 3}
+  maxHealth: 80
+  worth: 1
+  moveSpeed: 0.25
+  turnSpeedDeg: 180
+  canAttack: 1
+  attackRange: 1.5
+  attackRate: 0.5
+  attackDamage: 5
+  splitsOnDeath: 0
+  splitChildType: {fileID: 0}
+  splitCount: 2
+  splitScale: 0.6
+  splitBurstRadius: 0.6
+  hasFrontalShield: 1
+  shieldHalfAngle: 90
+  shieldRadius: 1
