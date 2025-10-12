@@ -9,6 +9,7 @@ public class StandardBullet : BaseBullet
         
         AudioManager.Instance?.PlaySFX("Shoot");
         
+        ReportDamage(damage); 
         Destroy(gameObject);
     }
 }

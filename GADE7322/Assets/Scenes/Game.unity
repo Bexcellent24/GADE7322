@@ -6303,7 +6303,7 @@ MonoBehaviour:
   planetGenerator: {fileID: 1516610172}
   polarCapDeformer: {fileID: 1516610177}
   enemySpawnPlacer: {fileID: 5241399861112172333}
-  enemySpawner: {fileID: 578630985769975107}
+  enemySpawner: {fileID: 0}
   crystalTowerPrefab: {fileID: 506492153464357288, guid: 62709f9b4c97bb7479fad3ff2293d451, type: 3}
   planet: {fileID: 179851553}
   northPoleOffset: {x: 0, y: 6.2, z: 0}
@@ -10453,50 +10453,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &578630985769975107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5241399861112172332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 358c861cce4d8d147af7d11e5101b4d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightEnemyPrefab: {fileID: 5634974199342168380, guid: 583a4b2c61c5f5845a8fcc35d4905ad0, type: 3}
-  mediumEnemyPrefab: {fileID: 5634974199342168380, guid: abd5418c4fa90bf468b829c6197a83b6, type: 3}
-  heavyEnemyPrefab: {fileID: 5634974199342168380, guid: 9a9515c1845b1f14e9c93cff6e7ff083, type: 3}
-  globeCenter: {fileID: 1507791553}
-  waterRadius: 7
-  hoverOffset: 0
-  goalPoleDir: {x: 0, y: 1, z: 0}
-  landMask:
-    serializedVersion: 2
-    m_Bits: 8
-  planet: {fileID: 1516610172}
-  spawnRingDegrees: 0
-  spawnTangentialJitter: 0.75
-  waves:
-  - count: 10
-    duration: 10
-  - count: 5
-    duration: 5
-  - count: 8
-    duration: 8
-  - count: 10
-    duration: 10
-  - count: 10
-    duration: 10
-  - count: 10
-    duration: 10
-  timeBetweenWaves: 15
-  loopWaves: 1
-  maxConcurrent: 60
-  spawnPoints: []
-  pureRandom: 1
-  verboseLogs: 1
 --- !u!4 &741068884723314624
 Transform:
   m_ObjectHideFlags: 0
@@ -10521,8 +10477,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 741068884723314624}
-  - component: {fileID: 578630985769975107}
   - component: {fileID: 5241399861112172333}
+  - component: {fileID: 5241399861112172338}
+  - component: {fileID: 5241399861112172337}
+  - component: {fileID: 5241399861112172336}
+  - component: {fileID: 5241399861112172335}
+  - component: {fileID: 5241399861112172334}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -10553,6 +10513,111 @@ MonoBehaviour:
   southBias: 0.3
   minSpacing: 2
   sampleCount: 500
+  spawnPoints: []
+--- !u!114 &5241399861112172334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5241399861112172332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02dfef39fb114ef48fa23e68400a5eea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currencyPerWave: 150
+--- !u!114 &5241399861112172335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5241399861112172332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f84c2ee72b004f9fb46b8b8c4babc175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threatBias: 1.5
+  light:
+    spawned: 0
+    totalSurvival: 0
+    totalDamage: 0
+    threat: 0
+  medium:
+    spawned: 0
+    totalSurvival: 0
+    totalDamage: 0
+    threat: 0
+  heavy:
+    spawned: 0
+    totalSurvival: 0
+    totalDamage: 0
+    threat: 0
+  towerHunter:
+    spawned: 0
+    totalSurvival: 0
+    totalDamage: 0
+    threat: 0
+--- !u!114 &5241399861112172336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5241399861112172332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d174c10ff9db4d44ab38cfa925eadaaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseWaveScaling: 0.1
+  towerHealthWeight: 0.4
+  currencyWeight: 0.4
+  defendersWeight: 0.2
+  towerHunterUnlockWave: 3
+  towerHunterMinScore: 70
+  minDelay: 0
+  maxDelay: 8
+--- !u!114 &5241399861112172337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5241399861112172332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f898926c25d6443a8df3cb5a84bb9b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDeaths: 50
+  hotZoneRadius: 15
+  avoidanceStrength: 1.5
+--- !u!114 &5241399861112172338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5241399861112172332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378847173f5947039bbf1ee6fd89a88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightEnemyPrefab: {fileID: 5241399861112172332}
+  mediumEnemyPrefab: {fileID: 0}
+  heavyEnemyPrefab: {fileID: 0}
+  towerHunterEnemyPrefab: {fileID: 0}
+  performance: {fileID: 5241399861112172334}
+  difficulty: {fileID: 5241399861112172336}
+  composition: {fileID: 5241399861112172335}
+  spawnSelector: {fileID: 5241399861112172337}
+  baseWaveCount: 5
+  spawnDuration: 5
+  maxConcurrent: 60
   spawnPoints: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

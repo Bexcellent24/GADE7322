@@ -7,12 +7,19 @@ public abstract class BaseBullet : MonoBehaviour
     protected IDamageable target;
     protected float damage;
     protected Faction attackerFaction;
+    protected EnemyTracker damageTracker; //  only set for enemy bullets
     
     public virtual void Init(IDamageable target, float damage, Faction faction)
     {
         this.target = target;
         this.damage = damage;
         this.attackerFaction = faction;
+    }
+    
+    /// Called by Attacker to pass the damage tracker (only for enemies)
+    public void SetDamageTracker(EnemyTracker tracker)
+    {
+        damageTracker = tracker;
     }
 
     protected virtual void Update()
@@ -43,4 +50,14 @@ public abstract class BaseBullet : MonoBehaviour
     }
 
     protected abstract void OnImpact();
+    
+    
+    /// Helper method for child class to report damage
+    protected void ReportDamage(float damageDealt)
+    {
+        if (damageTracker != null)
+        {
+            damageTracker.RecordDamage(damageDealt);
+        }
+    }
 }

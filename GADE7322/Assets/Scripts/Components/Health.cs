@@ -9,6 +9,7 @@ public class Health : MonoBehaviour, IDamageable
     public bool IsAlive => Current > 0;
     public event Action<IDamageable> OnDeath;
     public event Action OnHealthChanged;
+    public static event Action OnDefenderDied;
 
     private Faction faction;
     private int worth;
@@ -47,6 +48,7 @@ public class Health : MonoBehaviour, IDamageable
         }
         else
         {
+            OnDefenderDied?.Invoke();
             AudioManager.Instance?.PlaySFX("Break");
         }
         if (triggerGameOver)

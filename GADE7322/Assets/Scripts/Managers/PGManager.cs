@@ -8,7 +8,7 @@ public class PGManager : MonoBehaviour
     [SerializeField] private MarchingCubesPlanet planetGenerator;
     [SerializeField] private PolarCapDeformer polarCapDeformer;
     [SerializeField] private EnemySpawnPointPlacer enemySpawnPlacer;
-    [SerializeField] private EnemyWaveSpawner enemySpawner;
+    [SerializeField] private AdaptiveEnemyWaveSpawner enemySpawner;
     
     [Header("References")]
     [SerializeField] private GameObject crystalTowerPrefab;
@@ -49,7 +49,7 @@ public class PGManager : MonoBehaviour
         enemySpawner.spawnPoints = enemySpawnPlacer.spawnPoints;
 
         // 6. Enemy Spawner
-        yield return new WaitForSeconds(3f);
+       yield return new WaitForSeconds(3f);
         enemySpawner.Begin();
     }
 }

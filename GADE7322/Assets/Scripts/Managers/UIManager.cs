@@ -26,8 +26,8 @@ public class UIManager : MonoBehaviour
         CurrencyManager.OnCurrencyChanged += UpdateCurrencyHandler;
         GameManager.OnGameLost += HandleGameLost;
         GameManager.OnGamePaused += HandlePauseStateChanged;
-        EnemyWaveSpawner.OnWaveStarted += HandleWaveStarted;
-        EnemyWaveSpawner.OnWaveCountdown += HandleWaveCountdown;
+        //EnemyWaveSpawner.OnWaveStarted += HandleWaveStarted;
+        //EnemyWaveSpawner.OnWaveCountdown += HandleWaveCountdown;
     }
 
     private void OnDisable()
@@ -35,8 +35,8 @@ public class UIManager : MonoBehaviour
         CurrencyManager.OnCurrencyChanged -= UpdateCurrencyHandler;
         GameManager.OnGameLost -= HandleGameLost;
         GameManager.OnGamePaused -= HandlePauseStateChanged;
-        EnemyWaveSpawner.OnWaveStarted -= HandleWaveStarted;
-        EnemyWaveSpawner.OnWaveCountdown -= HandleWaveCountdown;
+       // EnemyWaveSpawner.OnWaveStarted -= HandleWaveStarted;
+       // EnemyWaveSpawner.OnWaveCountdown -= HandleWaveCountdown;
     }
 
     private void Start()

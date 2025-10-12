@@ -10,13 +10,17 @@ public class Attacker : MonoBehaviour
 
     private float fireCooldown;
     private IDamageable currentTarget;
-
+    private EnemyTracker tracker;
+    
     public void Initialize(GameObject bulletPrefab, float range, float fireRate, float damage)
     {
         this.bulletPrefab = bulletPrefab;
         this.range = range;
         this.fireRate = fireRate;
         this.damage = damage;
+        
+        // will be null if this is a defender - no problem, don't worry about it
+        tracker = GetComponent<EnemyTracker>();
     }
     
     void Update()
@@ -71,6 +75,11 @@ public class Attacker : MonoBehaviour
         if (bullet != null)
         {
             bullet.Init(currentTarget, damage, GetComponent<Actor>().faction);
+            
+            if (tracker != null)
+            {
+                bullet.SetDamageTracker(tracker);
+            }
         }
         else
         {

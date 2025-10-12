@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4395363767738316468}
   m_Layer: 6
   m_Name: CrystalTower
-  m_TagString: Untagged
+  m_TagString: MainTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,6 +105,7 @@ MonoBehaviour:
   faction: 0
   health: {fileID: 0}
   attacker: {fileID: 0}
+  auraAttacker: {fileID: 0}
   indicator: {fileID: 0}
 --- !u!114 &4769190020791765572
 MonoBehaviour:
