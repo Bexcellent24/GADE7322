@@ -4,20 +4,18 @@ using UnityEngine;
 public class SplitOnDeath : MonoBehaviour
 {
     [Header("Split Settings")]
-    [Tooltip("Prefab to spawn when this unit dies (e.g., your Light enemy prefab).")]
+    [Tooltip("Prefab to spawn when this unit dies.")]
     public GameObject splitChildPrefab;
 
     [Min(2)] public int count = 2;
 
     [Header("Size of children")]
-    [Tooltip("Child size relative to THIS unit's current size. 0.5 = half of this unit.")]
     [Range(0.05f, 2f)] public float relativeScale = 0.5f;
 
     [Header("Spawn spread")]
     [Range(0.0f, 2.0f)] public float burstRadius = 0.6f;
 
     [Header("Navigation Inheritance")]
-    [Tooltip("Copy WaterGlobeNavigator settings from this unit to the children.")]
     public bool inheritNavigator = true;
 
     Health _hp;
@@ -64,9 +62,7 @@ public class SplitOnDeath : MonoBehaviour
 
             // Spawn
             GameObject child = Instantiate(splitChildPrefab, spawnPos, rot);
-
-            // Parent to the SAME parent as the splitter so hierarchy scale matches,
-            // but keep world position/rotation.
+            
             if (parent != null)
                 child.transform.SetParent(parent, true);
 
@@ -84,18 +80,15 @@ public class SplitOnDeath : MonoBehaviour
 
     static void ApplyRelativeScale(Transform child, Transform source, Transform commonParent, float factor)
     {
-        // We want: child.worldScale = source.worldScale * factor (component-wise).
         Vector3 sourceWorld = source.lossyScale;
         Vector3 targetWorld = sourceWorld * factor;
 
         if (commonParent == null)
         {
-            // No parent → local == world
             child.localScale = targetWorld;
             return;
         }
 
-        // Convert desired world scale into local scale under the parent:
         Vector3 parentWorld = commonParent.lossyScale;
         child.localScale = new Vector3(
             SafeDiv(targetWorld.x, parentWorld.x),
@@ -136,7 +129,6 @@ public class SplitOnDeath : MonoBehaviour
         dst.preventLandPenetration = src.preventLandPenetration;
         dst.hardPushStrength       = src.hardPushStrength;
 
-        // Movement tuning is owned by the child prefab; leave its speeds alone.
         dst.surfaceSnap     = src.surfaceSnap;
         dst.probeRadius     = src.probeRadius;
         dst.minClearance    = src.minClearance;

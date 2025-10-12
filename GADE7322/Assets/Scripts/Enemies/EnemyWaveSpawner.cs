@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 [DefaultExecutionOrder(50)]
 public class EnemyWaveSpawner : MonoBehaviour
 {
-    public enum EnemyKind { Light, Medium, Heavy }
+    public enum EnemyKind { Light, Medium, Heavy }   // ← Boid removed
 
     [Serializable]
     public struct Wave
@@ -75,7 +75,7 @@ public class EnemyWaveSpawner : MonoBehaviour
     {
         if (verboseLogs) Debug.Log("[Spawner] Run() start");
 
-        // Wait until at least one prefab exists so we don’t stall forever.
+        // Wait until at least one non-boid prefab exists.
         while (!lightEnemyPrefab && !mediumEnemyPrefab && !heavyEnemyPrefab) yield return null;
         if (!planet) planet = FindObjectOfType<MarchingCubesPlanet>();
 
@@ -95,7 +95,6 @@ public class EnemyWaveSpawner : MonoBehaviour
                 {
                     while (_alive >= maxConcurrent) yield return null;
 
-                    // Pure random: pick a random kind each spawn (uniform among assigned prefabs).
                     EnemyKind kind = PickPureRandomKind();
                     SpawnInternal(kind);
 
@@ -123,13 +122,10 @@ public class EnemyWaveSpawner : MonoBehaviour
     // --- Debug helpers ---
     [ContextMenu("Spawn One (Debug Random)")]
     public GameObject SpawnOneDebugRandom() => SpawnInternal(PickPureRandomKind());
-
     [ContextMenu("Spawn One (Debug Light)")]
     public GameObject SpawnOneDebugLight() => SpawnInternal(EnemyKind.Light);
-
     [ContextMenu("Spawn One (Debug Medium)")]
     public GameObject SpawnOneDebugMedium() => SpawnInternal(EnemyKind.Medium);
-
     [ContextMenu("Spawn One (Debug Heavy)")]
     public GameObject SpawnOneDebugHeavy() => SpawnInternal(EnemyKind.Heavy);
 
@@ -144,7 +140,7 @@ public class EnemyWaveSpawner : MonoBehaviour
         if (options.Count == 0)
         {
             Debug.LogWarning("[Spawner] No enemy prefabs assigned.");
-            return EnemyKind.Light; // harmless fallback; caller still guards
+            return EnemyKind.Light; // harmless fallback
         }
         return options[Random.Range(0, options.Count)];
     }
@@ -162,14 +158,14 @@ public class EnemyWaveSpawner : MonoBehaviour
         Vector3 center = globeCenter ? globeCenter.position : Vector3.zero;
         float targetRadius = waterRadius + hoverOffset;
 
+        // --- Choose a surface position + rotation ---
         Vector3 surfacePos;
         Quaternion rot;
 
-        // Use explicit spawn points if provided
         if (spawnPoints != null && spawnPoints.Count > 0)
         {
-            Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
-            surfacePos = spawnPoint.position;
+            Transform sp = spawnPoints[Random.Range(0, spawnPoints.Count)];
+            surfacePos = sp.position;
             Vector3 up = (surfacePos - center).normalized;
             Vector3 fwd = Vector3.ProjectOnPlane(goalPoleDir, up).normalized;
             if (fwd.sqrMagnitude < 1e-6f) fwd = Vector3.Cross(up, Vector3.right).normalized;
@@ -177,14 +173,14 @@ public class EnemyWaveSpawner : MonoBehaviour
         }
         else
         {
-            // Ring around pole fallback
             Vector3 poleDir = (-goalPoleDir).normalized;
-
             float ang = Random.Range(0f, spawnRingDegrees) * Mathf.Deg2Rad;
+
             Vector3 u = Vector3.Cross(poleDir, Vector3.up);
             if (u.sqrMagnitude < 1e-4f) u = Vector3.Cross(poleDir, Vector3.right);
             u.Normalize();
             Vector3 v = Vector3.Cross(poleDir, u);
+
             float theta = Random.value * Mathf.PI * 2f;
             Vector3 ringOffset = (Mathf.Cos(theta) * u + Mathf.Sin(theta) * v) * Mathf.Sin(ang);
             Vector3 spawnDir = (poleDir * Mathf.Cos(ang) + ringOffset).normalized;
@@ -201,19 +197,17 @@ public class EnemyWaveSpawner : MonoBehaviour
             rot = Quaternion.LookRotation(fwd, up);
         }
 
+        // --- Instantiate ---
         var go = Instantiate(prefab, surfacePos, rot);
         go.SetActive(true);
 
-        // Ensure navigator context is set (in case prefab doesn't already)
+        // Legacy/nav enemies always use WaterGlobeNavigator
         var nav = go.GetComponent<WaterGlobeNavigator>() ?? go.AddComponent<WaterGlobeNavigator>();
         nav.planetCenter = globeCenter;
         nav.waterRadius = waterRadius;
         nav.hoverOffset = hoverOffset;
         nav.goalPoleDir = goalPoleDir;
-
-        LayerMask resolvedMask = ResolveLandMask();
-        nav.landMask = resolvedMask;
-
+        nav.landMask = ResolveLandMask();
         nav.planet = planet;
         nav.useHeightFallback = true;
         nav.waterBias = 0f;

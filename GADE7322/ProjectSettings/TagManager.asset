@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FxTemporaire
   - Bullet
+  - Tower
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Units
   - Bullet
   - Shield
-  - 
+  - Tower
   - 
   - 
   - 
