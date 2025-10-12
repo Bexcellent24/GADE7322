@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4684843129088879439}
   - component: {fileID: 1721901336947984517}
   m_Layer: 6
-  m_Name: Enemy
+  m_Name: SplitEnemyBaby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.099999994, y: 0.099999994, z: 0.099999994}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3726465476235191577}
@@ -74,7 +74,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aca380ee1fd4cf84a856482a6707943a, type: 2}
+  - {fileID: 2100000, guid: e1cbfc43d18395c44b2d3b1900012367, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5634974199342168380}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ddc4b5e6044f6f4b8a819a9165b0b35, type: 3}
   m_Name: 
@@ -530,6 +530,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23ffa60ff3228284cb7253890086e94e, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 23ffa60ff3228284cb7253890086e94e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f97dbdb68831847468b90390fbf28caf, type: 2}
     - target: {fileID: 919132149155446097, guid: 23ffa60ff3228284cb7253890086e94e, type: 3}
       propertyPath: m_Name
       value: Boat3Export

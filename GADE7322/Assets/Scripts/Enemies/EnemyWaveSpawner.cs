@@ -7,10 +7,19 @@ using Random = UnityEngine.Random;
 [DefaultExecutionOrder(50)]
 public class EnemyWaveSpawner : MonoBehaviour
 {
-    [System.Serializable] public struct Wave { public int count; public float duration; }
+    public enum EnemyKind { Light, Medium, Heavy }
 
-    [Header("Refs")]
-    public GameObject enemyPrefab;
+    [Serializable]
+    public struct Wave
+    {
+        [Min(0)] public int count;
+        [Min(0f)] public float duration;
+    }
+
+    [Header("Enemy Prefabs (distinct visuals)")]
+    public GameObject lightEnemyPrefab;
+    public GameObject mediumEnemyPrefab;
+    public GameObject heavyEnemyPrefab;
 
     [Header("Water Globe")]
     public Transform globeCenter;
@@ -23,20 +32,24 @@ public class EnemyWaveSpawner : MonoBehaviour
     public MarchingCubesPlanet planet;
 
     [Header("Spawn Ring (around top pole)")]
-    [Tooltip("Degrees away from the spawn pole (-goalPoleDir). 0 = exact pole.")]
     [Range(0f, 45f)] public float spawnRingDegrees = 8f;
-    [Tooltip("Meters of tangent jitter on the surface.")]
     public float spawnTangentialJitter = 0.75f;
 
     [Header("Waves")]
-    public List<Wave> waves = new() { new Wave { count = 10, duration = 5f } };
+    public List<Wave> waves = new()
+    {
+        new Wave { count = 10, duration = 5f }
+    };
     public float timeBetweenWaves = 5f;
     public bool loopWaves = false;
     public int maxConcurrent = 60;
 
     [Header("Optional Spawn Points")]
-    [Tooltip("If set, enemies will spawn from one of these points instead of the ring logic")]
     public List<Transform> spawnPoints;
+
+    [Header("Mode")]
+    [Tooltip("If true, each spawn picks a random available prefab (uniform).")]
+    public bool pureRandom = true;
 
     [Header("Run")]
     public bool verboseLogs = true;
@@ -62,7 +75,8 @@ public class EnemyWaveSpawner : MonoBehaviour
     {
         if (verboseLogs) Debug.Log("[Spawner] Run() start");
 
-        while (enemyPrefab == null) yield return null;
+        // Wait until at least one prefab exists so we don’t stall forever.
+        while (!lightEnemyPrefab && !mediumEnemyPrefab && !heavyEnemyPrefab) yield return null;
         if (!planet) planet = FindObjectOfType<MarchingCubesPlanet>();
 
         int globalWaveIndex = 0;
@@ -80,7 +94,10 @@ public class EnemyWaveSpawner : MonoBehaviour
                 for (int i = 0; i < wave.count; i++)
                 {
                     while (_alive >= maxConcurrent) yield return null;
-                    SpawnInternal();
+
+                    // Pure random: pick a random kind each spawn (uniform among assigned prefabs).
+                    EnemyKind kind = PickPureRandomKind();
+                    SpawnInternal(kind);
 
                     if (gap > 0f) yield return new WaitForSeconds(gap);
                     else yield return null;
@@ -103,12 +120,44 @@ public class EnemyWaveSpawner : MonoBehaviour
         _runner = null;
     }
 
-    [ContextMenu("Spawn One (Debug)")]
-    public GameObject SpawnOneDebug() => SpawnInternal();
+    // --- Debug helpers ---
+    [ContextMenu("Spawn One (Debug Random)")]
+    public GameObject SpawnOneDebugRandom() => SpawnInternal(PickPureRandomKind());
 
-    GameObject SpawnInternal()
+    [ContextMenu("Spawn One (Debug Light)")]
+    public GameObject SpawnOneDebugLight() => SpawnInternal(EnemyKind.Light);
+
+    [ContextMenu("Spawn One (Debug Medium)")]
+    public GameObject SpawnOneDebugMedium() => SpawnInternal(EnemyKind.Medium);
+
+    [ContextMenu("Spawn One (Debug Heavy)")]
+    public GameObject SpawnOneDebugHeavy() => SpawnInternal(EnemyKind.Heavy);
+
+    // Pure random among assigned prefabs (uniform).
+    EnemyKind PickPureRandomKind()
     {
-        if (!enemyPrefab) return null;
+        var options = new List<EnemyKind>(3);
+        if (lightEnemyPrefab)  options.Add(EnemyKind.Light);
+        if (mediumEnemyPrefab) options.Add(EnemyKind.Medium);
+        if (heavyEnemyPrefab)  options.Add(EnemyKind.Heavy);
+
+        if (options.Count == 0)
+        {
+            Debug.LogWarning("[Spawner] No enemy prefabs assigned.");
+            return EnemyKind.Light; // harmless fallback; caller still guards
+        }
+        return options[Random.Range(0, options.Count)];
+    }
+
+    GameObject SpawnInternal(EnemyKind kind)
+    {
+        GameObject prefab = GetPrefab(kind);
+        if (!prefab)
+        {
+            Debug.LogWarning($"[Spawner] No prefab set for {kind}. Falling back to Light.");
+            prefab = lightEnemyPrefab;
+            if (!prefab) return null;
+        }
 
         Vector3 center = globeCenter ? globeCenter.position : Vector3.zero;
         float targetRadius = waterRadius + hoverOffset;
@@ -116,11 +165,11 @@ public class EnemyWaveSpawner : MonoBehaviour
         Vector3 surfacePos;
         Quaternion rot;
 
-        // Check if spawnPoints exist and pick one randomly
+        // Use explicit spawn points if provided
         if (spawnPoints != null && spawnPoints.Count > 0)
         {
-            Transform chosen = spawnPoints[Random.Range(0, spawnPoints.Count)];
-            surfacePos = chosen.position;
+            Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
+            surfacePos = spawnPoint.position;
             Vector3 up = (surfacePos - center).normalized;
             Vector3 fwd = Vector3.ProjectOnPlane(goalPoleDir, up).normalized;
             if (fwd.sqrMagnitude < 1e-6f) fwd = Vector3.Cross(up, Vector3.right).normalized;
@@ -128,7 +177,7 @@ public class EnemyWaveSpawner : MonoBehaviour
         }
         else
         {
-            //fall back if not spawn points
+            // Ring around pole fallback
             Vector3 poleDir = (-goalPoleDir).normalized;
 
             float ang = Random.Range(0f, spawnRingDegrees) * Mathf.Deg2Rad;
@@ -152,13 +201,11 @@ public class EnemyWaveSpawner : MonoBehaviour
             rot = Quaternion.LookRotation(fwd, up);
         }
 
-        var go = Instantiate(enemyPrefab, surfacePos, rot);
+        var go = Instantiate(prefab, surfacePos, rot);
         go.SetActive(true);
-        if (!go.GetComponent<Collider>()) go.AddComponent<SphereCollider>();
 
-        var nav = go.GetComponent<WaterGlobeNavigator>();
-        if (!nav) nav = go.AddComponent<WaterGlobeNavigator>();
-
+        // Ensure navigator context is set (in case prefab doesn't already)
+        var nav = go.GetComponent<WaterGlobeNavigator>() ?? go.AddComponent<WaterGlobeNavigator>();
         nav.planetCenter = globeCenter;
         nav.waterRadius = waterRadius;
         nav.hoverOffset = hoverOffset;
@@ -174,6 +221,17 @@ public class EnemyWaveSpawner : MonoBehaviour
         go.AddComponent<SpawnedToken>().Init(this);
         _alive++;
         return go;
+    }
+
+    GameObject GetPrefab(EnemyKind kind)
+    {
+        switch (kind)
+        {
+            case EnemyKind.Light:  return lightEnemyPrefab;
+            case EnemyKind.Medium: return mediumEnemyPrefab;
+            case EnemyKind.Heavy:  return heavyEnemyPrefab;
+            default: return lightEnemyPrefab;
+        }
     }
 
     LayerMask ResolveLandMask()

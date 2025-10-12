@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Attacker : MonoBehaviour
 {
+    
+    
     private float range;
     private float fireRate;
     private float damage;
@@ -13,7 +15,7 @@ public class Attacker : MonoBehaviour
 
     public void Initialize(GameObject bulletPrefab, float range, float fireRate, float damage)
     {
-        this.bulletPrefab = bulletPrefab;
+        if (bulletPrefab) this.bulletPrefab = bulletPrefab; 
         this.range = range;
         this.fireRate = fireRate;
         this.damage = damage;
@@ -22,6 +24,10 @@ public class Attacker : MonoBehaviour
     void Update()
     {
         fireCooldown -= Time.deltaTime;
+
+        // If we don't have a projectile to shoot, do nothing (prevents null instantiation)
+        if (bulletPrefab == null)
+            return;
 
         if (currentTarget == null || !currentTarget.IsAlive ||
             Vector3.Distance(transform.position, currentTarget.Transform.position) > range)
@@ -66,17 +72,12 @@ public class Attacker : MonoBehaviour
 
     private void Fire()
     {
-        var bulletObj = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        var bullet = bulletObj.GetComponent<BaseBullet>();
-        if (bullet != null)
-        {
-            bullet.Init(currentTarget, damage, GetComponent<Actor>().faction);
-        }
-        else
-        {
-            Debug.LogWarning("No StandardBullet Prefab attached");
-        }
-        
+        if (!bulletPrefab) return; // extra guard
+        var spawnPos = firePoint ? firePoint.position : transform.position;
+        var bulletObj = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
+        var bullet = bulletObj.GetComponent<Bullet>();
+        if (bullet != null) bullet.Init(currentTarget, damage);
+
         AudioManager.Instance?.PlaySFX("Shoot");
     }
 }
