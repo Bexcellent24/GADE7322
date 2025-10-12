@@ -3,27 +3,43 @@ using System.Collections.Generic;
 
 public class AuraAttacker : MonoBehaviour
 {
-    
-   
+    [Header("Tuning")]
+    [SerializeField] private float tickRate = 0.2f;
+    [SerializeField] private LayerMask targetLayers;   
+    [SerializeField] private bool popShieldOnBlock = true; 
 
     [Header("Visuals")]
     [SerializeField] private GameObject laserBeamPrefab;
     [SerializeField] private Transform firePoint;
 
-    private float tickTimer;
-    private List<IDamageable> targetsInRange = new List<IDamageable>();
-    private List<GameObject> activeBeams = new List<GameObject>();
-
     private float range;
     private float damagePerSecond;
-    private float tickRate = 0.2f;
-    
+
+    private float tickTimer;
+    private readonly List<IDamageable> targetsInRange = new();
+    private readonly List<GameObject> activeBeams = new();
+
+    private Actor selfActor;
+    private int shieldLayer;
+    private static readonly Collider[] hitsBuffer = new Collider[128]; 
+
     public void Initialize(float range, float damagePerSecond)
     {
         this.range = range;
         this.damagePerSecond = damagePerSecond;
     }
-    
+
+    void Awake()
+    {
+        selfActor = GetComponent<Actor>();
+        if (!selfActor)
+            Debug.LogWarning("[AuraAttacker] No Actor found on attacker.");
+
+        shieldLayer = LayerMask.NameToLayer("Shield");
+        if (shieldLayer == -1)
+            Debug.LogWarning("[AuraAttacker] 'Shield' layer not found. LOS blocking will be skipped.");
+    }
+
     void Update()
     {
         tickTimer += Time.deltaTime;
@@ -41,22 +57,25 @@ public class AuraAttacker : MonoBehaviour
     private void FindTargetsInRange()
     {
         targetsInRange.Clear();
-        
-        Collider[] hits = Physics.OverlapSphere(transform.position, range);
-        
-        foreach (var hit in hits)
-        {
-            var damageable = hit.GetComponent<IDamageable>();
-            var actor = hit.GetComponent<Actor>();
 
-            // Only add enemies from opposite faction
-            if (damageable != null && actor != null && damageable.IsAlive)
-            {
-                if (actor.faction != GetComponent<Actor>().faction)
-                {
-                    targetsInRange.Add(damageable);
-                }
-            }
+        int count = (targetLayers.value == 0)
+            ? Physics.OverlapSphereNonAlloc(transform.position, range, hitsBuffer)
+            : Physics.OverlapSphereNonAlloc(transform.position, range, hitsBuffer, targetLayers);
+
+        for (int i = 0; i < count; i++)
+        {
+            var col = hitsBuffer[i];
+            if (!col) continue;
+
+            var damageable = col.GetComponent<IDamageable>();
+            if (damageable == null || !damageable.IsAlive) continue;
+
+            var actor = col.GetComponent<Actor>();
+            if (actor == null || selfActor == null) continue;
+
+            if (actor.faction == selfActor.faction) continue;
+
+            targetsInRange.Add(damageable);
         }
     }
 
@@ -65,13 +84,26 @@ public class AuraAttacker : MonoBehaviour
         if (targetsInRange.Count == 0) return;
 
         int damageThisTick = Mathf.Max(1, Mathf.RoundToInt(damagePerSecond * tickRate));
+        Vector3 startPos = firePoint ? firePoint.position : transform.position;
 
         foreach (var target in targetsInRange)
         {
-            if (target != null && target.IsAlive)
+            if (target == null || !target.IsAlive) continue;
+
+            Transform t = target.Transform;
+            if (!t) continue;
+
+            // Shield line-of-sight check
+            if (IsBlockedByShield(startPos, t.position, out FrontalShield shieldHit))
             {
-                target.TakeDamage(damageThisTick);
+                if (popShieldOnBlock && shieldHit != null)
+                {
+                    
+                }
+                continue;
             }
+
+            target.TakeDamage(damageThisTick);
         }
     }
 
@@ -79,64 +111,83 @@ public class AuraAttacker : MonoBehaviour
     {
         if (laserBeamPrefab == null) return;
 
-        // Remove destroyed beams
+        // purge nulls
         for (int i = activeBeams.Count - 1; i >= 0; i--)
-        {
-            if (activeBeams[i] == null)
-            {
-                activeBeams.RemoveAt(i);
-            }
-        }
+            if (activeBeams[i] == null) activeBeams.RemoveAt(i);
 
-        // Destroy excess beams
+        // match beam count to targets
         while (activeBeams.Count > targetsInRange.Count)
         {
-            if (activeBeams.Count > 0)
-            {
-                Destroy(activeBeams[activeBeams.Count - 1]);
-                activeBeams.RemoveAt(activeBeams.Count - 1);
-            }
+            var go = activeBeams[^1];
+            if (go) Destroy(go);
+            activeBeams.RemoveAt(activeBeams.Count - 1);
         }
-
-        // Create new beams as needed
         while (activeBeams.Count < targetsInRange.Count)
         {
-            Vector3 spawnPos = firePoint != null ? firePoint.position : transform.position;
-            GameObject beam = Instantiate(laserBeamPrefab, spawnPos, Quaternion.identity, transform);
+            Vector3 spawnPos = firePoint ? firePoint.position : transform.position;
+            var beam = Instantiate(laserBeamPrefab, spawnPos, Quaternion.identity, transform);
             activeBeams.Add(beam);
         }
 
-        // Update beam positions
+        // position beams
+        Vector3 startPos = firePoint ? firePoint.position : transform.position;
         for (int i = 0; i < targetsInRange.Count && i < activeBeams.Count; i++)
         {
-            if (targetsInRange[i] != null && targetsInRange[i].IsAlive && activeBeams[i] != null)
+            var target = targetsInRange[i];
+            var beam = activeBeams[i];
+            if (target == null || !target.IsAlive || beam == null) continue;
+
+            Vector3 endPos = target.Transform.position;
+
+            // If blocked by a shield, snap the end of the beam to the shield hit point
+            if (IsBlockedByShield(startPos, endPos, out _, out Vector3 shieldHitPoint))
             {
-                UpdateBeam(activeBeams[i], targetsInRange[i]);
+                endPos = shieldHitPoint;
+            }
+
+            var line = beam.GetComponent<LineRenderer>();
+            if (line)
+            {
+                line.positionCount = 2;
+                line.SetPosition(0, startPos);
+                line.SetPosition(1, endPos);
             }
         }
     }
 
-    private void UpdateBeam(GameObject beam, IDamageable target)
+    
+    private bool IsBlockedByShield(Vector3 from, Vector3 to, out FrontalShield shield)
     {
-        Vector3 startPos = firePoint != null ? firePoint.position : transform.position;
-        Vector3 endPos = target.Transform.position;
+        return IsBlockedByShield(from, to, out shield, out _);
+    }
 
-        LineRenderer line = beam.GetComponent<LineRenderer>();
-        if (line != null)
+    private bool IsBlockedByShield(Vector3 from, Vector3 to, out FrontalShield shield, out Vector3 hitPoint)
+    {
+        shield = null;
+        hitPoint = default;
+
+        if (shieldLayer == -1) return false; // no shield layer configured
+
+        Vector3 dir = to - from;
+        float dist = dir.magnitude;
+        if (dist <= Mathf.Epsilon) return false;
+
+        if (Physics.Raycast(from, dir.normalized, out RaycastHit hit, dist, 1 << shieldLayer, QueryTriggerInteraction.Collide))
         {
-            line.SetPosition(0, startPos);
-            line.SetPosition(1, endPos);
+            shield = hit.collider ? hit.collider.GetComponentInParent<FrontalShield>() : null;
+            if (shield != null)
+            {
+                hitPoint = hit.point;
+                return true;
+            }
         }
+        return false;
     }
 
     private void OnDestroy()
     {
-        // Clean up all beams
         foreach (var beam in activeBeams)
-        {
-            if (beam != null)
-                Destroy(beam);
-        }
+            if (beam) Destroy(beam);
         activeBeams.Clear();
     }
 }

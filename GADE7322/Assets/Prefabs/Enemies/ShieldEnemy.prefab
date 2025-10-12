@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4072263833698111525}
   - component: {fileID: 6040769495469360975}
   - component: {fileID: 5030623888981097472}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShielfdRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 6642880358912811709}
   - component: {fileID: 3861534357240171033}
   - component: {fileID: 2066643253830288227}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShieldTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -743,7 +743,7 @@ GameObject:
   - component: {fileID: 5934099947844708250}
   - component: {fileID: 730528433188783421}
   - component: {fileID: 6511551748106174994}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShielfdLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -864,7 +864,7 @@ GameObject:
   - component: {fileID: 2062788720096009416}
   - component: {fileID: 7772981889963516799}
   - component: {fileID: 5049385843601102083}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShielfdFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}

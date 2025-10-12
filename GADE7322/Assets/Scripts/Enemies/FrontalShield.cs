@@ -17,14 +17,12 @@ public class FrontalShield : MonoBehaviour
     public AudioClip breakSfx;
     public float vfxLifetime = 1.5f;
 
-    // internal
     [HideInInspector] public int bulletLayer;
     BoxCollider[] _segments;
     bool _broken;
 
     void Awake()
     {
-        // Ensure we receive trigger events even if bullets have no RB.
         var rb = GetComponent<Rigidbody>();
         if (!rb)
         {
@@ -33,17 +31,14 @@ public class FrontalShield : MonoBehaviour
             rb.useGravity = false;
         }
 
-        // Cache segments (all BoxColliders marked as triggers on this prefab)
         _segments = GetComponentsInChildren<BoxCollider>(includeInactive: true);
 
-        // Layer cache
         bulletLayer = LayerMask.NameToLayer(bulletLayerName);
         if (bulletLayer == -1)
         {
             Debug.LogWarning($"[Shield] Bullet layer '{bulletLayerName}' not found. Falling back to any layer.");
         }
 
-        // Auto-find a visual if none assigned
         if (!visualRoot)
         {
             var mr = GetComponentInChildren<MeshRenderer>(true);
