@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 8337872736828362074}
   - component: {fileID: 4684843129088879439}
   - component: {fileID: 1721901336947984517}
-  - component: {fileID: -1796438571261470617}
   m_Layer: 6
   m_Name: DefaultEnemy
   m_TagString: Untagged
@@ -155,9 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0850b23dbe3a71c49824ae1539b18a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetCenter: {fileID: 0}
-  waterRadius: 1
-  goalPoleDir: {x: 0, y: -1, z: 0}
   moveSpeed: 0.3
   turnSpeedDeg: 600
   surfaceSnap: 0.02
@@ -165,13 +161,12 @@ MonoBehaviour:
   landMask:
     serializedVersion: 2
     m_Bits: 8
-  lookAhead: 2
+  lookAhead: 3
   probeRadius: 0.1
   minClearance: 1
   probeAnchor: {fileID: 0}
   probeSkinUp: 0.025
   probeLocalOffset: {x: 0, y: -0.2, z: 0}
-  planet: {fileID: 0}
   useHeightFallback: 1
   waterBias: 0.1
   heightProbeDistance: -2
@@ -184,12 +179,12 @@ MonoBehaviour:
   - -60
   goalWeight: 1.2
   penaltyWeight: 0.8
-  enforceWaterLock: 1
+  enforceWaterLock: 0
   waterLockStepDeg: 8
   waterLockSteps: 5
   pullBackToLastWater: 1
   preventLandPenetration: 1
-  hardPushStrength: 4
+  hardPushStrength: 6
 --- !u!114 &8337872736828362074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,7 +192,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5634974199342168380}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ddc4b5e6044f6f4b8a819a9165b0b35, type: 3}
   m_Name: 
@@ -208,6 +203,7 @@ MonoBehaviour:
   attacker: {fileID: 0}
   auraAttacker: {fileID: 0}
   indicator: {fileID: 0}
+  navigator: {fileID: 0}
 --- !u!114 &4684843129088879439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,22 +229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65eea7204f1dfe746bb81f64e3aae689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-1796438571261470617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5634974199342168380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 423180a503c3e83469dfa355873766f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyType: {fileID: 11400000, guid: d7393f13db85e8e4985def7b59e63194, type: 2}
-  faction: 1
-  triggerGameOver: 0
-  applyNavMeshAgent: 1
 --- !u!1 &5922492490904186096
 GameObject:
   m_ObjectHideFlags: 0

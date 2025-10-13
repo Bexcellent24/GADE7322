@@ -15,10 +15,11 @@ MonoBehaviour:
   displayName: DefaultEnemy
   visualPrefab: {fileID: 5634974199342168380, guid: 583a4b2c61c5f5845a8fcc35d4905ad0, type: 3}
   maxHealth: 20
-  worth: 1
-  moveSpeed: 0.55
+  worth: 5
+  moveSpeed: 0.45
   turnSpeedDeg: 180
   canAttack: 1
+  bulletPrefab: {fileID: 0}
   attackRange: 1.5
   attackRate: 1
-  attackDamage: 2.5
+  attackDamage: 2

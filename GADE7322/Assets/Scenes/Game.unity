@@ -4983,7 +4983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d081d3d05866a7b40851066464f08681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingCurrency: 500
+  startingCurrency: 300
 --- !u!114 &924699498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10544,6 +10544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currencyPerWave: 150
+  logDebugLogs: 1
 --- !u!114 &5241399861112172335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10557,6 +10558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   threatBias: 1.5
+  logDebugLogs: 1
   light:
     spawned: 0
     totalSurvival: 0
@@ -10597,6 +10599,7 @@ MonoBehaviour:
   towerHunterMinScore: 70
   minDelay: 0
   maxDelay: 8
+  logDebugLogs: 1
 --- !u!114 &5241399861112172337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10612,6 +10615,8 @@ MonoBehaviour:
   maxDeaths: 50
   hotZoneRadius: 3
   avoidanceStrength: 1.5
+  logDebugLogs: 1
+  deathPositions: []
 --- !u!114 &5241399861112172338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10636,6 +10641,7 @@ MonoBehaviour:
   spawnDuration: 5
   maxConcurrent: 60
   spawnPoints: []
+  logDebugLogs: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

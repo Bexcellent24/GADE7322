@@ -15,10 +15,11 @@ MonoBehaviour:
   displayName: ShieldEnemy
   visualPrefab: {fileID: 5634974199342168380, guid: 9a9515c1845b1f14e9c93cff6e7ff083, type: 3}
   maxHealth: 30
-  worth: 1
+  worth: 20
   moveSpeed: 0.33
   turnSpeedDeg: 180
   canAttack: 1
+  bulletPrefab: {fileID: 0}
   attackRange: 1.5
-  attackRate: 1
-  attackDamage: 2.5
+  attackRate: 0.75
+  attackDamage: 4

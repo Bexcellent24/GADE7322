@@ -438,7 +438,6 @@ GameObject:
   - component: {fileID: 8337872736828362074}
   - component: {fileID: 4684843129088879439}
   - component: {fileID: 1721901336947984517}
-  - component: {fileID: -4307864370719916298}
   m_Layer: 6
   m_Name: ShieldEnemy
   m_TagString: Untagged
@@ -615,17 +614,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5634974199342168380}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ddc4b5e6044f6f4b8a819a9165b0b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: d14d70916785ef0448404347663b4f6e, type: 2}
+  stats: {fileID: 11400000, guid: 6e982981dcaf0d44c82c1be72405bbc0, type: 2}
   faction: 1
   health: {fileID: 0}
   attacker: {fileID: 0}
   auraAttacker: {fileID: 0}
   indicator: {fileID: 0}
+  navigator: {fileID: 0}
 --- !u!114 &4684843129088879439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -651,22 +651,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65eea7204f1dfe746bb81f64e3aae689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-4307864370719916298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5634974199342168380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 423180a503c3e83469dfa355873766f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyType: {fileID: 11400000, guid: 461f1b3d061744244948daf7977f838b, type: 2}
-  faction: 1
-  triggerGameOver: 0
-  applyNavigatorSpeeds: 1
 --- !u!1 &5922492490904186096
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 8337872736828362074}
   - component: {fileID: 4684843129088879439}
   - component: {fileID: 1721901336947984517}
-  - component: {fileID: -3795379981365518737}
   m_Layer: 6
   m_Name: SplitEnemyBaby
   m_TagString: Untagged
@@ -155,9 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0850b23dbe3a71c49824ae1539b18a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetCenter: {fileID: 0}
-  waterRadius: 1
-  goalPoleDir: {x: 0, y: -1, z: 0}
   moveSpeed: 0.3
   turnSpeedDeg: 600
   surfaceSnap: 0.02
@@ -171,7 +167,6 @@ MonoBehaviour:
   probeAnchor: {fileID: 0}
   probeSkinUp: 0.025
   probeLocalOffset: {x: 0, y: -0.2, z: 0}
-  planet: {fileID: 0}
   useHeightFallback: 1
   waterBias: 0.1
   heightProbeDistance: -2
@@ -197,17 +192,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5634974199342168380}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ddc4b5e6044f6f4b8a819a9165b0b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: d14d70916785ef0448404347663b4f6e, type: 2}
+  stats: {fileID: 11400000, guid: 3aeab27124ffd9247bd51145c7d79b94, type: 2}
   faction: 1
   health: {fileID: 0}
   attacker: {fileID: 0}
   auraAttacker: {fileID: 0}
   indicator: {fileID: 0}
+  navigator: {fileID: 0}
 --- !u!114 &4684843129088879439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,22 +229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65eea7204f1dfe746bb81f64e3aae689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-3795379981365518737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5634974199342168380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 423180a503c3e83469dfa355873766f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyType: {fileID: 11400000, guid: 09c475706cf87dd4d9947a247f9f3dee, type: 2}
-  faction: 1
-  triggerGameOver: 0
-  applyNavMeshAgent: 1
 --- !u!1 &5922492490904186096
 GameObject:
   m_ObjectHideFlags: 0

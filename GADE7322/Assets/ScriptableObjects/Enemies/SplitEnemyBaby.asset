@@ -15,10 +15,11 @@ MonoBehaviour:
   displayName: SplitEnemyBaby
   visualPrefab: {fileID: 5634974199342168380, guid: ddb40e886b948d34a99b1cdfb7737ea7, type: 3}
   maxHealth: 5
-  worth: 1
+  worth: 2
   moveSpeed: 1
   turnSpeedDeg: 180
   canAttack: 0
+  bulletPrefab: {fileID: 0}
   attackRange: 1.5
   attackRate: 1
   attackDamage: 2.5
