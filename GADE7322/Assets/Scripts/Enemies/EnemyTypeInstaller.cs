@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [DisallowMultipleComponent]
-[DefaultExecutionOrder(200)] // ensure we run after most components
+[DefaultExecutionOrder(200)]
 public class EnemyTypeInstaller : MonoBehaviour
 {
     [Header("Source")]
@@ -12,10 +12,9 @@ public class EnemyTypeInstaller : MonoBehaviour
     [SerializeField] private bool triggerGameOver = false;
 
     [Header("Apply Options")]
-    [SerializeField] private bool applyNavigatorSpeeds = true; // <- key: write into WaterGlobeNavigator
-    [SerializeField] private bool applyNavigatorHover   = false; // optional, if you want SO to drive hoverOffset too
+    [SerializeField] private bool applyNavigatorSpeeds = true;
 
-    bool _applied;
+    private bool _applied;
 
     void Start()
     {
@@ -48,22 +47,19 @@ public class EnemyTypeInstaller : MonoBehaviour
 
     void Apply(EnemyType data)
     {
-        // Health via your Initialize(max, faction, worth, triggerGameOver)
         var health = GetComponentInChildren<Health>();
         if (health != null)
             health.Initialize(data.maxHealth, faction, data.worth, triggerGameOver);
 
-        // Write speeds directly into WaterGlobeNavigator so it doesn’t override them
+        // Use public properties instead of direct field access
         if (applyNavigatorSpeeds)
         {
             var nav = GetComponentInChildren<WaterGlobeNavigator>();
             if (nav)
             {
-                nav.moveSpeed    = data.moveSpeed;
-                nav.turnSpeedDeg = data.turnSpeedDeg;
+                nav.MoveSpeed = data.moveSpeed;
+                nav.TurnSpeedDeg = data.turnSpeedDeg;
             }
         }
-
-        // NOTE: No visual spawning, no native allocations.
     }
 }

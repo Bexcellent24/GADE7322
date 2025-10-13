@@ -4948,6 +4948,7 @@ GameObject:
   - component: {fileID: 924699499}
   - component: {fileID: 924699497}
   - component: {fileID: 924699498}
+  - component: {fileID: 924699500}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5010,6 +5011,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e149da12eb3198b458b3edda21de98ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &924699500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924699494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff454edb814ed14d84eee0e05e348f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetCenter: {fileID: 1507791553}
+  waterRadius: 7
+  goalPoleDir: {x: 0, y: 1, z: 0}
+  planet: {fileID: 1516610172}
 --- !u!1 &925882517
 GameObject:
   m_ObjectHideFlags: 0
@@ -6303,7 +6320,7 @@ MonoBehaviour:
   planetGenerator: {fileID: 1516610172}
   polarCapDeformer: {fileID: 1516610177}
   enemySpawnPlacer: {fileID: 5241399861112172333}
-  enemySpawner: {fileID: 0}
+  enemySpawner: {fileID: 5241399861112172338}
   crystalTowerPrefab: {fileID: 506492153464357288, guid: 62709f9b4c97bb7479fad3ff2293d451, type: 3}
   planet: {fileID: 179851553}
   northPoleOffset: {x: 0, y: 6.2, z: 0}
@@ -10593,7 +10610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDeaths: 50
-  hotZoneRadius: 15
+  hotZoneRadius: 3
   avoidanceStrength: 1.5
 --- !u!114 &5241399861112172338
 MonoBehaviour:
@@ -10607,10 +10624,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378847173f5947039bbf1ee6fd89a88e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightEnemyPrefab: {fileID: 5241399861112172332}
-  mediumEnemyPrefab: {fileID: 0}
-  heavyEnemyPrefab: {fileID: 0}
-  towerHunterEnemyPrefab: {fileID: 0}
+  lightEnemyPrefab: {fileID: 5634974199342168380, guid: 583a4b2c61c5f5845a8fcc35d4905ad0, type: 3}
+  mediumEnemyPrefab: {fileID: 5634974199342168380, guid: abd5418c4fa90bf468b829c6197a83b6, type: 3}
+  heavyEnemyPrefab: {fileID: 5634974199342168380, guid: 9a9515c1845b1f14e9c93cff6e7ff083, type: 3}
+  towerHunterEnemyPrefab: {fileID: 8270657472283388889, guid: d5b26060ffbc6c0428a044b05277dc73, type: 3}
   performance: {fileID: 5241399861112172334}
   difficulty: {fileID: 5241399861112172336}
   composition: {fileID: 5241399861112172335}

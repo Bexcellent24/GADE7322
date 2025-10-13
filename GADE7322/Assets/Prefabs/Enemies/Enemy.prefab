@@ -154,10 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0850b23dbe3a71c49824ae1539b18a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetCenter: {fileID: 0}
-  waterRadius: 1
-  goalPoleDir: {x: 0, y: -1, z: 0}
-  moveSpeed: 0.3
+  moveSpeed: 0.4
   turnSpeedDeg: 600
   surfaceSnap: 0.02
   hoverOffset: 0
@@ -170,7 +167,6 @@ MonoBehaviour:
   probeAnchor: {fileID: 0}
   probeSkinUp: 0.025
   probeLocalOffset: {x: 0, y: -0.2, z: 0}
-  planet: {fileID: 0}
   useHeightFallback: 1
   waterBias: 0.1
   heightProbeDistance: -2
@@ -205,6 +201,7 @@ MonoBehaviour:
   faction: 1
   health: {fileID: 0}
   attacker: {fileID: 0}
+  auraAttacker: {fileID: 0}
   indicator: {fileID: 0}
 --- !u!114 &4684843129088879439
 MonoBehaviour:

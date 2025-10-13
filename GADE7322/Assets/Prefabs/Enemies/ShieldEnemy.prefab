@@ -577,9 +577,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0850b23dbe3a71c49824ae1539b18a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetCenter: {fileID: 0}
-  waterRadius: 1
-  goalPoleDir: {x: 0, y: -1, z: 0}
   moveSpeed: 0.3
   turnSpeedDeg: 600
   surfaceSnap: 0.02
@@ -593,7 +590,6 @@ MonoBehaviour:
   probeAnchor: {fileID: 0}
   probeSkinUp: 0.025
   probeLocalOffset: {x: 0, y: -0.2, z: 0}
-  planet: {fileID: 0}
   useHeightFallback: 1
   waterBias: 0.1
   heightProbeDistance: -2
@@ -671,7 +667,6 @@ MonoBehaviour:
   faction: 1
   triggerGameOver: 0
   applyNavigatorSpeeds: 1
-  applyNavigatorHover: 0
 --- !u!1 &5922492490904186096
 GameObject:
   m_ObjectHideFlags: 0

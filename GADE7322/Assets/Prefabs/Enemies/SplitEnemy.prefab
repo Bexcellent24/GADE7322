@@ -156,10 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0850b23dbe3a71c49824ae1539b18a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetCenter: {fileID: 0}
-  waterRadius: 1
-  goalPoleDir: {x: 0, y: -1, z: 0}
-  moveSpeed: 0.3
+  moveSpeed: 0.5
   turnSpeedDeg: 600
   surfaceSnap: 0.02
   hoverOffset: 0
@@ -172,7 +169,6 @@ MonoBehaviour:
   probeAnchor: {fileID: 0}
   probeSkinUp: 0.025
   probeLocalOffset: {x: 0, y: -0.2, z: 0}
-  planet: {fileID: 0}
   useHeightFallback: 1
   waterBias: 0.1
   heightProbeDistance: -2
@@ -250,7 +246,7 @@ MonoBehaviour:
   count: 2
   relativeScale: 0.5
   burstRadius: 0.6
-  inheritNavigator: 1
+  inheritNavigatorSpeeds: 1
 --- !u!114 &3734180358245932833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,7 +262,7 @@ MonoBehaviour:
   enemyType: {fileID: 11400000, guid: 55ee48e5cbd080a489f517461ac090f0, type: 2}
   faction: 1
   triggerGameOver: 0
-  applyNavMeshAgent: 1
+  applyNavigatorSpeeds: 1
 --- !u!1 &5922492490904186096
 GameObject:
   m_ObjectHideFlags: 0
