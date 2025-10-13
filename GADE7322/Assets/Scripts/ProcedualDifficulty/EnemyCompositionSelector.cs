@@ -13,6 +13,8 @@ public class EnemyCompositionSelector : MonoBehaviour
     [Tooltip("If an enemy type has been spawned less than this, force it to spawn occasionally")]
     [Min(0)] [SerializeField] private int minSpawnsBeforeNormal = 3;
     
+    [SerializeField] private float towerHunterWeight = 0.8f;
+    
     [Header("Debug Settings")]
     [SerializeField] private bool logDebugLogs = true;
 
@@ -40,7 +42,7 @@ public class EnemyCompositionSelector : MonoBehaviour
         stats.totalSurvival += survival;
         stats.totalDamage += damage;
 
-        // Estimate "threat" based on how long it survived and how much damage it dealt
+        // Estimate threat based on how long it survived and how much damage it dealt
         float avgSurvival = stats.totalSurvival / stats.spawned;
         float avgDamage = stats.totalDamage / stats.spawned;
         
@@ -111,7 +113,7 @@ public class EnemyCompositionSelector : MonoBehaviour
         // Optionally include tower hunters
         if (includeTowerHunter)
         {
-            weights[EnemyKind.TowerHunter] = 0.5f;
+            weights[EnemyKind.TowerHunter] = towerHunterWeight;
             if(logDebugLogs) Debug.Log("[Composition] TowerHunters enabled with weight 0.5");
         }
         
@@ -131,7 +133,7 @@ public class EnemyCompositionSelector : MonoBehaviour
             if (stats.spawned < minSpawnsBeforeNormal)
             {
                 float before = weights[kind];
-                weights[kind] *= 3f; // Multiply weight by 5 to encourage spawning
+                weights[kind] *= 3f; // Multiply weight by 3 to encourage spawning
                 if(logDebugLogs) Debug.Log($"[Composition] BOOTSTRAP: {kind} has only spawned {stats.spawned} times. Boosting weight {before:F2}→{weights[kind]:F2}");
             }
         }
@@ -162,6 +164,37 @@ public class EnemyCompositionSelector : MonoBehaviour
         }
 
         return string.Join(", ", chances);
+    }
+    
+    public void LogThreatBreakdown()
+    {
+        Debug.Log("[Overview][THREAT LEVELS]");
+        
+        var types = new[] { EnemyKind.Light, EnemyKind.Medium, EnemyKind.Heavy, EnemyKind.TowerHunter };
+        EnemyKind mostThreatening = EnemyKind.Light;
+        float maxThreat = 0f;
+
+        foreach (var kind in types)
+        {
+            EnemyStats stats = GetStats(kind);
+            if (stats.spawned == 0)
+            {
+                Debug.Log($" [Overview] {kind}: No data yet");
+            }
+            else
+            {
+                Debug.Log($"[Overview]  {kind}: Threat={stats.threat:F2} | Confidence={stats.confidence:P0} | Avg Survival={stats.totalSurvival / stats.spawned:F1}s | Avg Damage={stats.totalDamage / stats.spawned:F1}");
+                
+                if (stats.threat > maxThreat)
+                {
+                    maxThreat = stats.threat;
+                    mostThreatening = kind;
+                }
+            }
+        }
+
+        if (maxThreat > 0)
+            Debug.Log($" [Overview] [GREATEST THREAT: {mostThreatening} ({maxThreat:F2})]");
     }
 
     // Selects a random enemy type using weighted probabilities

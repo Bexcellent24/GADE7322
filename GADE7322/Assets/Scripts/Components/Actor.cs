@@ -38,5 +38,6 @@ public class Actor : MonoBehaviour
             navigator.TurnSpeedDeg = stats.turnSpeedDeg;
         }
     }
+    
 }
 

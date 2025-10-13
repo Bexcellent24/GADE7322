@@ -46,25 +46,21 @@ public class WaterGlobeNavigator : MonoBehaviour
     private Vector3 _lastWaterUp;
 
     // Public properties for dynamic configuration
-    public float MoveSpeed
-    {
-        get => moveSpeed;
-        set => moveSpeed = value;
-    }
+    public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
 
-    public float TurnSpeedDeg
-    {
-        get => turnSpeedDeg;
-        set => turnSpeedDeg = value;
-    }
+    public float TurnSpeedDeg { get => turnSpeedDeg; set => turnSpeedDeg = value; }
 
-    public float HoverOffset
-    {
-        get => hoverOffset;
-        set => hoverOffset = value;
-    }
+    public float HoverOffset { get => hoverOffset; set => hoverOffset = value; }
+    
+    public float SurfaceSnap{ get => surfaceSnap; set => surfaceSnap = value; }
 
     Vector3 Center => _worldManager?.PlanetCenter?.position ?? Vector3.zero;
+    
+    private Vector3? localGoalDirOverride;
+    public void SetLocalGoalDirection(Vector3? dir)
+    {
+        localGoalDirOverride = dir;
+    }
 
     void Reset()
     {
@@ -126,7 +122,8 @@ public class WaterGlobeNavigator : MonoBehaviour
         pos = Vector3.MoveTowards(pos, onSurface, surfaceSnap);
         up = (pos - center).normalized;
 
-        Vector3 goalPoint = center + _worldManager.GoalPoleDir.normalized * targetRadius;
+        Vector3 goalDirection = localGoalDirOverride ?? _worldManager.GoalPoleDir;
+        Vector3 goalPoint = center + goalDirection.normalized * targetRadius;
         Vector3 toGoal = goalPoint - pos;
         Vector3 desired = Vector3.ProjectOnPlane(toGoal, up).normalized;
 

@@ -21,7 +21,7 @@ public class AdaptiveEnemyWaveSpawner : MonoBehaviour
 
     [Header("Spawn Settings")]
     [SerializeField] private int baseWaveCount = 10;
-    [SerializeField] private float spawnDuration = 5f;
+    [SerializeField] private float maxSpawnDuration = 15f;
     [SerializeField] private int maxConcurrent = 60;
     public List<Transform> spawnPoints;
     
@@ -115,12 +115,25 @@ public class AdaptiveEnemyWaveSpawner : MonoBehaviour
         var weights = composition.GetWeights(lastScore, allowHunters);
         
         string weightsDebug = composition.GetWeightsDebugString(weights);
-        if(logDebugLogs) Debug.Log($"[Spawner] Wave {wave}: {count} enemies. Spawn chances: {weightsDebug}");
+        if(logDebugLogs) 
+        {
+            Debug.Log("[Overview]═══════════════════════════════════════════════════");
+            Debug.Log($"[Overview][WAVE {wave} PREVIEW]");
+            Debug.Log("[Overview]═══════════════════════════════════════════════════");
+            difficulty.LogScoreBreakdown(lastScore);
+            composition.LogThreatBreakdown();
+            Debug.Log($"[Overview]Enemy count: {count} | Spawn chances: {weightsDebug}");
+            Debug.Log($"[Overview]Tower hunters allowed: {allowHunters}");
+            Debug.Log("[Overview]═══════════════════════════════════════════════════");
+        }
 
         if(logDebugLogs) Debug.Log($"[Spawner] Wave {wave}: spawning {count} enemies. Hunters allowed: {allowHunters}");
         
         // Spawn enemies
-        float interval = (count <= 1) ? 0f : spawnDuration / count;
+        float timePerEnemy = 0.75f;   // seconds per enemy
+
+        float totalDuration = Mathf.Min(count * timePerEnemy, maxSpawnDuration);
+        float interval = (count <= 1) ? 0f : totalDuration / count;
 
         for (int i = 0; i < count; i++)
         {

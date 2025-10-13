@@ -47,6 +47,17 @@ public class DifficultyManager : MonoBehaviour
 
         return finalScore;
     }
+    
+    public void LogScoreBreakdown(float finalScore)
+    {
+        Debug.Log($"[Overview][FINAL SCORE: {finalScore:F1}/100]");
+        
+        if (finalScore >= 80) Debug.Log("[Overview]  Status: DOMINATING → Next wave +30% enemies");
+        else if (finalScore >= 60) Debug.Log("[Overview]  Status: DOING WELL → Next wave +15% enemies");
+        else if (finalScore >= 40) Debug.Log("[Overview]  Status: AVERAGE → Next wave normal");
+        else if (finalScore >= 20) Debug.Log("[Overview]  Status: STRUGGLING → Next wave -10% enemies");
+        else Debug.Log("[Overview]  Status: NEAR DEFEAT → Next wave -20% enemies");
+    }
 
 
     // Returns a difficulty multiplier (how much harder the next wave will be)
@@ -89,9 +100,8 @@ public class DifficultyManager : MonoBehaviour
         if(logDebugLogs) Debug.Log($"[Difficulty] TowerHunters allowed? {allowed} (Wave={wave}, Score={score:F1})");
         return allowed;
     }
-
-
-    /// Calculate delay before next wave
+    
+    // Calculate delay before next wave
     public float CalculateDelay(float score)
     {
         float delay = Mathf.Lerp(maxDelay, minDelay, score / 100f);
