@@ -13,21 +13,21 @@ MonoBehaviour:
   m_Name: SwarmEnemyType
   m_EditorClassIdentifier: 
   displayName: Swarm
-  visualPrefab: {fileID: 8270657472283388889, guid: d5b26060ffbc6c0428a044b05277dc73, type: 3}
-  maxHealth: 30
+  visualPrefab: {fileID: 0}
+  maxHealth: 80
   worth: 1
-  moveSpeed: 1
+  moveSpeed: 0.66
   turnSpeedDeg: 180
   canAttack: 1
-  attackRange: 3
+  attackRange: 1.75
   attackRate: 0.6
-  attackDamage: 1
+  attackDamage: 6
   towerMask:
     serializedVersion: 2
     m_Bits: 64
   towerTag: Tower
-  extraHoverOffset: 1
-  visualLift: 1
+  extraHoverOffset: 0.5
+  visualLift: 0.6
   particlesAt100: 60
   particlesAt50: 30
   particlesAt10: 8

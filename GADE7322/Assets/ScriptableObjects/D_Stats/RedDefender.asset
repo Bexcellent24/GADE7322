@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8010429607598179167, guid: 433afc93b42d65947b39aef2c2a3adad, type: 3}
   maxHealth: 80
-  attackRate: 0.25
+  attackRate: 0.3
   range: 4
   damage: 5
   triggerGameOver: 0

@@ -1455,9 +1455,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 179851553}
   distance: 20
-  xSpeed: 200
-  ySpeed: 200
-  zoomSpeed: 10
+  xSpeed: 500
+  ySpeed: 500
+  zoomSpeed: 15
   minDistance: 8
   maxDistance: 60
 --- !u!1 &363419144
