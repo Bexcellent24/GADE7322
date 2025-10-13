@@ -4998,7 +4998,7 @@ MonoBehaviour:
   moveSpeed: 1
   turnSpeedDeg: 180
   surfaceSnap: 0.15
-  hoverOffset: 2
+  hoverOffset: 0.5
   landMask:
     serializedVersion: 2
     m_Bits: 8
