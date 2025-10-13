@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9215978438358400253}
   - component: {fileID: 4198098096701864584}
   - component: {fileID: 2937366760716069744}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4843,7 +4843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2970463832348497314}
   - component: {fileID: 1714424245687447661}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4992,7 +4992,7 @@ GameObject:
   - component: {fileID: 5213207553355499846}
   - component: {fileID: 2373832429795672264}
   - component: {fileID: 1070226815023260794}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9825,9 +9825,9 @@ GameObject:
   - component: {fileID: 149806113295370112}
   - component: {fileID: 3155395343801246903}
   - component: {fileID: 347318985527781821}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: CystalTowerBullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -84,15 +84,9 @@ public class Attacker : MonoBehaviour
             {
                 bullet.SetDamageTracker(tracker);
             }
-            else
-            {
-                Debug.LogWarning("No tracker set");
-            }
+            
         }
-        else
-        {
-            Debug.LogWarning("No StandardBullet Prefab attached");
-        }
+        
         
         AudioManager.Instance?.PlaySFX("Shoot");
     }
