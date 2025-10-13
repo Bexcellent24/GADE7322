@@ -15,6 +15,7 @@ public class EnemyType : ScriptableObject
 
     [Header("Combat (optional)")]
     public bool  canAttack    = true;
+    public GameObject bulletPrefab;
     [Min(0f)] public float attackRange  = 1.5f;
     [Min(0f)] public float attackRate   = 1.0f;
     [Min(0f)] public float attackDamage = 2.5f;

@@ -24,7 +24,10 @@ public class AdaptiveEnemyWaveSpawner : MonoBehaviour
     [SerializeField] private float spawnDuration = 5f;
     [SerializeField] private int maxConcurrent = 60;
     public List<Transform> spawnPoints;
-
+    
+    [Header("Debug Settings")]
+    [SerializeField] private bool logDebugLogs = true;
+    
     private int currentWave = 0;
     private int enemiesAlive = 0;
     private float lastScore = 50f;
@@ -43,6 +46,7 @@ public class AdaptiveEnemyWaveSpawner : MonoBehaviour
         if (!spawnSelector) spawnSelector = FindObjectOfType<AdaptiveSpawnPointSelector>();
     }
 
+    // Starts the wave system
     public void Begin()
     {
         if (waveRunner == null)
@@ -52,6 +56,7 @@ public class AdaptiveEnemyWaveSpawner : MonoBehaviour
         }
     }
 
+    // Main loop that controls wave flow
     IEnumerator WaveLoop()
     {
         // Wait for prefabs
@@ -62,22 +67,26 @@ public class AdaptiveEnemyWaveSpawner : MonoBehaviour
         while (true)
         {
             currentWave++;
+            if(logDebugLogs) Debug.Log($"[Spawner] Starting wave {currentWave}");
             yield return StartCoroutine(SpawnWave(currentWave));
 
             // Wait for all enemies to die
             while (enemiesAlive > 0)
                 yield return new WaitForSeconds(0.5f);
 
+            if(logDebugLogs) Debug.Log($"[Spawner] Wave {currentWave} complete.");
             OnWaveComplete?.Invoke(currentWave);
 
             // Calculate performance
             var perf = performance.GetPerformance(currentWave);
             lastScore = difficulty.CalculateScore(perf);
+            if(logDebugLogs) Debug.Log($"[Spawner] Performance score for wave {currentWave}: {lastScore:F1}");
 
             // Delay before next wave
             float delay = difficulty.CalculateDelay(lastScore);
             if (delay > 0f)
             {
+                if(logDebugLogs) Debug.Log($"[Spawner] Waiting {delay:F1}s before next wave...");
                 float t = delay;
                 while (t > 0f)
                 {
@@ -89,6 +98,7 @@ public class AdaptiveEnemyWaveSpawner : MonoBehaviour
         }
     }
 
+    // Handles spawning all enemies for a wave
     IEnumerator SpawnWave(int wave)
     {
         // Start tracking
@@ -104,13 +114,18 @@ public class AdaptiveEnemyWaveSpawner : MonoBehaviour
         bool allowHunters = difficulty.AllowTowerHunters(wave, lastScore);
         var weights = composition.GetWeights(lastScore, allowHunters);
 
+        if(logDebugLogs) Debug.Log($"[Spawner] Wave {wave}: spawning {count} enemies. Hunters allowed: {allowHunters}");
+        
         // Spawn enemies
         float interval = (count <= 1) ? 0f : spawnDuration / count;
 
         for (int i = 0; i < count; i++)
         {
             while (enemiesAlive >= maxConcurrent)
+            {
+                if(logDebugLogs) Debug.Log("[Spawner] Max concurrent enemies reached, waiting...");
                 yield return null;
+            }
 
             var kind = composition.SelectType(weights);
             SpawnEnemy(kind);
@@ -122,11 +137,13 @@ public class AdaptiveEnemyWaveSpawner : MonoBehaviour
         }
     }
 
+    // Spawns a single enemy of given type
     void SpawnEnemy(EnemyKind kind)
     {
         GameObject prefab = GetPrefab(kind);
         if (!prefab)
         {
+            if(logDebugLogs) Debug.LogWarning("[Spawner] Missing prefab for enemy type, defaulting to light enemy.");
             prefab = lightEnemyPrefab;
             if (!prefab) return;
         }
@@ -142,7 +159,7 @@ public class AdaptiveEnemyWaveSpawner : MonoBehaviour
 
         if (!spawnPoint)
         {
-            Debug.LogWarning("[AdaptiveSpawner] No spawn points available!");
+            if(logDebugLogs) Debug.LogWarning("[AdaptiveSpawner] No spawn points available!");
             return;
         }
 
@@ -155,6 +172,7 @@ public class AdaptiveEnemyWaveSpawner : MonoBehaviour
         tracker.Init(this, kind, Time.time);
 
         enemiesAlive++;
+        if(logDebugLogs) Debug.Log($"[Spawner] Spawned {kind} at {spawnPoint.name}. Total alive: {enemiesAlive}");
     }
 
     GameObject GetPrefab(EnemyKind kind)
@@ -174,5 +192,6 @@ public class AdaptiveEnemyWaveSpawner : MonoBehaviour
         enemiesAlive = Mathf.Max(0, enemiesAlive - 1);
         composition.RecordDeath(kind, survival, damage);
         if (spawnSelector) spawnSelector.RecordDeath(pos);
+        if(logDebugLogs) Debug.Log($"[Spawner] {kind} died. Remaining enemies: {enemiesAlive}");
     }
 }

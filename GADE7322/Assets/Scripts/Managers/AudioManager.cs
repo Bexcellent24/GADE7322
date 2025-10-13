@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
 using System.Collections.Generic;
@@ -32,6 +33,11 @@ public class AudioManager : MonoBehaviour
         foreach (var sound in sounds)
             soundLookup[sound.soundName] = sound;
 
+        
+    }
+
+    private void Start()
+    {
         LoadVolumes();
     }
 
@@ -79,8 +85,8 @@ public class AudioManager : MonoBehaviour
 
     private void LoadVolumes()
     {
-        float music = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
-        float sfx = PlayerPrefs.GetFloat("SFXVolume", 0.75f);
+        float music = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
+        float sfx = PlayerPrefs.GetFloat("SFXVolume", 0.5f);
         SetMusicVolume(music);
         SetSFXVolume(sfx);
     }

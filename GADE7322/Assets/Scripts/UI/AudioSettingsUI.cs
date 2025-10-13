@@ -8,8 +8,15 @@ public class AudioSettingsUI : MonoBehaviour
 
     private void Start()
     {
-        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
-        sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", 0.75f);
+        float music = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
+        float sfx = PlayerPrefs.GetFloat("SFXVolume", 0.5f);
+
+        musicSlider.value = music;
+        sfxSlider.value = sfx;
+
+        // Apply these values immediately
+        AudioManager.Instance.SetMusicVolume(music);
+        AudioManager.Instance.SetSFXVolume(sfx);
 
         musicSlider.onValueChanged.AddListener(AudioManager.Instance.SetMusicVolume);
         sfxSlider.onValueChanged.AddListener(AudioManager.Instance.SetSFXVolume);

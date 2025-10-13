@@ -4,7 +4,10 @@ public class PerformanceTracker : MonoBehaviour
 {
     [Header("Settings")]
     [Tooltip("How much currency should player have per wave for 'average' performance")]
-    [SerializeField] private int currencyPerWave = 150;
+    [SerializeField] private int currencyPerWave = 120;
+    
+    [Header("Debug Settings")]
+    [SerializeField] private bool logDebugLogs = true;
 
     private int defendersLostThisWave;
     private Health mainTowerHealth;
@@ -19,7 +22,7 @@ public class PerformanceTracker : MonoBehaviour
         Health.OnDefenderDied -= OnDefenderLost;
     }
     
-    /// Call at wave start to reset tracking and find the tower
+    // Called at start of each wave to reset stats
     public void StartWave(int waveNumber)
     {
         defendersLostThisWave = 0;
@@ -47,8 +50,9 @@ public class PerformanceTracker : MonoBehaviour
             towerHealthPercent = (float)mainTowerHealth.Current / mainTowerHealth.Max;
 
         int currency = CurrencyManager.Instance ? CurrencyManager.Instance.CurrentCurrency : 0;
-        int expectedCurrency = currencyPerWave * waveNumber;
+        int expectedCurrency = currencyPerWave * waveNumber / 2;
 
+        if(logDebugLogs) Debug.Log($"[PerformanceTracker] Wave {waveNumber} performance: Tower {towerHealthPercent:P0}, Currency {currency}/{expectedCurrency}, Defenders lost {defendersLostThisWave}");
         return new WavePerformance
         {
             towerHealthPercent = towerHealthPercent,
@@ -61,6 +65,7 @@ public class PerformanceTracker : MonoBehaviour
     void OnDefenderLost()
     {
         defendersLostThisWave++;
+        if(logDebugLogs) Debug.Log($"[PerformanceTracker] Defender lost. Total this wave: {defendersLostThisWave}");
     }
 }
 

@@ -15,21 +15,30 @@ public class AdaptiveSpawnPointSelector : MonoBehaviour
     [Tooltip("How strongly to avoid hot zones")]
     [Range(0f, 3f)] public float avoidanceStrength = 1.5f;
 
-    private List<Vector3> deathPositions = new List<Vector3>();
+    [Header("Debug Settings")]
+    [SerializeField] private bool logDebugLogs = true;
+    
+    [SerializeField]private List<Vector3> deathPositions = new List<Vector3>();
 
 
-    /// Record enemy death position
+    // Store death positions for heatmap logic
     public void RecordDeath(Vector3 pos)
     {
         deathPositions.Add(pos);
         if (deathPositions.Count > maxDeaths)
             deathPositions.RemoveAt(0);
+        
+        if(logDebugLogs) Debug.Log($"[SpawnSelector] Recorded death at {pos}. Total tracked: {deathPositions.Count}");
     }
     
-    /// Select spawn point away from combat
+    // Chooses a spawn point away from death clusters
     public Transform SelectSpawnPoint(List<Transform> points)
     {
-        if (points == null || points.Count == 0) return null;
+        if (points == null || points.Count == 0)
+        {
+            if(logDebugLogs) Debug.LogWarning("[SpawnSelector] No spawn points provided.");
+            return null;
+        }
         if (points.Count == 1) return points[0];
         if (deathPositions.Count == 0) return points[Random.Range(0, points.Count)];
 
@@ -62,7 +71,12 @@ public class AdaptiveSpawnPointSelector : MonoBehaviour
         foreach (var kvp in weights)
         {
             cumulative += kvp.Value;
-            if (roll < cumulative) return kvp.Key;
+            if (roll < cumulative)
+            {
+                if(logDebugLogs) Debug.Log($"[SpawnSelector] Selected spawn point: {kvp.Key.name}");
+                return kvp.Key;
+            }
+
         }
 
         return points[0];

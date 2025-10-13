@@ -18,10 +18,14 @@ public class Attacker : MonoBehaviour
         this.range = range;
         this.fireRate = fireRate;
         this.damage = damage;
-        
+    }
+    
+    void Start()
+    {
         // will be null if this is a defender - no problem, don't worry about it
         tracker = GetComponent<EnemyTracker>();
     }
+
     
     void Update()
     {
@@ -79,6 +83,10 @@ public class Attacker : MonoBehaviour
             if (tracker != null)
             {
                 bullet.SetDamageTracker(tracker);
+            }
+            else
+            {
+                Debug.LogWarning("No tracker set");
             }
         }
         else

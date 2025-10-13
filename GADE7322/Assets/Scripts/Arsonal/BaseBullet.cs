@@ -58,6 +58,11 @@ public abstract class BaseBullet : MonoBehaviour
         if (damageTracker != null)
         {
             damageTracker.RecordDamage(damageDealt);
+            Debug.Log(name + ":......................................... " + damageDealt);
+        }
+        else
+        {
+            Debug.Log(name + ":......................................... Tracker = null");
         }
     }
 }

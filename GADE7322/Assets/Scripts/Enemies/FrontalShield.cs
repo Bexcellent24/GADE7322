@@ -79,7 +79,7 @@ public class FrontalShield : MonoBehaviour
         // Optional layer check
         if (bulletLayer != -1 && other.gameObject.layer != bulletLayer) return;
 
-        Debug.Log($"[Shield] Hit by {other.name} → BREAK");
+       // Debug.Log($"[Shield] Hit by {other.name} → BREAK");
 
         if (destroyProjectileOnHit)
             Destroy(other.attachedRigidbody ? other.attachedRigidbody.gameObject : other.gameObject);
