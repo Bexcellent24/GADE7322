@@ -50,7 +50,7 @@ public class PerformanceTracker : MonoBehaviour
             towerHealthPercent = (float)mainTowerHealth.Current / mainTowerHealth.Max;
 
         int currency = CurrencyManager.Instance ? CurrencyManager.Instance.CurrentCurrency : 0;
-        int expectedCurrency = currencyPerWave * waveNumber / 2;
+        int expectedCurrency = currencyPerWave;
 
         if(logDebugLogs) Debug.Log($"[PerformanceTracker] Wave {waveNumber} performance: Tower {towerHealthPercent:P0}, Currency {currency}/{expectedCurrency}, Defenders lost {defendersLostThisWave}");
         return new WavePerformance

@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4684843129088879439}
   - component: {fileID: 1721901336947984517}
   m_Layer: 6
-  m_Name: Enemy
+  m_Name: StandinForBoid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aca380ee1fd4cf84a856482a6707943a, type: 2}
+  - {fileID: 2100000, guid: e1cbfc43d18395c44b2d3b1900012367, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -154,14 +154,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0850b23dbe3a71c49824ae1539b18a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.35
+  moveSpeed: 0.3
   turnSpeedDeg: 600
   surfaceSnap: 0.02
   hoverOffset: 0
   landMask:
     serializedVersion: 2
     m_Bits: 8
-  lookAhead: 2
+  lookAhead: 3
   probeRadius: 0.1
   minClearance: 1
   probeAnchor: {fileID: 0}
@@ -179,12 +179,12 @@ MonoBehaviour:
   - -60
   goalWeight: 1.2
   penaltyWeight: 0.8
-  enforceWaterLock: 1
+  enforceWaterLock: 0
   waterLockStepDeg: 8
   waterLockSteps: 5
   pullBackToLastWater: 1
   preventLandPenetration: 1
-  hardPushStrength: 4
+  hardPushStrength: 6
 --- !u!114 &8337872736828362074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +203,7 @@ MonoBehaviour:
   attacker: {fileID: 0}
   auraAttacker: {fileID: 0}
   indicator: {fileID: 0}
+  navigator: {fileID: 0}
 --- !u!114 &4684843129088879439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,6 +528,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 23ffa60ff3228284cb7253890086e94e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: df1e79bb9dc59ef43a987a79571c027b, type: 2}
     - target: {fileID: 919132149155446097, guid: 23ffa60ff3228284cb7253890086e94e, type: 3}
       propertyPath: m_Name
       value: Boat3Export

@@ -113,6 +113,9 @@ public class AdaptiveEnemyWaveSpawner : MonoBehaviour
         // Get composition
         bool allowHunters = difficulty.AllowTowerHunters(wave, lastScore);
         var weights = composition.GetWeights(lastScore, allowHunters);
+        
+        string weightsDebug = composition.GetWeightsDebugString(weights);
+        if(logDebugLogs) Debug.Log($"[Spawner] Wave {wave}: {count} enemies. Spawn chances: {weightsDebug}");
 
         if(logDebugLogs) Debug.Log($"[Spawner] Wave {wave}: spawning {count} enemies. Hunters allowed: {allowHunters}");
         

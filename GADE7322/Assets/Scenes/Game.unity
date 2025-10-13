@@ -10557,28 +10557,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84c2ee72b004f9fb46b8b8c4babc175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  threatBias: 1.5
+  threatBias: 1.99
+  minDataPoints: 5
+  minSpawnsBeforeNormal: 5
   logDebugLogs: 1
   light:
     spawned: 0
     totalSurvival: 0
     totalDamage: 0
     threat: 0
+    confidence: 0
   medium:
     spawned: 0
     totalSurvival: 0
     totalDamage: 0
     threat: 0
+    confidence: 0
   heavy:
     spawned: 0
     totalSurvival: 0
     totalDamage: 0
     threat: 0
+    confidence: 0
   towerHunter:
     spawned: 0
     totalSurvival: 0
     totalDamage: 0
     threat: 0
+    confidence: 0
 --- !u!114 &5241399861112172336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10591,14 +10597,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d174c10ff9db4d44ab38cfa925eadaaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseWaveScaling: 0.1
+  baseWaveScaling: 0.25
   towerHealthWeight: 0.4
-  currencyWeight: 0.4
-  defendersWeight: 0.2
-  towerHunterUnlockWave: 3
+  currencyWeight: 0.3
+  defendersWeight: 0.4
+  towerHunterUnlockWave: 4
   towerHunterMinScore: 70
-  minDelay: 0
-  maxDelay: 8
+  minDelay: 3
+  maxDelay: 10
   logDebugLogs: 1
 --- !u!114 &5241399861112172337
 MonoBehaviour:
@@ -10614,7 +10620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDeaths: 50
   hotZoneRadius: 3
-  avoidanceStrength: 1.5
+  avoidanceStrength: 2.01
   logDebugLogs: 1
   deathPositions: []
 --- !u!114 &5241399861112172338
@@ -10632,7 +10638,7 @@ MonoBehaviour:
   lightEnemyPrefab: {fileID: 5634974199342168380, guid: 583a4b2c61c5f5845a8fcc35d4905ad0, type: 3}
   mediumEnemyPrefab: {fileID: 5634974199342168380, guid: abd5418c4fa90bf468b829c6197a83b6, type: 3}
   heavyEnemyPrefab: {fileID: 5634974199342168380, guid: 9a9515c1845b1f14e9c93cff6e7ff083, type: 3}
-  towerHunterEnemyPrefab: {fileID: 8270657472283388889, guid: d5b26060ffbc6c0428a044b05277dc73, type: 3}
+  towerHunterEnemyPrefab: {fileID: 5634974199342168380, guid: 122adc7b45f3a944b919007fb31cebe8, type: 3}
   performance: {fileID: 5241399861112172334}
   difficulty: {fileID: 5241399861112172336}
   composition: {fileID: 5241399861112172335}

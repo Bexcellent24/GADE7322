@@ -7,6 +7,12 @@ public class EnemyCompositionSelector : MonoBehaviour
     [Tooltip("How strongly to bias toward threatening enemies when player does well")]
     [Range(0f, 3f)]  [SerializeField] private float threatBias = 1.5f;
     
+    [Tooltip("Minimum enemies of a type before we start trusting threat data")]
+    [Min(1)] [SerializeField] private int minDataPoints = 5;
+    
+    [Tooltip("If an enemy type has been spawned less than this, force it to spawn occasionally")]
+    [Min(0)] [SerializeField] private int minSpawnsBeforeNormal = 3;
+    
     [Header("Debug Settings")]
     [SerializeField] private bool logDebugLogs = true;
 
@@ -17,6 +23,7 @@ public class EnemyCompositionSelector : MonoBehaviour
         public float totalSurvival;
         public float totalDamage;
         [HideInInspector] public float threat; // Calculated in runtime
+        [HideInInspector] public float confidence; // How confident we are in this threat value
     }
 
     [SerializeField] private EnemyStats light = new EnemyStats();
@@ -40,7 +47,11 @@ public class EnemyCompositionSelector : MonoBehaviour
         // Survival contributes half, damage contributes half
         stats.threat = (avgSurvival / 30f) * 0.5f + (avgDamage / 100f) * 0.5f;
         
-       if(logDebugLogs) Debug.Log($"[Composition] {kind} recorded death. AvgSurvival={avgSurvival:F1}, AvgDamage={avgDamage:F1}, Threat={stats.threat:F2}");
+        // Confidence grows as we get more data points
+        // With minDataPoints=5: at 5 spawns = 100%, at 1 spawn = 20%
+        stats.confidence = Mathf.Clamp01((float)stats.spawned / minDataPoints);
+        
+        if(logDebugLogs) Debug.Log($"[Composition] {kind} recorded death. AvgSurvival={avgSurvival:F1}, AvgDamage={avgDamage:F1}, Threat={stats.threat:F2}, Confidence={stats.confidence:F2}");
     }
 
 
@@ -51,8 +62,11 @@ public class EnemyCompositionSelector : MonoBehaviour
         {
             { EnemyKind.Light, 10f },
             { EnemyKind.Medium, 2f },
-            { EnemyKind.Heavy, 0.1f }
+            { EnemyKind.Heavy, 0.75f }
         };
+
+        //Force under-represented types to spawn so they can gather threat data
+        ApplyBootstrapWeights(weights, includeTowerHunter);
 
         // Only apply adjustment once we have enough data
         if (light.spawned > 0 || medium.spawned > 0 || heavy.spawned > 0)
@@ -60,7 +74,9 @@ public class EnemyCompositionSelector : MonoBehaviour
             float perfNormalized = score / 100f; // Convert score to 0–1 range
             float adjustment = Mathf.Lerp(-threatBias, threatBias, perfNormalized);
 
-            if(logDebugLogs) Debug.Log($"[Composition] Adjusting weights based on score {score:F1} (Adj={adjustment:F2})");
+            // Calculate total "presence" to avoid volume bias
+            int totalSpawned = light.spawned + medium.spawned + heavy.spawned;
+            if(logDebugLogs) Debug.Log($"[Composition] Adjusting weights based on score {score:F1} (Adj={adjustment:F2}). Total spawned: {totalSpawned}");
             
             foreach (var kind in new[] { 
                 EnemyKind.Light, 
@@ -70,11 +86,20 @@ public class EnemyCompositionSelector : MonoBehaviour
                 EnemyStats stats = GetStats(kind);
                 if (stats.spawned > 0)
                 {
-                    // More threat for higher-performing player
+                    // Weight the threat by confidence (how much data we have)
+                    // This prevents low-spawn-count enemies from dominating
+                    float weightedThreat = stats.threat * stats.confidence;
+                    
+                    // Also scale down if this type was spawned way more than others
+                    // If an enemy type is 80% of all spawns, it's probably not the best indicator of difficulty
+                    float spawnRatio = (float)stats.spawned / totalSpawned;
+                    float volumePenalty = Mathf.Lerp(1f, 0.5f, Mathf.Clamp01(spawnRatio - 0.3f)); // Reduce influence if >30% of spawns
+                    
                     float before = weights[kind];
-                    weights[kind] *= (1f + adjustment * stats.threat);
+                    weights[kind] *= (1f + adjustment * weightedThreat * volumePenalty);
                     weights[kind] = Mathf.Max(0.1f, weights[kind]); // Never zero
-                    if(logDebugLogs) Debug.Log($"[Composition] {kind}: Threat={stats.threat:F2}, Weight {before:F2}→{weights[kind]:F2}");
+                    
+                    if(logDebugLogs) Debug.Log($"[Composition] {kind}: Spawned={stats.spawned} ({spawnRatio:P0}), Threat={stats.threat:F2}, Confidence={stats.confidence:F2}, VolumePenalty={volumePenalty:F2}, Weight {before:F2}→{weights[kind]:F2}");
                 }
             }
         }
@@ -92,7 +117,53 @@ public class EnemyCompositionSelector : MonoBehaviour
         
         return weights;
     }
+
+    // Ensures under-represented enemy types spawn occasionally to gather threat data
+    void ApplyBootstrapWeights(Dictionary<EnemyKind, float> weights, bool includeTowerHunter)
+    {
+        var types = new[] { EnemyKind.Light, EnemyKind.Medium, EnemyKind.Heavy };
+        
+        foreach (var kind in types)
+        {
+            EnemyStats stats = GetStats(kind);
+            
+            // If this type hasn't spawned enough, boost its weight significantly
+            if (stats.spawned < minSpawnsBeforeNormal)
+            {
+                float before = weights[kind];
+                weights[kind] *= 3f; // Multiply weight by 5 to encourage spawning
+                if(logDebugLogs) Debug.Log($"[Composition] BOOTSTRAP: {kind} has only spawned {stats.spawned} times. Boosting weight {before:F2}→{weights[kind]:F2}");
+            }
+        }
+        
+        // Same for tower hunters if enabled
+        if (includeTowerHunter)
+        {
+            EnemyStats stats = GetStats(EnemyKind.TowerHunter);
+            if (stats.spawned < minSpawnsBeforeNormal)
+            {
+                weights[EnemyKind.TowerHunter] = 2f; // Give it a reasonable base weight
+                if(logDebugLogs) Debug.Log($"[Composition] BOOTSTRAP: TowerHunter has only spawned {stats.spawned} times. Enabling with weight 2.0");
+            }
+        }
+    }
     
+    // Formats weights as a readable spawn chance string for debug output
+    public string GetWeightsDebugString(Dictionary<EnemyKind, float> weights)
+    {
+        float total = 0f;
+        foreach (var w in weights.Values) total += w;
+
+        var chances = new System.Collections.Generic.List<string>();
+        foreach (var kvp in weights)
+        {
+            float percent = (kvp.Value / total) * 100f;
+            chances.Add($"{kvp.Key}={percent:F1}%");
+        }
+
+        return string.Join(", ", chances);
+    }
+
     // Selects a random enemy type using weighted probabilities
     public EnemyKind SelectType(Dictionary<EnemyKind, float> weights)
     {
