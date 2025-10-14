@@ -34,7 +34,7 @@ public class DifficultyManager : MonoBehaviour
         float currencyRatio = Mathf.Clamp01((float)perf.currency / perf.expectedCurrency);
         float currencyScore = currencyRatio * 100f;
 
-        // Fewer defender deaths = higher score (5+ deaths = 0)
+        // Fewer defender deaths = higher score
         float defenderScore = Mathf.Clamp01(1f - (perf.defendersLost / 5f)) * 100f;
 
         // Combine scores using weights
