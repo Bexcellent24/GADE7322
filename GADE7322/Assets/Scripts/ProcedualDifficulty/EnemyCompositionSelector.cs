@@ -150,6 +150,42 @@ public class EnemyCompositionSelector : MonoBehaviour
         }
     }
     
+    // Selects a random enemy type using weighted probabilities
+    public EnemyKind SelectType(Dictionary<EnemyKind, float> weights)
+    {
+        float total = 0f;
+        foreach (var w in weights.Values) total += w;
+
+        float roll = Random.Range(0f, total);
+        float cumulative = 0f;
+
+        foreach (var kvp in weights)
+        {
+            cumulative += kvp.Value;
+            if (roll < cumulative)
+            {
+                if(logDebugLogs) Debug.Log($"[Composition] Selected {kvp.Key} (Roll={roll:F2}/{total:F2})");
+                return kvp.Key;
+            }
+        }
+
+        if(logDebugLogs) Debug.LogWarning("[Composition] Weighted selection failed. Defaulting to Light enemy.");
+        return EnemyKind.Light;
+    }
+
+    // Returns stats container for specified enemy type
+    EnemyStats GetStats(EnemyKind kind)
+    {
+        switch (kind)
+        {
+            case EnemyKind.Light: return light;
+            case EnemyKind.Medium: return medium;
+            case EnemyKind.Heavy: return heavy;
+            case EnemyKind.TowerHunter: return towerHunter;
+            default: return light;
+        }
+    }
+    
     // Formats weights as a readable spawn chance string for debug output
     public string GetWeightsDebugString(Dictionary<EnemyKind, float> weights)
     {
@@ -195,41 +231,5 @@ public class EnemyCompositionSelector : MonoBehaviour
 
         if (maxThreat > 0)
             Debug.Log($" [Overview] [GREATEST THREAT: {mostThreatening} ({maxThreat:F2})]");
-    }
-
-    // Selects a random enemy type using weighted probabilities
-    public EnemyKind SelectType(Dictionary<EnemyKind, float> weights)
-    {
-        float total = 0f;
-        foreach (var w in weights.Values) total += w;
-
-        float roll = Random.Range(0f, total);
-        float cumulative = 0f;
-
-        foreach (var kvp in weights)
-        {
-            cumulative += kvp.Value;
-            if (roll < cumulative)
-            {
-                if(logDebugLogs) Debug.Log($"[Composition] Selected {kvp.Key} (Roll={roll:F2}/{total:F2})");
-                return kvp.Key;
-            }
-        }
-
-        if(logDebugLogs) Debug.LogWarning("[Composition] Weighted selection failed. Defaulting to Light enemy.");
-        return EnemyKind.Light;
-    }
-
-    // Returns stats container for specified enemy type
-    EnemyStats GetStats(EnemyKind kind)
-    {
-        switch (kind)
-        {
-            case EnemyKind.Light: return light;
-            case EnemyKind.Medium: return medium;
-            case EnemyKind.Heavy: return heavy;
-            case EnemyKind.TowerHunter: return towerHunter;
-            default: return light;
-        }
     }
 }

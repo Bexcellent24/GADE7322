@@ -79,7 +79,7 @@ public class UIManager : MonoBehaviour
         if (waveText)
             waveText.text = waveIndex + "";
         if (countdownText)
-            countdownText.text = "0s";
+            countdownText.text = "Progress";
     }
 
     // Called repeatedly during countdown to next wave
