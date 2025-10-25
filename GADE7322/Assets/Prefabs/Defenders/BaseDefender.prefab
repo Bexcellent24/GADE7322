@@ -167,6 +167,8 @@ GameObject:
   - component: {fileID: 7494291471169893708}
   - component: {fileID: 7453975177940860144}
   - component: {fileID: -4786715848306759920}
+  - component: {fileID: 2303366827743379218}
+  - component: {fileID: -5678483869238337723}
   m_Layer: 6
   m_Name: BaseDefender
   m_TagString: Tower
@@ -277,6 +279,9 @@ MonoBehaviour:
   attacker: {fileID: 0}
   auraAttacker: {fileID: 0}
   indicator: {fileID: 0}
+  navigator: {fileID: 0}
+  upgradeConfig: {fileID: 11400000, guid: fcfe15e561db1a14fbef549c3d332655, type: 2}
+  upgradeController: {fileID: 0}
 --- !u!114 &7494291471169893708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,6 +317,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 653504112608ccd42b7b5647d6360c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2303366827743379218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4632996947101834670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cbc8685483fb1f4aa0c857a4dca41a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-5678483869238337723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4632996947101834670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 760cd63e4b97cb6489bcb904da75ccf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6791963713582056067
@@ -371,7 +400,7 @@ Transform:
   m_GameObject: {fileID: 8843768187458986505}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: -0.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

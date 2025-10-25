@@ -24,6 +24,7 @@ public class DefenderGenerator : MonoBehaviour
 
     private Cell[,,] grid;
     private GameObject[,,] instantiatedTiles;
+    private TileSwapController tileSwapper;
 
     private const int sizeX = 2;
     private const int sizeZ = 2;
@@ -34,7 +35,7 @@ public class DefenderGenerator : MonoBehaviour
     
     // represents a single cell in the WFC grid.
     // stores possible tiles it can collapse into.
-    private class Cell
+    public class Cell
     {
         public HashSet<WFCTile> possible;
 
@@ -50,6 +51,17 @@ public class DefenderGenerator : MonoBehaviour
 
     #region Public API
 
+    void Awake()
+    {
+        // Get or add TileSwapController
+        tileSwapper = GetComponent<TileSwapController>();
+        if (tileSwapper == null)
+        {
+            tileSwapper = gameObject.AddComponent<TileSwapController>();
+            Debug.Log("[DefenderGenerator] Added TileSwapController component");
+        }
+    }
+    
     void Start()
     {
         Generate();
@@ -133,6 +145,9 @@ public class DefenderGenerator : MonoBehaviour
             if (candidates.Count == 0)
             {
                 InstantiateResult();
+                
+                // REGISTER TILES WITH TILE SWAPPER AFTER WFC COMPLETES
+                RegisterTilesForUpgrade();
                 yield break;
             }
 
@@ -265,6 +280,23 @@ public class DefenderGenerator : MonoBehaviour
             Instantiate(tile.prefab, worldPos, rot, p);
     }
 
+
+    #endregion
+    
+    #region Upgrade Support
+    
+    /// Register all generated tiles with the TileSwapController for upgrade support
+    private void RegisterTilesForUpgrade()
+    {
+        if (tileSwapper == null)
+        {
+            Debug.LogWarning("[DefenderGenerator] No TileSwapController found, tiles won't be upgradeable!");
+            return;
+        }
+
+        tileSwapper.RegisterTiles(instantiatedTiles, grid, sizeX, height, sizeZ);
+        Debug.Log($"[DefenderGenerator] Registered {sizeX * height * sizeZ} tiles for upgrade support");
+    }
 
     #endregion
 

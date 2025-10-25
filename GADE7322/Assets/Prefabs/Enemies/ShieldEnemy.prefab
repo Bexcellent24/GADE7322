@@ -626,6 +626,8 @@ MonoBehaviour:
   auraAttacker: {fileID: 0}
   indicator: {fileID: 0}
   navigator: {fileID: 0}
+  upgradeConfig: {fileID: 0}
+  upgradeController: {fileID: 0}
 --- !u!114 &4684843129088879439
 MonoBehaviour:
   m_ObjectHideFlags: 0

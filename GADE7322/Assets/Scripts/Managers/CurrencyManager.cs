@@ -26,6 +26,7 @@ public class CurrencyManager : MonoBehaviour
     {
         CurrentCurrency += amount;
         OnCurrencyChanged?.Invoke(CurrentCurrency);
+        UpgradeUIManager.Instance?.OnCurrencyChanged();
     }
 
     public bool SpendCurrency(int amount)
@@ -34,6 +35,8 @@ public class CurrencyManager : MonoBehaviour
 
         CurrentCurrency -= amount;
         OnCurrencyChanged?.Invoke(CurrentCurrency);
+        
+        UpgradeUIManager.Instance?.OnCurrencyChanged();
         return true;
     }
 
@@ -41,12 +44,21 @@ public class CurrencyManager : MonoBehaviour
     {
         CurrentCurrency = amount;
         OnCurrencyChanged?.Invoke(CurrentCurrency);
+        
+        UpgradeUIManager.Instance?.OnCurrencyChanged();
     }
     
     public void ResetCurrency()
     {
         CurrentCurrency = startingCurrency;
         OnCurrencyChanged?.Invoke(CurrentCurrency);
+        
+        UpgradeUIManager.Instance?.OnCurrencyChanged();
+    }
+    
+    public bool HasEnough(int amount)
+    {
+        return CurrentCurrency >= amount;
     }
     
 }

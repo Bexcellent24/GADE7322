@@ -1,47 +1,82 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SelectionManager : MonoBehaviour
 {
     [SerializeField] private LayerMask selectableLayer;
-    private RangeIndicator currentIndicator;
+    private ISelectable currentlySelected;
+    private Actor currentActor;
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) // left click
         {
+            // Don't process clicks if clicking on UI!
+            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+            {
+                Debug.Log("[SelectionManager] Click is over UI, ignoring");
+                return;
+            }
+            
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit, 100f, selectableLayer))
             {
                 var actor = hit.collider.GetComponentInParent<Actor>();
                 if (actor != null)
                 {
-                    Select(actor);
+                    // Check if this actor implements ISelectable and is actually selectable
+                    if (actor is ISelectable selectable && selectable.IsSelectable)
+                    {
+                        Select(selectable, actor);
+                    }
+                    else
+                    {
+                        Deselect();
+                    }
+                }
+                else
+                {
+                    Deselect();
                 }
             }
             else
             {
+                // Clicked on nothing
                 Deselect();
             }
         }
     }
 
-    private void Select(Actor actor)
+    private void Select(ISelectable selectable, Actor actor)
     {
-        if (currentIndicator != null)
-            currentIndicator.Hide();
+        // Deselect previous if it exists
+        if (currentlySelected != null)
+        {
+            currentlySelected.OnDeselected();
+        }
 
-        currentIndicator = actor.GetComponentInChildren<RangeIndicator>();
-        if (currentIndicator != null)
-            currentIndicator.Show();
+        // Select new
+        currentlySelected = selectable;
+        currentActor = actor;
+        currentlySelected.OnSelected();
+        
+        Debug.Log($"[SelectionManager] Selected: {actor.gameObject.name}");
     }
 
     private void Deselect()
     {
-        if (currentIndicator != null)
+        if (currentlySelected != null)
         {
-            currentIndicator.Hide();
-            currentIndicator = null;
+            currentlySelected.OnDeselected();
+            currentlySelected = null;
+            currentActor = null;
+            
+            Debug.Log("[SelectionManager] Deselected");
         }
     }
-}
 
+    public Actor GetCurrentlySelectedActor()
+    {
+        return currentActor;
+    }
+}

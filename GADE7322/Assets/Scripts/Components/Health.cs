@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour, IDamageable
 {
-    public int Current { get; private set; } 
-    public int Max { get; private set; }
+    public int Current { get; set; } 
+    public int Max { get; set; }  // Changed to have setter for upgrades
     public Transform Transform => transform; 
     public bool IsAlive => Current > 0;
     public event Action<IDamageable> OnDeath;
@@ -14,6 +14,7 @@ public class Health : MonoBehaviour, IDamageable
     private Faction faction;
     private int worth;
     private bool triggerGameOver;
+    private bool isDying = false;  // Prevent multiple death triggers
 
     public void Initialize(int max, Faction faction, int worth, bool triggerGameOver)
     {
@@ -25,11 +26,17 @@ public class Health : MonoBehaviour, IDamageable
         OnHealthChanged?.Invoke();
     }
 
+    public void UpdateHealth()
+    {
+        OnHealthChanged?.Invoke();
+    }
+
     public void TakeDamage(int amount)
     {
-        if (!IsAlive) return;
+        if (!IsAlive || isDying) return;
 
         Current -= amount;
+        Current = Mathf.Max(0, Current);  // Clamp to 0
         OnHealthChanged?.Invoke();
 
         if (Current <= 0) Die();
@@ -37,21 +44,32 @@ public class Health : MonoBehaviour, IDamageable
 
     private void Die()
     {
+        if (isDying) return;  // Prevent multiple death calls
+        isDying = true;
+        
         Current = 0;
         OnHealthChanged?.Invoke();
         OnDeath?.Invoke(this);
 
         if (faction == Faction.Enemy)
         {
-            CurrencyManager.Instance.AddCurrency(worth);
-            GameManager.Instance.IncrementEnemiesKilled();
+            if (CurrencyManager.Instance != null)
+            {
+                CurrencyManager.Instance.AddCurrency(worth);
+            }
+            
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.IncrementEnemiesKilled();
+            }
         }
         else
         {
             OnDefenderDied?.Invoke();
             AudioManager.Instance?.PlaySFX("Break");
         }
-        if (triggerGameOver)
+        
+        if (triggerGameOver && GameManager.Instance != null)
         {
             GameManager.Instance.LoseGame();
         }

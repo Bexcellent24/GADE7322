@@ -21,23 +21,18 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Range
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 50d57939818fa354abed917eee59085e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _ALPHAPREMULTIPLY_ON
-  - _SURFACE_TYPE_TRANSPARENT
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap:
-    RenderType: Transparent
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
-  - DepthOnly
-  - SHADOWCASTER
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -103,6 +98,7 @@ Material:
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
+    - _Amplitude: 0.03
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -114,27 +110,44 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _DstBlendAlpha: 10
+    - _EdgeFalloff: 20
+    - _EdgeRadius: 0.82
     - _EnvironmentReflections: 1
+    - _Frequency: 3.58
+    - _Frequency_2: 10.55
+    - _Fresnel_Intensity: 0.36
+    - _Fresnel_Power: 0.04
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Gradient_Noise: 5
     - _Metallic: 0.294
+    - _Noise_intensity: 0.17
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 0.669
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _Speed: 2.21
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 1
+    - _Wobble_Size: 0.05
+    - _Wobble_Speed: 0.2
+    - _Wobble_Strength: 1
+    - _Wobble_intensity: 0.029
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
     - _BaseColor: {r: 0.41981128, g: 1, b: 0.9785988, a: 0.4117647}
+    - _BaseColour: {r: 0.1957547, g: 0.5, b: 0.45516384, a: 0.7372549}
     - _Color: {r: 0.41981125, g: 1, b: 0.9785988, a: 0.4117647}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Noise_Speed: {r: 0.2, g: 0.2, b: 0, a: 0}
+    - _SimmerColour: {r: 1, g: 1, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

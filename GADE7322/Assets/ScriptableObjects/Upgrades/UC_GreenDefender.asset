@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a46eb6ca87ae8b54684272a57a0b13b7, type: 3}
+  m_Name: UC_GreenDefender
+  m_EditorClassIdentifier: 
+  unitDisplayName: Green Defender
+  upgradeType: 1
+  level1Cost: 75
+  level2Cost: 120
+  level1DamageMultiplier: 1.5
+  level1RangeMultiplier: 1.2
+  level1AttackRateMultiplier: 1
+  level1HealthMultiplier: 1.3
+  level2DamageMultiplier: 2
+  level2RangeMultiplier: 1.5
+  level2AttackRateMultiplier: 1
+  level2HealthMultiplier: 1.6
+  level1TileSwapPercentage: 0.15
+  level2TileSwapPercentage: 0.9
+  tileUpgradeMappings:
+  - baseTile: {fileID: 11400000, guid: 79ab3ce891cbea34c9724864bf83fdab, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: ab05f17954634364bbbbc8121ddcc67c, type: 2}
+  - baseTile: {fileID: 11400000, guid: a58da541db9bb604f890e50e80730695, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: 96f3499132e3e494da2d2f3c5869cd61, type: 2}
+  - baseTile: {fileID: 11400000, guid: f2dd5aed816277c488f529f457a6af50, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: 742bb3cffc91eb14090992c060c218e7, type: 2}
+  - baseTile: {fileID: 11400000, guid: 811298ed5a5cbe44bb012feadc3bb32e, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: 6cbd9087cd85a924f828fd42580609a3, type: 2}
+  - baseTile: {fileID: 11400000, guid: 238bd43f158568b419a405b31bf936a1, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: 5539917ecf1273d4eb00bc6a03d30f65, type: 2}
+  - baseTile: {fileID: 11400000, guid: 1a7060acf9e9fb64d8cdf02f7da90e88, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: 8cb3909dc41e813439403475cd9aa059, type: 2}
+  - baseTile: {fileID: 11400000, guid: 4b6638068036b9b4185e5e7b0d2e979e, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: d829b2b9f6a5ddb48a2175f84d09e8fe, type: 2}
+  - baseTile: {fileID: 11400000, guid: 444fe814a1a9c8e4fabcaeb4f546b361, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: 90a92c0cbb7ee9d4aae1581384e6dfb8, type: 2}
+  - baseTile: {fileID: 11400000, guid: 7ead814083ac23943a7e1e908b161661, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: 4f311a22d9dc39740ab354407ba2753c, type: 2}
+  - baseTile: {fileID: 11400000, guid: 18809689f21a4a34eb52ea875c43bce2, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: c4026c4ee1be06c4bad889594a4593f4, type: 2}
+  - baseTile: {fileID: 11400000, guid: 6de3665160b788a49813cafcbd1ede21, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: c8e1430cf389436439873f5312d516c7, type: 2}
+  - baseTile: {fileID: 11400000, guid: 3b1844450c1ed484096b10428e2cf86a, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: 14882588794644c4a9fd8ea7768bb306, type: 2}
+  - baseTile: {fileID: 11400000, guid: 41551465c42480b44883f0eca5b4a431, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: e22f342204419c342b1b8b539c68c829, type: 2}
+  - baseTile: {fileID: 11400000, guid: 7e8d51e0d1406074699ee1a557b49aeb, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: 67755172601df6c4f96adb9c58b0f752, type: 2}
+  - baseTile: {fileID: 11400000, guid: 690bd4d053c86e44db52bfe161a710d0, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: 77cc33cf8c3ad4946af0412f9b155deb, type: 2}
+  - baseTile: {fileID: 11400000, guid: 2f07724002e963e4d9073e8630126b68, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: c65532c65cbc0aa48a4b774244c690b2, type: 2}
+  - baseTile: {fileID: 11400000, guid: 76c2b0b795c53d44b922906ed49a5713, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: 96ff4e2b1ca61cc46a3942228ecfd500, type: 2}
+  - baseTile: {fileID: 11400000, guid: 7f34c6e52a372da4784ce2fa23b86108, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: 8c196a313d834ac4a9740ecddda58c1f, type: 2}
+  - baseTile: {fileID: 11400000, guid: b81fc0d5947e9f2459bf3b2371a30e99, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: e268531f9452d9d438666ff04c1396d5, type: 2}
+  - baseTile: {fileID: 11400000, guid: 70a38aceb4b7e254b952f49ce5c13884, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: 0ff176b517a69cc418282f48c55a7514, type: 2}
+  - baseTile: {fileID: 11400000, guid: ba1d490302d9cf642b4e8f61ac8d5eb3, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: f85c84a4f415b5444ad9b89658198fa4, type: 2}
+  - baseTile: {fileID: 11400000, guid: 86b8e552e66ece143a67eed49e4f1103, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: ac75dc1592f56084da8db0b577e26fde, type: 2}
+  - baseTile: {fileID: 11400000, guid: 5f2d4a38624de604cb030e107c0ef281, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: 440a02d3a8b0d174fabafcc5f743a2fd, type: 2}
+  - baseTile: {fileID: 11400000, guid: 0f2fc57283de0b344b80cda8eb716f41, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: 83d678adf15f67f49b902de4e85a999b, type: 2}
+  - baseTile: {fileID: 11400000, guid: 9290fc71d653a0b4c9f049fb5dfa0b57, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: 88a239157344f9d449cb841853d27f93, type: 2}
+  - baseTile: {fileID: 11400000, guid: 13f7743b074ccb743ba86058e5880b83, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: 4460fcbc7cb61d542b2f0c47d6363162, type: 2}
+  - baseTile: {fileID: 11400000, guid: 5eab3d0bc28fd724eb9820a149c2859a, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: 4bc0889896ecfda409ed862fcc5028cf, type: 2}
+  - baseTile: {fileID: 11400000, guid: f60564d6385630a45908b6f7371f1f25, type: 2}
+    upgradedVariant: {fileID: 11400000, guid: a7b8afdf9e8e75345b16ca71b6ef86ab, type: 2}
+  level1MeshPrefab: {fileID: 0}
+  level2MeshPrefab: {fileID: 0}
