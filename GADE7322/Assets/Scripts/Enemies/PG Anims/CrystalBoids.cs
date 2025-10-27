@@ -1,6 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+using UnityEditor.SceneManagement; // PrefabStageUtility
+#endif
+
 [DisallowMultipleComponent]
 public class CrystalBoidsFlocking : MonoBehaviour
 {
@@ -11,41 +16,30 @@ public class CrystalBoidsFlocking : MonoBehaviour
     [Min(0.02f)] public float shardScale = 0.12f;
     public bool hideShardGameObjects = true;
 
-    [Header("Flocking (Reynolds)")]
-    [Tooltip("Neighbour radius used for alignment/cohesion.")]
+    [Header("Flocking")]
+    [Tooltip("Neighbour radius used for alignment/cohesion")]
     [Min(0.05f)] public float neighborRadius = 1.1f;
     [Tooltip("Personal space radius used for separation.")]
     [Min(0.02f)] public float separationRadius = 0.8f;
 
-    [Tooltip("Weight of separation force.")]
-    public float separationWeight = 2.8f;
-    [Tooltip("Weight of alignment force.")]
-    public float alignmentWeight = 0.6f;
-    [Tooltip("Weight of cohesion force.")]
-    public float cohesionWeight = 0.5f;
+    [Tooltip("Weight of separation force")] public float separationWeight = 2.8f;
+    [Tooltip("Weight of alignment force")]  public float alignmentWeight  = 0.6f;
+    [Tooltip("Weight of cohesion force")]   public float cohesionWeight   = 0.5f;
 
     [Header("Speed Limits")]
-    [Tooltip("Maximum speed ")]
-    public float maxSpeed = 2.2f;
-    [Tooltip("Maximum steering acceleration")]
-    public float maxAccel = 8f;
+    [Tooltip("Maximum speed ")] public float maxSpeed = 2.2f;
+    [Tooltip("Maximum steering acceleration")] public float maxAccel = 8f;
 
     [Header("Anchor")]
-    [Tooltip("Preferred distance from center")]
-    public float anchorRadius = 1.1f;
-    [Tooltip("How strongly boids are nudged toward/away from the anchor radius")]
-    public float anchorStrength = 1.2f;
+    [Tooltip("Preferred distance from center")] public float anchorRadius = 1.1f;
+    [Tooltip("How strongly boids are nudged toward/away from the anchor radius")] public float anchorStrength = 1.2f;
 
     [Header("Stability / Flow")]
-    [Tooltip("Random drift to reduce lock-ups")]
-    [Range(0f, 1f)] public float jitter = 0.3f;
-    [Tooltip("Small damping to stabilise jitter")]
-    [Range(0f, 1f)] public float velocityDamping = 0.005f;
-    [Tooltip("Bias toward tangential motion around sphere (0..1)")]
-    [Range(0f, 1f)] public float tangentialBias = 0.25f;
+    [Tooltip("Random drift to reduce lock-ups")] [Range(0f, 1f)] public float jitter = 0.3f;
+    [Tooltip("Small damping to stabilise jitter")] [Range(0f, 1f)] public float velocityDamping = 0.005f;
+    [Tooltip("Bias toward tangential motion around sphere (0..1)")] [Range(0f, 1f)] public float tangentialBias = 0.25f;
 
     [Header("Soft Bounds")]
-    [Tooltip("0 disables soft bounds.")]
     public float softBoundsRadius = 0f;
     public float softBoundsStrength = 1.5f;
 
@@ -55,40 +49,66 @@ public class CrystalBoidsFlocking : MonoBehaviour
     Material _runtimeMat;
     bool _built;
 
-#if UNITY_EDITOR
+    #if UNITY_EDITOR
     bool _needsRebuild;
+
+    static bool IsPrefabAssetOrEditingPrefabContents(GameObject go)
+    {
+        if (Application.isPlaying) return false;
+
+        if (PrefabUtility.IsPartOfPrefabAsset(go)) return true;
+        if (!go.scene.IsValid()) return true; 
+
+        var stage = PrefabStageUtility.GetCurrentPrefabStage();
+        return stage != null && stage.IsPartOfPrefabContents(go);
+    }
+
     void OnValidate()
     {
-        neighborRadius    = Mathf.Max(0.05f, neighborRadius);
-        separationRadius  = Mathf.Clamp(separationRadius, 0.02f, neighborRadius);
-        maxSpeed          = Mathf.Max(0.01f, maxSpeed);
-        maxAccel          = Mathf.Max(0.01f, maxAccel);
-        count             = Mathf.Max(1, count);
+        neighborRadius   = Mathf.Max(0.05f, neighborRadius);
+        separationRadius = Mathf.Clamp(separationRadius, 0.02f, neighborRadius);
+        maxSpeed         = Mathf.Max(0.01f, maxSpeed);
+        maxAccel         = Mathf.Max(0.01f, maxAccel);
+        count            = Mathf.Max(1, count);
 
         if (!Application.isPlaying)
         {
+            if (IsPrefabAssetOrEditingPrefabContents(gameObject)) return; // don't touch prefab assets
             _needsRebuild = true;
-            UnityEditor.EditorApplication.delayCall += DeferredRebuild;
+            EditorApplication.delayCall += DeferredRebuild;
         }
     }
+
     void DeferredRebuild()
     {
-        UnityEditor.EditorApplication.delayCall -= DeferredRebuild;
+        EditorApplication.delayCall -= DeferredRebuild;
         if (!this) return;
-        if (_needsRebuild) { _needsRebuild = false; Rebuild(); }
+
+        if (_needsRebuild)
+        {
+            _needsRebuild = false;
+            if (!IsPrefabAssetOrEditingPrefabContents(gameObject))
+                Rebuild();
+        }
     }
-#endif
+        #endif
 
     void Awake()    => Rebuild();
     void OnEnable() => Rebuild();
-    void OnDisable() { ClearChildren(); _shards.Clear(); _built = false; }
-    void OnDestroy() { ClearChildren(); _shards.Clear(); _built = false; }
+
+    void OnDisable()  { ClearChildren(); _shards.Clear(); _built = false; }
+    void OnDestroy()  { ClearChildren(); _shards.Clear(); _built = false; }
 
     void Rebuild()
     {
+        #if UNITY_EDITOR
+            if (!Application.isPlaying && IsPrefabAssetOrEditingPrefabContents(gameObject))
+                return;
+        #endif
+
         if (shardMesh == null || shardMaterial == null)
         {
-            if (shardMesh == null) Debug.LogError("[CrystalBoidsFlocking] Assign shardMesh.");
+            if (shardMesh == null)     Debug.LogError("[CrystalBoidsFlocking] Assign shardMesh.");
             if (shardMaterial == null) Debug.LogError("[CrystalBoidsFlocking] Assign shardMaterial.");
             enabled = false; return;
         }
@@ -137,12 +157,12 @@ public class CrystalBoidsFlocking : MonoBehaviour
         for (int i = transform.childCount - 1; i >= 0; i--)
         {
             var child = transform.GetChild(i).gameObject;
-#if UNITY_EDITOR
-            if (!Application.isPlaying) DestroyImmediate(child);
-            else Destroy(child);
-#else
-            Destroy(child);
-#endif
+            #if UNITY_EDITOR
+                if (!Application.isPlaying) DestroyImmediate(child);
+                else Destroy(child);
+            #else
+                Destroy(child);
+            #endif
         }
     }
 
@@ -154,7 +174,6 @@ public class CrystalBoidsFlocking : MonoBehaviour
         float neighR2 = neighborRadius * neighborRadius;
         float sepR2   = separationRadius * separationRadius;
 
-        // O(n^2) 
         for (int i = 0; i < _shards.Count; i++)
         {
             var a = _shards[i];
@@ -181,7 +200,6 @@ public class CrystalBoidsFlocking : MonoBehaviour
 
                     if (d2 < sepR2 && d2 > 0f)
                     {
-                        // Inverse-square push away, clamped to avoid numeric spikes
                         float inv = 1f / Mathf.Max(0.0002f, d2);
                         Vector3 dir = delta * (-inv);
                         separation += Vector3.ClampMagnitude(dir, 5f);
@@ -192,7 +210,7 @@ public class CrystalBoidsFlocking : MonoBehaviour
 
             Vector3 accel = Vector3.zero;
 
-            // Separation 
+            // Separation
             if (sepCount > 0)
             {
                 float crowd = Mathf.InverseLerp(2f, 10f, neighborCount);
@@ -210,7 +228,7 @@ public class CrystalBoidsFlocking : MonoBehaviour
                 accel += align * alignmentWeight;
             }
 
-            // Cohesion 
+            // Cohesion
             if (neighborCount > 0)
             {
                 Vector3 center = sumPos / neighborCount;
@@ -219,14 +237,16 @@ public class CrystalBoidsFlocking : MonoBehaviour
                 accel += toCenter * cohesionWeight;
             }
 
+            // Anchor radius keeper
             float r = a.pos.magnitude;
             if (r > 0.0001f)
             {
-                float radialErr = (anchorRadius - r); 
+                float radialErr = (anchorRadius - r);
                 Vector3 radialDir = a.pos.normalized;
                 accel += radialDir * (radialErr * anchorStrength);
             }
 
+            // Soft bounds
             if (softBoundsRadius > 0f)
             {
                 float rr = a.pos.magnitude;
@@ -237,6 +257,7 @@ public class CrystalBoidsFlocking : MonoBehaviour
                 }
             }
 
+            // Jitter
             if (jitter > 0f)
             {
                 float t = Time.time;
@@ -251,12 +272,14 @@ public class CrystalBoidsFlocking : MonoBehaviour
                     accel += n * (jitter * maxAccel * 0.5f);
                 }
             }
-            
+
+            // Clamp acceleration
             if (accel.sqrMagnitude > maxAccel * maxAccel)
                 accel = accel.normalized * maxAccel;
 
             a.vel += accel * dt;
-            
+
+            // Bias away from radial component to encourage orbiting
             if (tangentialBias > 0f && a.pos.sqrMagnitude > 1e-6f)
             {
                 Vector3 radial = a.pos.normalized;
