@@ -21,27 +21,27 @@ public class CrystalBoidsFlocking : MonoBehaviour
     public float separationWeight = 2.8f;
     [Tooltip("Weight of alignment force.")]
     public float alignmentWeight = 0.6f;
-    [Tooltip("Weight of cohesion (toward neighbors' center) force.")]
+    [Tooltip("Weight of cohesion force.")]
     public float cohesionWeight = 0.5f;
 
     [Header("Speed Limits")]
-    [Tooltip("Maximum speed (units/sec).")]
+    [Tooltip("Maximum speed ")]
     public float maxSpeed = 2.2f;
-    [Tooltip("Maximum steering accel (units/sec^2).")]
+    [Tooltip("Maximum steering acceleration")]
     public float maxAccel = 8f;
 
-    [Header("Anchor (keep around a shell)")]
-    [Tooltip("Preferred distance from center (visual shell).")]
+    [Header("Anchor")]
+    [Tooltip("Preferred distance from center")]
     public float anchorRadius = 1.1f;
-    [Tooltip("How strongly boids are nudged toward/away from the anchor radius.")]
+    [Tooltip("How strongly boids are nudged toward/away from the anchor radius")]
     public float anchorStrength = 1.2f;
 
     [Header("Stability / Flow")]
-    [Tooltip("Random drift to reduce lock-ups.")]
+    [Tooltip("Random drift to reduce lock-ups")]
     [Range(0f, 1f)] public float jitter = 0.3f;
-    [Tooltip("Small damping to stabilize jitter.")]
+    [Tooltip("Small damping to stabilize jitte.")]
     [Range(0f, 1f)] public float velocityDamping = 0.005f;
-    [Tooltip("Bias toward tangential motion around sphere (0..1).")]
+    [Tooltip("Bias toward tangential motion around sphere (0..1)")]
     [Range(0f, 1f)] public float tangentialBias = 0.25f;
 
     [Header("Optional Soft Bounds")]
@@ -192,7 +192,7 @@ public class CrystalBoidsFlocking : MonoBehaviour
 
             Vector3 accel = Vector3.zero;
 
-            // --- Separation (with crowd-based boost) ---
+            // Separation 
             if (sepCount > 0)
             {
                 float crowd = Mathf.InverseLerp(2f, 10f, neighborCount); // 0..1
@@ -201,7 +201,7 @@ public class CrystalBoidsFlocking : MonoBehaviour
                 accel += sepDir * (separationWeight * sepBoost * maxAccel);
             }
 
-            // --- Alignment (limited) ---
+            // Alignment
             if (neighborCount > 0)
             {
                 Vector3 avgVel = sumVel / neighborCount;
@@ -210,7 +210,7 @@ public class CrystalBoidsFlocking : MonoBehaviour
                 accel += align * alignmentWeight;
             }
 
-            // --- Cohesion (limited) ---
+            // Cohesion 
             if (neighborCount > 0)
             {
                 Vector3 center = sumPos / neighborCount;
@@ -219,16 +219,14 @@ public class CrystalBoidsFlocking : MonoBehaviour
                 accel += toCenter * cohesionWeight;
             }
 
-            // --- Anchor shell (maintain roughly anchorRadius) ---
             float r = a.pos.magnitude;
             if (r > 0.0001f)
             {
-                float radialErr = (anchorRadius - r); // positive if inside
+                float radialErr = (anchorRadius - r); 
                 Vector3 radialDir = a.pos.normalized;
                 accel += radialDir * (radialErr * anchorStrength);
             }
 
-            // --- Soft bounds (optional) ---
             if (softBoundsRadius > 0f)
             {
                 float rr = a.pos.magnitude;
@@ -239,7 +237,6 @@ public class CrystalBoidsFlocking : MonoBehaviour
                 }
             }
 
-            // --- Small jitter to avoid gridlock ---
             if (jitter > 0f)
             {
                 float t = Time.time;
@@ -254,8 +251,7 @@ public class CrystalBoidsFlocking : MonoBehaviour
                     accel += n * (jitter * maxAccel * 0.5f);
                 }
             }
-
-            // --- Clamp accel, integrate velocity/position ---
+            
             if (accel.sqrMagnitude > maxAccel * maxAccel)
                 accel = accel.normalized * maxAccel;
 
