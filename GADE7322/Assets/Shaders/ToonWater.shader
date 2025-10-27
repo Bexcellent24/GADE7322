@@ -87,7 +87,7 @@
                 return float4(color, a);
             }
 
-            // Vertex with WORLD-SPACE sine displacement on Y
+            // Vertex with sine displacement on Y
             v2f vert (appdata v)
             {
                 v2f o;
@@ -109,7 +109,7 @@
                 // Apply displacement along world Y
                 worldPos.y += h;
 
-                o.vertex         = UnityWorldToClipPos(float4(worldPos, 1));
+                o.vertex = UnityWorldToClipPos(float4(worldPos, 1));
                 o.screenPosition = ComputeScreenPos(o.vertex);
 
                 // Pass UVs through 
@@ -125,7 +125,7 @@
             float4 frag (v2f i) : SV_Target
             {
                 // Depth behind current pixel 
-                float existingDepth01     = tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(i.screenPosition)).r;
+                float existingDepth01 = tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(i.screenPosition)).r;
                 float existingDepthLinear = LinearEyeDepth(existingDepth01);
 
                 // Distance between water surface and object behind it 
@@ -153,14 +153,13 @@
 
                 // Distorted scrolling noise
                 float surfaceNoiseCutoff = foamDepth01 * _SurfaceNoiseCutoff;
-                float2 distortSample     = (tex2D(_SurfaceDistortion, i.distortUV).xy * 2 - 1) * _SurfaceDistortionAmount;
+                float2 distortSample = (tex2D(_SurfaceDistortion, i.distortUV).xy * 2 - 1) * _SurfaceDistortionAmount;
                 float2 noiseUV           = float2(
                     (i.noiseUV.x + _Time.y * _SurfaceNoiseScroll.x) + distortSample.x,
                     (i.noiseUV.y + _Time.y * _SurfaceNoiseScroll.y) + distortSample.y
                 );
                 float surfaceNoiseSample = tex2D(_SurfaceNoise, noiseUV).r;
 
-                // AA’d threshold
                 float surfaceNoise = smoothstep(surfaceNoiseCutoff - SMOOTHSTEP_AA,
                                                 surfaceNoiseCutoff + SMOOTHSTEP_AA,
                                                 surfaceNoiseSample);

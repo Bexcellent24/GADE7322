@@ -5577,6 +5577,7 @@ GameObject:
   - component: {fileID: 924699497}
   - component: {fileID: 924699498}
   - component: {fileID: 924699500}
+  - component: {fileID: 924699501}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5655,6 +5656,20 @@ MonoBehaviour:
   waterRadius: 7
   goalPoleDir: {x: 0, y: 1, z: 0}
   planet: {fileID: 1516610172}
+--- !u!114 &924699501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924699494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72964ecdf09daae45baf1859f243c0d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainTowerTag: MainTower
+  shaderHPParam: _TowerHealth01
 --- !u!1 &925882517
 GameObject:
   m_ObjectHideFlags: 0
@@ -10505,7 +10520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1806478848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12491,8 +12506,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightEnemyPrefab: {fileID: 4362574961040303067, guid: 6cfeba1f5d54d61489f8d4f9d3154372, type: 3}
-  mediumEnemyPrefab: {fileID: 5634974199342168380, guid: abd5418c4fa90bf468b829c6197a83b6, type: 3}
-  heavyEnemyPrefab: {fileID: 2267227689962475889, guid: 9a9515c1845b1f14e9c93cff6e7ff083, type: 3}
+  mediumEnemyPrefab: {fileID: 4362574961040303067, guid: 6cfeba1f5d54d61489f8d4f9d3154372, type: 3}
+  heavyEnemyPrefab: {fileID: 4362574961040303067, guid: 6cfeba1f5d54d61489f8d4f9d3154372, type: 3}
   towerHunterEnemyPrefab: {fileID: 3035804390501432149, guid: 383c376208f5b6c4abe84650588a1a34, type: 3}
   performance: {fileID: 5241399861112172334}
   difficulty: {fileID: 5241399861112172336}

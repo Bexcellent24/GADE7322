@@ -39,7 +39,7 @@ public class CrystalBoidsFlocking : MonoBehaviour
     [Header("Stability / Flow")]
     [Tooltip("Random drift to reduce lock-ups")]
     [Range(0f, 1f)] public float jitter = 0.3f;
-    [Tooltip("Small damping to stabilize jitte.")]
+    [Tooltip("Small damping to stabilise jitter")]
     [Range(0f, 1f)] public float velocityDamping = 0.005f;
     [Tooltip("Bias toward tangential motion around sphere (0..1)")]
     [Range(0f, 1f)] public float tangentialBias = 0.25f;
@@ -154,7 +154,7 @@ public class CrystalBoidsFlocking : MonoBehaviour
         float neighR2 = neighborRadius * neighborRadius;
         float sepR2   = separationRadius * separationRadius;
 
-        // Naive O(n^2) scan; fine for a few hundred.
+        // O(n^2) 
         for (int i = 0; i < _shards.Count; i++)
         {
             var a = _shards[i];
@@ -181,7 +181,7 @@ public class CrystalBoidsFlocking : MonoBehaviour
 
                     if (d2 < sepR2 && d2 > 0f)
                     {
-                        // Inverse-square push away, clamped to avoid numeric spikes.
+                        // Inverse-square push away, clamped to avoid numeric spikes
                         float inv = 1f / Mathf.Max(0.0002f, d2);
                         Vector3 dir = delta * (-inv);
                         separation += Vector3.ClampMagnitude(dir, 5f);
@@ -195,7 +195,7 @@ public class CrystalBoidsFlocking : MonoBehaviour
             // Separation 
             if (sepCount > 0)
             {
-                float crowd = Mathf.InverseLerp(2f, 10f, neighborCount); // 0..1
+                float crowd = Mathf.InverseLerp(2f, 10f, neighborCount);
                 float sepBoost = Mathf.Lerp(1f, 1.8f, crowd);
                 Vector3 sepDir = separation.normalized;
                 accel += sepDir * (separationWeight * sepBoost * maxAccel);
@@ -256,8 +256,7 @@ public class CrystalBoidsFlocking : MonoBehaviour
                 accel = accel.normalized * maxAccel;
 
             a.vel += accel * dt;
-
-            // Tangential bias: reduce radial component to keep lateral flow on the shell
+            
             if (tangentialBias > 0f && a.pos.sqrMagnitude > 1e-6f)
             {
                 Vector3 radial = a.pos.normalized;
