@@ -85,10 +85,8 @@ public class CrystalBoids : MonoBehaviour
         {
             _needsRebuild = false;
             
-            // Only rebuild if not in a prefab asset
             if (UnityEditor.PrefabUtility.IsPartOfPrefabAsset(this))
             {
-                // Don't build hierarchy for prefab assets - only for instances
                 return;
             }
             
@@ -113,7 +111,6 @@ public class CrystalBoids : MonoBehaviour
         _built = false;
     }
 
-    // requires shard Mesh and shard Material to be assigned
     void BuildIfNeeded()
     {
         if (_built) return;
