@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7402962467367273126}
   - component: {fileID: 88822139023974070}
   - component: {fileID: 5679348914173189681}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4843,7 +4843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3109546892494339159}
   - component: {fileID: 4637802153957133595}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4992,7 +4992,7 @@ GameObject:
   - component: {fileID: 6463809220334499756}
   - component: {fileID: 7105896545990455185}
   - component: {fileID: 8332630287846275350}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9824,7 +9824,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1703752383875818140}
   - component: {fileID: 1417820358415713931}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: StandardEnemyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9861,5 +9861,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949b939153979f94e9da72e681892256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
   speed: 3

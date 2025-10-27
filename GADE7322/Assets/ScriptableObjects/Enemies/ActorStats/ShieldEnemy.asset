@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ShieldEnemy
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8010429607598179167, guid: 2aef4d6233394d44e899309b1d0d8a77, type: 3}
-  maxHealth: 40
+  maxHealth: 30
   attackRate: 0.5
-  range: 1.6
+  range: 1.4
   damage: 10
   triggerGameOver: 0
   worth: 50

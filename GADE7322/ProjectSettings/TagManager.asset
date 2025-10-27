@@ -7,6 +7,8 @@ TagManager:
   - FxTemporaire
   - Bullet
   - MainTower
+  - Tower
+  - PlanetCenter
   layers:
   - Default
   - TransparentFX

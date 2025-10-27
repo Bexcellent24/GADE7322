@@ -8506,7 +8506,7 @@ GameObject:
   - component: {fileID: 1507791553}
   m_Layer: 0
   m_Name: GlobeCenter
-  m_TagString: Untagged
+  m_TagString: PlanetCenter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12490,10 +12490,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378847173f5947039bbf1ee6fd89a88e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightEnemyPrefab: {fileID: 5634974199342168380, guid: 583a4b2c61c5f5845a8fcc35d4905ad0, type: 3}
+  lightEnemyPrefab: {fileID: 4362574961040303067, guid: 6cfeba1f5d54d61489f8d4f9d3154372, type: 3}
   mediumEnemyPrefab: {fileID: 5634974199342168380, guid: abd5418c4fa90bf468b829c6197a83b6, type: 3}
-  heavyEnemyPrefab: {fileID: 5634974199342168380, guid: 9a9515c1845b1f14e9c93cff6e7ff083, type: 3}
-  towerHunterEnemyPrefab: {fileID: 8270657472283388889, guid: f266e9834ea189149a9a17a1b2da4cfa, type: 3}
+  heavyEnemyPrefab: {fileID: 2267227689962475889, guid: 9a9515c1845b1f14e9c93cff6e7ff083, type: 3}
+  towerHunterEnemyPrefab: {fileID: 3035804390501432149, guid: 383c376208f5b6c4abe84650588a1a34, type: 3}
   performance: {fileID: 5241399861112172334}
   difficulty: {fileID: 5241399861112172336}
   composition: {fileID: 5241399861112172335}

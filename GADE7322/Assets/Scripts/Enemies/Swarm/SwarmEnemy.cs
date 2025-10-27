@@ -1,29 +1,32 @@
-// Assets/Scripts/Enemies/Swarm/SwarmEnemy.cs
 using UnityEngine;
 
 [RequireComponent(typeof(WaterGlobeNavigator))]
+[DisallowMultipleComponent]
 public class SwarmEnemy : MonoBehaviour, IDamageable
 {
     [Header("Combat")]
     public float attackRange  = 1.75f;
-    public float attackRate   = 0.6f;
-    public float attackDamage = 6f;
+    public float attackRate   = 0.6f;   
+    public float attackDamage = 6f;     
 
     [Header("Targeting")]
     public LayerMask towerMask;
     public string towerTag = "Tower";
 
-    [Header("VFX hook (optional)")]
-    public ParticleSystem swarmParticles;
-    SwarmParticlesController swarmCtl;
+    [Header("Aura")]
+    [Tooltip("Aura component that deals DPS and renders 4 beams.")]
+    public AuraAttackerMulti aura;
+    [Tooltip("Enemy layer")]
+    public LayerMask auraTargetLayers;
+    [Tooltip("Beam sockets.")]
+    public Transform[] beamSockets;
 
-    WaterGlobeNavigator nav;
-    Transform target;
-    float atkTimer;
-    readonly Collider[] hits = new Collider[32];
+    WaterGlobeNavigator nav; // Sperical movement 
+    Transform target; // Target steering
+    readonly Collider[] hits = new Collider[32]; // Buffer for non-allocated colliders
+    Health health; 
 
-    Health health; // use central health system
-
+    // IDamageable implementations
     public int CurrentHealth => health ? health.Current : 0;
     public bool IsAlive => health && health.IsAlive;
     public Transform Transform => this.transform;
@@ -32,17 +35,40 @@ public class SwarmEnemy : MonoBehaviour, IDamageable
     {
         nav = GetComponent<WaterGlobeNavigator>();
         health = GetComponent<Health>();
-        swarmCtl = swarmParticles
-            ? swarmParticles.GetComponent<SwarmParticlesController>()
-            : GetComponentInChildren<SwarmParticlesController>();
+    }
+
+    void Start()
+    {
+        // Convert regular DPS to aura DPS
+        float dps = (attackRate > 0f) ? (attackDamage / attackRate) : attackDamage;
+
+        if (!aura) aura = GetComponent<AuraAttackerMulti>();
+        if (aura)
+        {
+            // Push range and DPS
+            aura.Initialize(attackRange, dps);
+
+            var so = typeof(AuraAttackerMulti).GetField("beamSockets",
+                System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public);
+            if (so != null && beamSockets != null && beamSockets.Length > 0) so.SetValue(aura, beamSockets);
+
+            // Push target layers 
+            var tl = typeof(AuraAttackerMulti).GetField("targetLayers",
+                System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public);
+            if (tl != null) tl.SetValue(aura, auraTargetLayers);
+        }
+        else
+        {
+            Debug.LogWarning("[SwarmEnemy] No AuraAttackerMulti assigned");
+        }
     }
 
     void Update()
     {
-        // acquire target every ~0.5s (30 frames @ 60fps)
+        // Re-acquire the steering target every 30 frames
         if (Time.frameCount % 30 == 0) target = FindClosestTower();
 
-        // steer along great-circle toward target
+        // steer along the sphere towards the target
         if (target)
         {
             var world = WaterWorldManager.Instance;
@@ -52,26 +78,11 @@ public class SwarmEnemy : MonoBehaviour, IDamageable
         }
         else
         {
-            // no target, revert to global behaviour
             nav.SetLocalGoalDirection(null);
-        }
-
-        // attack tick
-        if (target && IsAlive)
-        {
-            atkTimer += Time.deltaTime;
-            if (atkTimer >= attackRate)
-            {
-                atkTimer = 0f;
-                if (Vector3.Distance(transform.position, target.position) <= attackRange &&
-                    target.TryGetComponent<IDamageable>(out var dmg))
-                {
-                    dmg.TakeDamage(Mathf.RoundToInt(attackDamage));
-                }
-            }
         }
     }
 
+    // Returns the nearest transform that has a tower based on layer and optional tag.
     Transform FindClosestTower()
     {
         int n = Physics.OverlapSphereNonAlloc(transform.position, 25f, hits, towerMask);
@@ -88,17 +99,11 @@ public class SwarmEnemy : MonoBehaviour, IDamageable
         return tBest;
     }
 
-    // IDamageable — forward to central Health so UI/currency/etc. work
     public void TakeDamage(int amount)
     {
         if (!health) return;
         int before = health.Current;
         health.TakeDamage(amount);
-
-        if (swarmCtl && health.Current != before)
-        {
-            swarmCtl.SetMaxHealth(health.Max);
-            swarmCtl.SetCurrentHealth(health.Current);
-        }
+        
     }
 }

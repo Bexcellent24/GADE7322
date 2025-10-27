@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: BaseEnemy
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8010429607598179167, guid: 2aef4d6233394d44e899309b1d0d8a77, type: 3}
-  maxHealth: 30
+  maxHealth: 25
   attackRate: 1
   range: 2
-  damage: 3
+  damage: 2
   triggerGameOver: 0
   worth: 10
   moveSpeed: 0.45

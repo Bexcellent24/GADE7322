@@ -16,12 +16,12 @@ MonoBehaviour:
   visualPrefab: {fileID: 0}
   maxHealth: 80
   worth: 1
-  moveSpeed: 0.66
+  moveSpeed: 1.5
   turnSpeedDeg: 180
   canAttack: 1
   attackRange: 1.75
   attackRate: 0.6
-  attackDamage: 10
+  attackDamage: 6
   towerMask:
     serializedVersion: 2
     m_Bits: 64
