@@ -44,7 +44,7 @@ public class CrystalBoidsFlocking : MonoBehaviour
     [Tooltip("Bias toward tangential motion around sphere (0..1)")]
     [Range(0f, 1f)] public float tangentialBias = 0.25f;
 
-    [Header("Optional Soft Bounds")]
+    [Header("Soft Bounds")]
     [Tooltip("0 disables soft bounds.")]
     public float softBoundsRadius = 0f;
     public float softBoundsStrength = 1.5f;
