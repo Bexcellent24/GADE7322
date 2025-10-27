@@ -136,7 +136,6 @@
 
                 // t = 1 at full HP, 0 at low HP 
                 float t = saturate(_TowerHealth01);
-                // Optional easing so changes feel smoother near low HP:
                 t = smoothstep(0.0, 1.0, t);
 
                 float4 shallowCol = lerp(_DamagedDepthGradientShallow, _DepthGradientShallow, t);
