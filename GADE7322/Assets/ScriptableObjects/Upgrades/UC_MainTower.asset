@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitDisplayName: Main Tower
   upgradeType: 2
-  level1Cost: 100
-  level2Cost: 200
+  level1Cost: 200
+  level2Cost: 500
   level1DamageMultiplier: 1.5
   level1RangeMultiplier: 1.2
-  level1AttackRateMultiplier: 1.3
+  level1AttackRateMultiplier: 1.2
   level1HealthMultiplier: 1.3
   level2DamageMultiplier: 2
   level2RangeMultiplier: 1.5
-  level2AttackRateMultiplier: 1.6
-  level2HealthMultiplier: 1.6
+  level2AttackRateMultiplier: 1.1
+  level2HealthMultiplier: 1.5
   level1TileSwapPercentage: 0.15
   level2TileSwapPercentage: 0.9
   tileUpgradeMappings: []

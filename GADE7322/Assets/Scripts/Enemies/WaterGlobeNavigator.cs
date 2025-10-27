@@ -8,6 +8,7 @@ public class WaterGlobeNavigator : MonoBehaviour
     [SerializeField] private float turnSpeedDeg = 180f;
     [SerializeField] private float surfaceSnap = 0.15f;
     [SerializeField] private float hoverOffset = 0.0f;
+    [SerializeField] private float acceptanceRadius = 1.5f;
 
     [Header("Enemy Avoidance")]
     [SerializeField] private LayerMask landMask;
@@ -44,15 +45,15 @@ public class WaterGlobeNavigator : MonoBehaviour
     private WaterWorldManager _worldManager;
     private Vector3 _vel;
     private Vector3 _lastWaterUp;
+    private bool _hasReachedGoal;
 
     // Public properties for dynamic configuration
     public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
-
     public float TurnSpeedDeg { get => turnSpeedDeg; set => turnSpeedDeg = value; }
-
     public float HoverOffset { get => hoverOffset; set => hoverOffset = value; }
-    
-    public float SurfaceSnap{ get => surfaceSnap; set => surfaceSnap = value; }
+    public float SurfaceSnap { get => surfaceSnap; set => surfaceSnap = value; }
+    public float AcceptanceRadius { get => acceptanceRadius; set => acceptanceRadius = value; }
+    public bool HasReachedGoal => _hasReachedGoal;
 
     Vector3 Center => _worldManager?.PlanetCenter?.position ?? Vector3.zero;
     
@@ -60,6 +61,7 @@ public class WaterGlobeNavigator : MonoBehaviour
     public void SetLocalGoalDirection(Vector3? dir)
     {
         localGoalDirOverride = dir;
+        _hasReachedGoal = false;
     }
 
     void Reset()
@@ -71,6 +73,7 @@ public class WaterGlobeNavigator : MonoBehaviour
         probeRadius = 0.35f;
         minClearance = 0.25f;
         surfaceSnap = 0.15f;
+        acceptanceRadius = 1.5f;
 
         useHeightFallback = true;
         waterBias = 0f;
@@ -107,6 +110,8 @@ public class WaterGlobeNavigator : MonoBehaviour
 
         if (_worldManager.Planet && useHeightFallback)
             _lastWaterUp = _worldManager.Planet.IsWaterDirection(up, waterBias) ? up : Vector3.zero;
+        
+        _hasReachedGoal = false;
     }
 
     void LateUpdate()
@@ -125,6 +130,19 @@ public class WaterGlobeNavigator : MonoBehaviour
         Vector3 goalDirection = localGoalDirOverride ?? _worldManager.GoalPoleDir;
         Vector3 goalPoint = center + goalDirection.normalized * targetRadius;
         Vector3 toGoal = goalPoint - pos;
+        float distanceToGoal = toGoal.magnitude;
+
+        // Check if within acceptance radius
+        if (distanceToGoal <= acceptanceRadius)
+        {
+            _hasReachedGoal = true;
+            // Stop moving but maintain position on surface
+            transform.position = pos;
+            return;
+        }
+
+        _hasReachedGoal = false;
+
         Vector3 desired = Vector3.ProjectOnPlane(toGoal, up).normalized;
 
         Vector3 steering = ChooseSteeringWithCost(pos, up, desired);
@@ -338,6 +356,15 @@ public class WaterGlobeNavigator : MonoBehaviour
         UnityEditor.Handles.DrawWireDisc(end, up, probeRadius);
         UnityEditor.Handles.color = new Color(1, 1, 0, 0.2f);
         UnityEditor.Handles.DrawWireDisc(origin, up, probeRadius);
+
+        // Draw acceptance radius
+        Vector3 goalDirection = localGoalDirOverride ?? _worldManager.GoalPoleDir;
+        float targetRadius = _worldManager.WaterRadius + hoverOffset;
+        Vector3 goalPoint = center + goalDirection.normalized * targetRadius;
+        
+        Gizmos.color = _hasReachedGoal ? Color.green : new Color(0, 1, 0, 0.3f);
+        UnityEditor.Handles.color = _hasReachedGoal ? Color.green : new Color(0, 1, 0, 0.3f);
+        UnityEditor.Handles.DrawWireDisc(goalPoint, goalDirection.normalized, acceptanceRadius);
     }
 #endif
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4054403761843846492}
   m_Layer: 6
   m_Name: CrystalTower
-  m_TagString: MainTower
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

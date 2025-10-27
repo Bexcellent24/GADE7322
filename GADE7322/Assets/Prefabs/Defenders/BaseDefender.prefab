@@ -294,7 +294,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ffc6b6f6cdfa0e418dab6747c19fba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 5233225615591349072}
+  firePoints:
+  - {fileID: 5233225615591349072}
 --- !u!114 &7453975177940860144
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -158,6 +158,7 @@ MonoBehaviour:
   turnSpeedDeg: 600
   surfaceSnap: 0.02
   hoverOffset: 0
+  acceptanceRadius: 1.8
   landMask:
     serializedVersion: 2
     m_Bits: 8
@@ -204,6 +205,8 @@ MonoBehaviour:
   auraAttacker: {fileID: 0}
   indicator: {fileID: 0}
   navigator: {fileID: 0}
+  upgradeConfig: {fileID: 0}
+  upgradeController: {fileID: 0}
 --- !u!114 &4684843129088879439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ffc6b6f6cdfa0e418dab6747c19fba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 2581565573064149666}
+  firePoints:
+  - {fileID: 2581565573064149666}
 --- !u!114 &1721901336947984517
 MonoBehaviour:
   m_ObjectHideFlags: 0

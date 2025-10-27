@@ -3,8 +3,8 @@ using TMPro;
 using UnityEngine.UI;
 
 
-/// Manages the upgrade UI panel that appears when selecting an upgradeable unit.
-/// Singleton pattern for easy access from other scripts.
+// Manages the upgrade UI panel that appears when selecting an upgradeable unit.
+// Singleton pattern for easy access from other scripts.
 
 public class UpgradeUIManager : MonoBehaviour
 {
@@ -33,7 +33,6 @@ public class UpgradeUIManager : MonoBehaviour
     
     void Awake()
     {
-        // Singleton setup
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -41,11 +40,10 @@ public class UpgradeUIManager : MonoBehaviour
         }
         Instance = this;
         
-        // Hide panel initially
+        // Hide panel in the beginning
         if (upgradePanel != null)
             upgradePanel.SetActive(false);
         
-        // Setup button listener
         if (upgradeButton != null)
         {
             upgradeButton.onClick.AddListener(OnUpgradeButtonClicked);
@@ -142,7 +140,7 @@ public class UpgradeUIManager : MonoBehaviour
         var config = currentActor.upgradeConfig;
         int nextLevel = upgradeController.CurrentUpgradeLevel + 1;
         
-        // Update stats with upgrade preview - only show arrow if stat actually changes
+        // Update stats with upgrade preview 
         if (damageText != null)
         {
             if (config != null && config.DoesDamageUpgrade(nextLevel))
@@ -263,7 +261,7 @@ public class UpgradeUIManager : MonoBehaviour
     }
     
 
-    /// Call this when currency changes to update the UI if panel is open
+    // Call this when currency changes to update the UI if panel is open
     public void OnCurrencyChanged()
     {
         if (currentActor != null && upgradePanel != null && upgradePanel.activeSelf)

@@ -21,7 +21,7 @@ MonoBehaviour:
   canAttack: 1
   attackRange: 1.75
   attackRate: 0.6
-  attackDamage: 6
+  attackDamage: 10
   towerMask:
     serializedVersion: 2
     m_Bits: 64

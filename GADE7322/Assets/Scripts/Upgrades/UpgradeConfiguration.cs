@@ -29,19 +29,19 @@ public class UpgradeConfiguration : ScriptableObject
     public float level2AttackRateMultiplier = 1.6f;
     public float level2HealthMultiplier = 1.6f;
     
-    [Header("Visual Upgrade Rules - Tile Swap (Defenders)")]
+    [Header("Visual Upgrade Rules for Defenders")]
     [Range(0f, 1f)] 
     [Tooltip("Percentage of tiles to swap at level 1")]
     public float level1TileSwapPercentage = 0.35f;
     
     [Range(0f, 1f)] 
-    [Tooltip("Percentage of tiles to swap at level 2 (cumulative, so if 0.65 then 65% total will be swapped)")]
+    [Tooltip("Percentage of tiles to swap at level 2")]
     public float level2TileSwapPercentage = 0.65f;
     
-    [Tooltip("Tile variant mappings for WFC defenders - only need ONE upgraded variant per base tile")]
+    [Tooltip("Tile variant mappings for WFC defenders")]
     public List<TileUpgradeMapping> tileUpgradeMappings;
     
-    [Header("Visual Upgrade Rules - Mesh Swap (Main Tower)")]
+    [Header("Visual Upgrade Rules for Main Tower)")]
     [Tooltip("Mesh to swap to at level 1")]
     public GameObject level1MeshPrefab;
     

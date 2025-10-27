@@ -12311,6 +12311,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2419705494266005840, guid: a2b5fecbc50b3d04b936a6a715c729f2, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2643272353435937289, guid: a2b5fecbc50b3d04b936a6a715c729f2, type: 3}
       propertyPath: m_Name
       value: MainTower
@@ -12407,7 +12411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84c2ee72b004f9fb46b8b8c4babc175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  threatBias: 1.99
+  threatBias: 2.49
   minDataPoints: 5
   minSpawnsBeforeNormal: 4
   towerHunterWeight: 2
@@ -12448,13 +12452,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d174c10ff9db4d44ab38cfa925eadaaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseWaveScaling: 0.15
+  baseWaveScaling: 0.25
   towerHealthWeight: 0.4
   currencyWeight: 0.3
   defendersWeight: 0.4
   towerHunterUnlockWave: 4
-  towerHunterMinScore: 70
-  minDelay: 3
+  towerHunterMinScore: 0.6
+  minDelay: 5
   maxDelay: 10
   logDebugLogs: 0
 --- !u!114 &5241399861112172337
@@ -12496,7 +12500,7 @@ MonoBehaviour:
   spawnSelector: {fileID: 5241399861112172337}
   baseWaveCount: 5
   maxSpawnDuration: 15
-  maxConcurrent: 60
+  maxConcurrent: 100
   spawnPoints: []
   logDebugLogs: 0
 --- !u!1660057539 &9223372036854775807

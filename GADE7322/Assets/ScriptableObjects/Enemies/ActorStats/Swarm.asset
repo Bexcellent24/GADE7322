@@ -16,7 +16,7 @@ MonoBehaviour:
   maxHealth: 10
   attackRate: 1.5
   range: 1.5
-  damage: 1
+  damage: 10
   triggerGameOver: 0
   worth: 20
   moveSpeed: 0.45

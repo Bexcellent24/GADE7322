@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitDisplayName: Green Defender
   upgradeType: 1
-  level1Cost: 75
-  level2Cost: 120
+  level1Cost: 100
+  level2Cost: 140
   level1DamageMultiplier: 1.5
   level1RangeMultiplier: 1.2
   level1AttackRateMultiplier: 1

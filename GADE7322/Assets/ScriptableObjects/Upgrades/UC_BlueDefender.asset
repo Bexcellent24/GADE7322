@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitDisplayName: Blue Defender
   upgradeType: 1
-  level1Cost: 50
-  level2Cost: 100
+  level1Cost: 80
+  level2Cost: 120
   level1DamageMultiplier: 1.2
   level1RangeMultiplier: 1.2
   level1AttackRateMultiplier: 1

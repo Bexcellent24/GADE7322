@@ -4,8 +4,6 @@ using System.Linq;
 
 // Handles visual upgrades for Defenders that use WFC tile-based generation.
 // Swaps out individual tiles with upgraded variants.
-// Level 1: Swaps X% of tiles to upgraded variant
-// Level 2: Swaps MORE tiles (cumulative total) to upgraded variant
 public class TileSwapController : MonoBehaviour, IVisualUpgradeStrategy
 {
     private List<TileInstance> tileInstances = new List<TileInstance>();
@@ -102,9 +100,11 @@ public class TileSwapController : MonoBehaviour, IVisualUpgradeStrategy
             return;
         }
         
-        // Filter tiles that haven't been swapped yet AND have an upgraded variant available
+        // Filter tiles that haven't been swapped yet have an upgraded variant available
         var swappableTiles = tileInstances
             .Where(t => !t.isSwapped && t.gameObject != null && HasVariant(t.originalTile, config))
+            .OrderBy(x => Random.value) // shuffle them so the upgraded tiles are scattered
+            .Take(additionalSwapsNeeded)
             .ToList();
         
         if (swappableTiles.Count == 0)
@@ -113,31 +113,10 @@ public class TileSwapController : MonoBehaviour, IVisualUpgradeStrategy
             return;
         }
         
-        // Clamp to available tiles
-        int tilesToSwap = Mathf.Min(additionalSwapsNeeded, swappableTiles.Count);
+        Debug.Log($"[TileSwapController] Level {upgradeLevel}: Swapping {swappableTiles.Count} additional tiles (Total: {currentSwappedCount + swappableTiles.Count}/{tileInstances.Count})");
         
-        // SHUFFLE THE LIST PROPERLY - convert to array, shuffle it, then take what we need
-        TileInstance[] shuffledArray = swappableTiles.ToArray();
         
-        // Fisher-Yates shuffle for truly random selection
-        for (int i = shuffledArray.Length - 1; i > 0; i--)
-        {
-            int randomIndex = Random.Range(0, i + 1);
-            TileInstance temp = shuffledArray[i];
-            shuffledArray[i] = shuffledArray[randomIndex];
-            shuffledArray[randomIndex] = temp;
-        }
-        
-        // Take the first N tiles from the shuffled array
-        var tilesToSwapList = shuffledArray.Take(tilesToSwap).ToList();
-        
-        Debug.Log($"[TileSwapController] Level {upgradeLevel}: Swapping {tilesToSwap} additional tiles (Total: {currentSwappedCount + tilesToSwap}/{tileInstances.Count})");
-        
-        // Log which tiles are being swapped for debugging
-        string swapPositions = string.Join(", ", tilesToSwapList.Select(t => t.gridPosition.ToString()));
-        Debug.Log($"[TileSwapController] Swapping tiles at positions: {swapPositions}");
-        
-        foreach (var tile in tilesToSwapList)
+        foreach (var tile in swappableTiles)
         {
             SwapSingleTile(tile, config);
         }
@@ -180,7 +159,7 @@ public class TileSwapController : MonoBehaviour, IVisualUpgradeStrategy
         tile.gameObject = newObject;
         tile.isSwapped = true;
         
-        // Destroy old AFTER new is created (deferred destruction)
+        // Destroy old AFTER new is created
         if (oldObject != null)
         {
             Destroy(oldObject);

@@ -98,8 +98,6 @@ public class MeshSwapController : MonoBehaviour, IVisualUpgradeStrategy
         return isInitialized && visualRoot != null;
     }
     
-
-    // Call this to manually set the visual root if needed
     public void SetVisualRoot(Transform root)
     {
         visualRoot = root;

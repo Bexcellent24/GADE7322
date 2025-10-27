@@ -1,7 +1,7 @@
 using UnityEngine;
 
-/// Handles all upgrade logic for an Actor (stats, visuals, costs).
-/// Supports both tile-based (defenders) and mesh-based (main tower) upgrades.
+// Handles all upgrade logic for an Actor (stats, visuals, costs).
+// Supports both tile-based (defenders) and mesh-based (main tower) upgrades.
 [RequireComponent(typeof(Actor))]
 public class UpgradeController : MonoBehaviour, IUpgradable
 {
@@ -30,8 +30,6 @@ public class UpgradeController : MonoBehaviour, IUpgradable
             Debug.LogError($"[UpgradeController] Actor {actor.gameObject.name} has no stats assigned!");
         }
         
-        // DON'T setup visual strategy here - wait until first upgrade attempt
-        // This allows WFC time to complete and register tiles
         hasSetupStrategy = false;
     }
     
@@ -52,7 +50,7 @@ public class UpgradeController : MonoBehaviour, IUpgradable
                 var tileSwapper = GetComponent<TileSwapController>();
                 if (tileSwapper == null)
                 {
-                    // Try to find it on children (DefenderGenerator)
+                    // Try to find it on children
                     tileSwapper = GetComponentInChildren<TileSwapController>();
                 }
                 
@@ -141,7 +139,7 @@ public class UpgradeController : MonoBehaviour, IUpgradable
         
         try
         {
-            // Setup visual strategy on first upgrade (lazy initialization)
+            // Setup visual strategy on first upgrade
             if (!hasSetupStrategy)
             {
                 SetupVisualUpgradeStrategy();
@@ -162,7 +160,7 @@ public class UpgradeController : MonoBehaviour, IUpgradable
             // Apply stat upgrades
             ApplyStatUpgrades();
             
-            // Apply visual upgrades (if strategy is valid)
+            // Apply visual upgrades
             if (visualUpgradeStrategy != null && visualUpgradeStrategy.IsValid())
             {
                 Debug.Log($"[UpgradeController] Applying visual upgrade...");
@@ -245,31 +243,38 @@ public class UpgradeController : MonoBehaviour, IUpgradable
             Debug.Log("[UpgradeController] Updated RangeIndicator");
         }
         
-        // Update health if it exists - CAREFULLY
+        // Update health if it exists
         if (actor.health != null)
         {
-            // Store current health ratio BEFORE any changes
+            // Store current health ratio before any changes
             int oldCurrent = actor.health.Current;
             int oldMax = actor.health.Max;
             float healthRatio = oldMax > 0 ? (float)oldCurrent / oldMax : 1f;
-            
+    
             Debug.Log($"[UpgradeController] Health before: {oldCurrent}/{oldMax} (ratio: {healthRatio:F2})");
-            
-            // Calculate new current health
-            int newCurrentHealth = Mathf.Max(1, Mathf.RoundToInt(newMaxHealth * healthRatio));
-            
+    
+            // Calculate new current health based on ratio
+            int newCurrentHealth = Mathf.RoundToInt(newMaxHealth * healthRatio);
+    
+            // Add 20% of new max health as a bonus
+            int healthBonus = Mathf.RoundToInt(newMaxHealth * 0.2f);
+            newCurrentHealth += healthBonus;
+    
+            // Clamp to new max (in case they were already near full)
+            newCurrentHealth = Mathf.Clamp(newCurrentHealth, 1, newMaxHealth);
+    
             // Update max first
             actor.health.Max = newMaxHealth;
-            
-            // Then set current (this won't trigger death because we ensure it's >= 1)
+    
+            // Then set current
             actor.health.Current = newCurrentHealth;
-            
-            // Trigger health changed event manually if needed
+    
+            // Trigger health manually to trigger the health bar ui update. 
             actor.health.UpdateHealth();
-            
-            Debug.Log($"[UpgradeController] Health after: {newCurrentHealth}/{newMaxHealth}");
+    
+            Debug.Log($"[UpgradeController] Health after: {newCurrentHealth}/{newMaxHealth} (bonus: +{healthBonus})");
         }
-        
+
         Debug.Log($"[UpgradeController] Stat upgrades applied successfully");
     }
     
