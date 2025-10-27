@@ -20,7 +20,7 @@ public class CrystalBoids : MonoBehaviour
     [Header("Orbit Motion")]
     [Tooltip("Average distance from the crystal center")]
     public float radius = 0.9f;
-    [Tooltip("Random variation added to each shard’s radius")]
+    [Tooltip("Random variation added to each shard's radius")]
     public float radiusJitter = 0.25f;
 
     [Tooltip("Base angular speed of shards")]
@@ -51,7 +51,11 @@ public class CrystalBoids : MonoBehaviour
     Material _runtimeMat;
     System.Random _rng;
     bool _built;
-    bool _valid;  
+    bool _valid;
+
+#if UNITY_EDITOR
+    bool _needsRebuild;
+#endif
 
     void Awake()    => BuildIfNeeded();
     void OnEnable() => BuildIfNeeded();
@@ -59,14 +63,39 @@ public class CrystalBoids : MonoBehaviour
 #if UNITY_EDITOR
     void OnValidate()
     {
+        // Only validate parameters - don't build hierarchy during OnValidate
         count = Mathf.Max(1, count);
         speedRange.x = Mathf.Min(speedRange.x, speedRange.y);
 
-        // If anything changed in edit mode, mark unbuilt and try to rebuild
-        if (!Application.isPlaying) _built = false;
-        BuildIfNeeded();
-        ResizeIfNeeded();
-        ApplyHideFlagsToChildren();
+        // Schedule rebuild for next editor update instead of doing it immediately
+        if (!Application.isPlaying)
+        {
+            _built = false;
+            _needsRebuild = true;
+            UnityEditor.EditorApplication.delayCall += DeferredRebuild;
+        }
+    }
+
+    void DeferredRebuild()
+    {
+        // Remove the callback first to avoid multiple calls
+        UnityEditor.EditorApplication.delayCall -= DeferredRebuild;
+        
+        if (_needsRebuild && this != null)
+        {
+            _needsRebuild = false;
+            
+            // Only rebuild if not in a prefab asset
+            if (UnityEditor.PrefabUtility.IsPartOfPrefabAsset(this))
+            {
+                // Don't build hierarchy for prefab assets - only for instances
+                return;
+            }
+            
+            BuildIfNeeded();
+            ResizeIfNeeded();
+            ApplyHideFlagsToChildren();
+        }
     }
 #endif
 
@@ -88,6 +117,12 @@ public class CrystalBoids : MonoBehaviour
     void BuildIfNeeded()
     {
         if (_built) return;
+
+#if UNITY_EDITOR
+        // Skip building if this is a prefab asset
+        if (UnityEditor.PrefabUtility.IsPartOfPrefabAsset(this))
+            return;
+#endif
 
         // Validate required assets
         _valid = (shardMesh != null && shardMaterial != null);
