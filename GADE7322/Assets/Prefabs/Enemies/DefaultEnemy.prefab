@@ -250,16 +250,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shardMesh: {fileID: 3498079512676413664, guid: 6cb80010455f96d47b4041b56e96b1f1, type: 3}
   shardMaterial: {fileID: 2100000, guid: 110782a397dfe2743a5555523f84f477, type: 2}
-  count: 40
+  count: 100
   shardScale: 1
-  radius: 3
-  radiusJitter: 1
-  angularSpeedDeg: 30
-  speedRange: {x: 0.6, y: 1.4}
-  bobAmplitude: 0.1
-  bobSpeed: 1.5
-  axisWobble: 0.15
   hideShardGameObjects: 1
+  neighborRadius: 1.4
+  separationRadius: 0.8
+  separationWeight: 3.2
+  alignmentWeight: 0.8
+  cohesionWeight: 0.3
+  maxSpeed: 4
+  maxAccel: 8
+  anchorRadius: 0.45
+  anchorStrength: 0.1
+  jitter: 0.15
+  velocityDamping: 0.02
+  tangentialBias: 0.25
+  softBoundsRadius: 0.78
+  softBoundsStrength: 0.65
 --- !u!1 &3720175210962020247
 GameObject:
   m_ObjectHideFlags: 0
